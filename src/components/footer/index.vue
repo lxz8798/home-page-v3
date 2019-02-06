@@ -7,20 +7,14 @@
 
 <style lang="scss">
 @import "../../assets/base/base";
-$FooterHeight: 1.5rem;
+$FooterHeight: 0.8rem;
 div.Footer-wrap {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-
   width: $childBaseWidth;
   height: $FooterHeight;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
-  border-top: 1px solid #cecece;
 }
 </style>
 

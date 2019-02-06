@@ -9,11 +9,11 @@ const webpack = require('webpack');
 // 单页或多页入口
 // const utils = require("./src/utils/utils.js");
 // 去console插件
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+// const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 // 压缩格式
-const productionGzipExtensions = ["js", "css"];
+// const productionGzipExtensions = ["js", "css"];
 // gzip压缩插件
-const CompressionWebpackPlugin = require("compression-webpack-plugin");
+// const CompressionWebpackPlugin = require("compression-webpack-plugin");
 // 把js放到页面底部
 // const HtmlWebpackPlugin = require("html-webpack-plugin");
 // 消除冗余的css
@@ -38,14 +38,14 @@ module.exports = {
       entry: 'src/main.js',
       template: 'public/index.html',
       filename: 'index.html',
-      title: 'home',
+      title: '懒虫的窝',
       chunks: ['chunk-vendors', 'chunk-common', 'index']
     }
   },
   // 是否在开发环境下通过 eslint-loader 在每次保存时 lint 代码 (在生产构建时禁用 eslint-loader)
   lintOnSave: process.env.NODE_ENV !== 'production',
   // 是否使用包含运行时编译器的Vue核心的构建，热重启
-  // runtimeCompiler: true,
+  runtimeCompiler: true,
   // 生产环境是否生成 sourceMap 文件
   productionSourceMap: false,
   // 设置生成的 HTML 中 <link rel="stylesheet"> 和 <script> 标签的 crossorigin 属性（注：仅影响构建时注入的标签）

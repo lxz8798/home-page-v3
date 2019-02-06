@@ -9,7 +9,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store/index";
 import _ from "lodash";
-import fly from "./http"; /* eslint-disable */
+import fly from "./http";
 import normalize from "normalize.css";
 import global from "./utils/global";
 import api from "./api/api";

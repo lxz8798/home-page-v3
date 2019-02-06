@@ -1,28 +1,12 @@
 <template>
-  <div id="app">
-    <!-- 避免重复渲染DOM -->
-    <keep-alive>
-      <Header></Header>
-    </keep-alive>
-    <keep-alive>
-      <router-view/>
-    </keep-alive>
-    <keep-alive>
-      <Footer></Footer>
-    </keep-alive>
-  </div>
+<div id="app">
+  <router-view />
+</div>
 </template>
 
 <style lang="scss">
 @import "./assets/base/base";
-html {
-  @media screen and (min-width: 560px) {
-    font-size: $FontSize560;
-  }
-  @media screen and (max-width: 750px) {
-    font-size: $FontSize750;
-  }
-}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif, "MSYH";
   -webkit-font-smoothing: antialiased;

@@ -1,31 +1,144 @@
-<template>
 <!-- header 公共组件 -->
-<div class="Header-wrap">
-{{title}}
-</div>
+<template>
+  <!-- header 公共组件 -->
+  <div class="Header-wrap">
+    <ul>
+      <li v-for="(item,index) in menuList" :key="index" :class="{'activeHover':index == active}">
+        <router-link :to="item.link">{{item.name}}</router-link>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style lang="scss">
 @import "../../assets/base/base";
-$HeaderHeight: 0.8rem;
+@import "../../assets/base/color";
+$HeaderHeight: 0.6rem;
+
 div.Header-wrap {
   width: $childBaseWidth;
   height: $HeaderHeight;
+  background: rgba(240, 240, 240, 0.3);
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  border-bottom: 1px solid #cecece;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  ul {
+    width: 12rem;
+    height: $HeaderHeight;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    li {
+      height: inherit;
+      line-height: inherit;
+
+      display: inline-flex;
+      align-items: center;
+
+      a {
+        width: 100%;
+        height: $HeaderHeight;
+        line-height: $HeaderHeight;
+        color: rgba(220, 220, 220, 1);
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
+    }
+
+    li:hover {
+      border-top: 0.02rem solid $menuColor;
+      padding-bottom: 0.02rem;
+
+      a {
+        color: darken($menuColor, 30%);
+      }
+    }
+
+    li.activeHover {
+      border-top: 0.02rem solid $menuColor;
+      padding-bottom: 0.02rem;
+
+      a {
+        color: darken($menuColor, 30%);
+      }
+    }
+  }
+}
+
+div.Header-wrap:hover {
+  background: rgba(255, 255, 255, 1);
+  transition: all 0.3s ease;
+
+  ul {
+    li {
+      a {
+        color: $menuColor;
+      }
+    }
+  }
 }
 </style>
 
 <script>
 export default {
   name: "Header",
+  props: ["active"],
   data() {
     return {
-      title: "这里是公共用的头部!"
+      menuList: [
+        {
+          name: "LAZY-STUDIO.COM",
+          link: "/",
+          key: 1
+        },
+        {
+          name: "JAVASCRIPT/NODE",
+          link: "jsview",
+          key: 2
+        },
+        {
+          name: "CSS/ANIMATION",
+          link: "cssview",
+          key: 3
+        },
+        {
+          name: "DESIGN/PS/XD",
+          link: "designview",
+          key: 4
+        },
+        {
+          name: "MONGODB",
+          link: "mongoview",
+          key: 5
+        },
+        {
+          name: "LINK",
+          link: "linkview",
+          key: 6
+        },
+        {
+          name: "UPDATE",
+          link: "updateview",
+          key: 7
+        },
+        {
+          name: "SIGN IN",
+          link: "loginview",
+          key: 8
+        },
+        {
+          name: "SIGN UP",
+          link: "logoutview",
+          key: 9
+        }
+      ]
     };
   }
 };

@@ -5,11 +5,11 @@
  */
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "./views/home/Home"
+import Home from "@/views/home/Home"
 
 Vue.use(VueRouter);
 
-const getComponent = name => () => import(`./views/${name}/${name}.vue`);
+const getComponent = name => () => import(`./views/${name}/index.vue`);
 
 const router = new VueRouter({
   // mode: "history",
@@ -18,16 +18,66 @@ const router = new VueRouter({
     {
       path: "/",
       name: "home",
-      component:Home,
-      meta: {
-        auth: false,
-        keepAlive:false // 是否缓存
-      }
+      component:Home
     },
     {
       path:"/example",
       name:'example',
       component:getComponent("example"),
+      meta: {
+        auth: true,
+        keepAlive:false // 是否缓存
+      }
+    },
+    {
+      path:"/jsview",
+      name:'jsview',
+      component:getComponent("jsview"),
+      meta: {
+        auth: true,
+        keepAlive:false // 是否缓存
+      }
+    },
+    {
+      path:"/cssview",
+      name:'cssview',
+      component:getComponent("cssview"),
+      meta: {
+        auth: true,
+        keepAlive:false // 是否缓存
+      }
+    },
+    {
+      path:"/designview",
+      name:'designview',
+      component:getComponent("designview"),
+      meta: {
+        auth: true,
+        keepAlive:false // 是否缓存
+      }
+    },
+    {
+      path:"/mongoview",
+      name:'mongoview',
+      component:getComponent("mongoview"),
+      meta: {
+        auth: true,
+        keepAlive:false // 是否缓存
+      }
+    },
+    {
+      path:"/linkview",
+      name:'linkview',
+      component:getComponent("linkview"),
+      meta: {
+        auth: true,
+        keepAlive:false // 是否缓存
+      }
+    },
+    {
+      path:"/updateview",
+      name:'updateview',
+      component:getComponent("updateview"),
       meta: {
         auth: true,
         keepAlive:false // 是否缓存
