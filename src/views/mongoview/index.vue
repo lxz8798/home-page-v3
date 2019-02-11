@@ -19,5 +19,5 @@ export default {
       active: 4
     };
   }
-}
+};
 </script>

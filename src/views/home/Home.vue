@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       active: 0,
-      switchImg: false
+      switchImg: true
     }
   },
   mounted() {
@@ -25,17 +25,18 @@ export default {
     switchImgFn() {
       setInterval(() => {
         this.switchImg = !this.switchImg;
-      },8000)
+      },6000)
     }
   }
 };
 </script>
 
 <style lang="scss">
+@import "../../assets/base/base";
 @import "../../assets/base/color";
 div.first_screen_wrap {
-  width: 100vw;
-  height: 100vh;
+  width: $childBaseWidth;
+  height: $childBaseHeight;
 
   display: flex;
   flex-direction: column;

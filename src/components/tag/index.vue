@@ -15,6 +15,14 @@ div.tag-wrap {
     margin-right: $spancin;
     height: 0.28rem;
     line-height: 0.28rem;
+    span.ivu-tag-text {
+      color: white !important;      
+    }
+    span.ivu-tag-text:hover {
+      display: inline-block;
+      transition: all 0.3s ease;
+      color: lighten($fontColor, 20%) !important;
+    }
   }
 }
 </style>

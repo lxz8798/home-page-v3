@@ -12,8 +12,11 @@
 @import "./color";
 // 全屏宽度
 $childBaseWidth: 100vw;
+$childBaseHeight: 100vh;
 $boxWidth: 12rem;
 $spancin: 0.1rem;
+$distanceHeader: 0.6rem;
+$iconSize: 0.17rem;
 html {
   font-size: 100px;
 }

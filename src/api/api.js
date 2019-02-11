@@ -3,7 +3,9 @@
  * @author 李啸竹
  */
 import example from "./example";
+import workApi from "./workview";
 
 export default {
-  example
+  example,
+  workApi
 };

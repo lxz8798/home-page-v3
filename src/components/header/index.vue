@@ -17,7 +17,6 @@ $HeaderHeight: 0.6rem;
 
 div.Header-wrap {
   width: $childBaseWidth;
-  height: $HeaderHeight;
   background: rgba(240, 240, 240, 0.3);
 
   display: flex;
@@ -29,23 +28,20 @@ div.Header-wrap {
   left: 0;
   z-index: 99;
   ul {
-    width: 12rem;
-    height: $HeaderHeight;
+    width: $boxWidth;
     display: inline-flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-
     li {
-      height: inherit;
-      line-height: inherit;
-
       display: inline-flex;
       align-items: center;
-
+      height: $distanceHeader;
+      line-height: $distanceHeader;
+      border-top: 2px solid rgba(240, 240, 240, 0);
       a {
         width: 100%;
-        height: $HeaderHeight;
-        line-height: $HeaderHeight;
+        display: inline-block;
         color: rgba(220, 220, 220, 1);
         display: inline-block;
         transition: all 0.3s ease;
@@ -54,8 +50,6 @@ div.Header-wrap {
 
     li:hover {
       border-top: 0.02rem solid $menuColor;
-      padding-bottom: 0.02rem;
-
       a {
         color: darken($menuColor, 30%);
       }
@@ -63,8 +57,6 @@ div.Header-wrap {
 
     li.activeHover {
       border-top: 0.02rem solid $menuColor;
-      padding-bottom: 0.02rem;
-
       a {
         color: darken($menuColor, 30%);
       }
@@ -92,6 +84,8 @@ export default {
   props: ["active"],
   data() {
     return {
+      prev: "",
+      next: "",
       menuList: [
         {
           name: "LAZY-STUDIO.COM",
@@ -109,18 +103,18 @@ export default {
           key: 3
         },
         {
-          name: "DESIGN/PS/XD",
+          name: "DESIGN/PS/XD/AI/AE",
           link: "designview",
           key: 4
         },
         {
-          name: "MONGODB",
+          name: "MONGODB/EGG/API",
           link: "mongoview",
           key: 5
         },
         {
-          name: "LINK",
-          link: "linkview",
+          name: "WORKS COLLECTION",
+          link: "workview",
           key: 6
         },
         {

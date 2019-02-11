@@ -5,7 +5,7 @@
  */
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "@/views/home/Home"
+import Home from "@/views/home/Home";
 
 Vue.use(VueRouter);
 
@@ -66,9 +66,9 @@ const router = new VueRouter({
       }
     },
     {
-      path:"/linkview",
-      name:'linkview',
-      component:getComponent("linkview"),
+      path:"/workview",
+      name:'workview',
+      component:getComponent("workview"),
       meta: {
         auth: true,
         keepAlive:false // 是否缓存
@@ -104,7 +104,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     // 合法性校验
     if (to.meta.auth) {
-        next();
+      next();
     }
     next();
 });

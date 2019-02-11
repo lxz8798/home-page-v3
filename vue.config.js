@@ -1,3 +1,4 @@
+
 /**
  * vue-cli3.0 的自定义配置
  * 引入了多页开发、多代码入口、多环境入口、优化插件等
@@ -70,14 +71,14 @@ module.exports = {
           '^/api': ''
         }
       }
-    }
+    },
+    // https: true
   },
   // 构建时开启多进程处理 babel 编译
   parallel: require('os').cpus().length > 1,
   // 支持的loader有css-loader、postcss-loader、sass-loader、less-loader、stylus-loader
   // 配置高于chianWebpack中的关于 css loader的配置
   css: { // 配置高于chainWebpack中关于css loader的配置
-    extract: true,// 是否使用css分离插件 ExtractTextPlugin
     modules: false, // 是否开启支持‘foo.module.css’样式
     // extract: true, // 是否使用css分离插件 ExtractTextPlugin，采用独立样式文件载入，不采用<style>方式内联至html文件中
     sourceMap: false, // 是否在构建样式地图，false将提高构建速度

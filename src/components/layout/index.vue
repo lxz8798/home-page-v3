@@ -30,7 +30,7 @@
 $parallaxBoxHeight: 5rem; // 视差盒子高度
 div.layout-wrap {
   width: $childBaseWidth;
-  transform: translateY(0.6rem);
+  transform: translateY(0.3rem);
 
   display: flex;
   justify-content: center;
@@ -44,7 +44,7 @@ div.layout-wrap {
     flex-wrap: wrap;
     div.l,
     div.r {
-      margin-top: $spancin;
+      margin-top: $distanceHeader + $spancin;
     }
     div.l {
       flex: 1 1 4rem;
@@ -273,11 +273,11 @@ export default {
       ],
       tagList:[
         {
-          color: "blue",
+          color: this.getRandomColor(),
           name: "javascript"
         },
         {
-          color: "green",
+          color: this.getRandomColor(),
           name: "parallax"
         }
       ]

@@ -9,6 +9,18 @@
 export default {
   install(Vue, options) {
     /**
+     * @Description: 随机颜色
+     * @Author: 李啸竹
+     * @Date: 2019-02-11 17:13:00
+     */
+    Vue.prototype.getRandomColor = function() {
+      var r = Math.floor(Math.random()*230);
+			var g = Math.floor(Math.random()*230);
+			var b = Math.floor(Math.random()*230);
+			var color = '#'+r.toString(16)+g.toString(16)+b.toString(16);
+      return color;
+    }
+    /**
      * Promise.all 的好处是所有的promise实例都变为resolve的时候，该方法才会返回
      * 并将所有结果传递results数组中。promise数组中任何一个promise为reject的话
      * 则整个Promise.all调用会立即终止，并返回一个reject的新的promise对象
