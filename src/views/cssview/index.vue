@@ -15,11 +15,17 @@
 @import "../../assets/base/base";
 @import "../../assets/base/mixin";
 div.cssview-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: $childBaseWidth;
-  height: $childBaseHeight;
   background: linear-gradient(to bottom, #21468c, #8aaee2);
-  overflow: hidden;
+  
   div.cloud-wrap {
+    width: $childBaseWidth;
+    height: $childBaseHeight;
+    overflow: hidden;
     ul {
       position: relative;
       height: $childBaseHeight;
@@ -90,6 +96,30 @@ div.cssview-wrap {
         height: 1.4rem;
         animation: cloudTranslateAnimate7 20s linear 4s 1 normal;
       }
+    }
+  }
+
+  div.footer-box-wrap {
+    ul {
+      li {
+        
+        h3 {
+          color: lighten($menuColor, 30%) !important;
+        }
+        svg {
+          fill: lighten($menuColor, 30%) !important;
+        }
+        svg:hover {
+          fill: darken($menuColor, 30%) !important;
+        }
+      }
+      li:hover {
+        color: lighten($menuColor, 30%) !important;
+      }
+    }
+    ul:hover {
+      background: darken(#8aaee2, 5%) !important;
+      
     }
   }
 }

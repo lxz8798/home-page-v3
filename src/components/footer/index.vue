@@ -1,54 +1,144 @@
 <template>
-<!-- footer 公共组件 -->
-<div class="Footer-wrap">
-  <div class="footer-box-w">
-    <ul class="TS">
-			<li><h3>TECHNOLOGY STACK</h3></li>
-			<li v-for="(item, index) in ts" :key="index">{{item.text}}</li>
-		</ul>
-		<ul>
-			<li><h3>TEMPLATE</h3></li>
-			<li v-for="(item, index) in temp" :key="index">{{item.text}}</li>
-		</ul>
-		<ul>
-			<li><h3>LEARNING SITE</h3></li>
-			<li v-for="(item, index) in ls" :key="index">{{item.text}}</li>
-		</ul>
-		<ul>
-			<li><h3>Code Tool</h3></li>
-			<li v-for="(item, index) in ct" :key="index">{{item.text}}</li>
-		</ul>
-		<ul>
-			<li><h3>About me</h3></li>
-			<li v-html="des">
-			</li>
-			<li class="iconBox iconfont">
-				
-				<svg class="qq-icon" aria-hidden="true">
-				  	<use xlink:href="#icon-qq1-copy"></use>
-				</svg>
-				<svg class="wx-icon">
-					<use xlink:href="#icon-weixin-copy"></use>
-				</svg>
-				<svg class="mail-icon">
-					<use xlink:href="#icon-qunfengyouxiang"></use>
-				</svg>
-			</li>
-		</ul>
+  <!-- footer 公共组件 -->
+  <div class="Footer-wrap">
+		<div class="about_me_wrap" v-html="des"></div>
+    <div class="footer-box-wrap">
+      <ul class="TS">
+        <li>
+          <h3>MY SKILLS.</h3>
+        </li>
+        <li v-for="(item, index) in ts"
+            :key="index">{{item.text}}</li>
+      </ul>
+      <ul>
+        <li>
+          <h3>MYHOME CONTENT.</h3>
+        </li>
+        <li v-for="(item, index) in temp"
+            :key="index">{{item.text}}</li>
+      </ul>
+      <ul>
+        <li>
+          <h3>MATERIAL SITE.</h3>
+        </li>
+        <li v-for="(item, index) in ls"
+            :key="index">{{item.text}}</li>
+      </ul>
+      <ul>
+        <li>
+          <h3>GOOD TOOL.</h3>
+        </li>
+        <li v-for="(item, index) in ct"
+            :key="index">{{item.text}}</li>
+      </ul>
+      <ul>
+				<li><h3>INFORMATION.</h3></li>
+				<li v-html="copydes">
+				</li>
+				<li class="iconBox iconfont">
+					<svg class="qq-icon" aria-hidden="true">
+						<use xlink:href="#icon-qq1-copy"></use>
+					</svg>
+					<svg class="wx-icon">
+						<use xlink:href="#icon-weixin-copy"></use>
+					</svg>
+					<svg class="mail-icon">
+						<use xlink:href="#icon-qunfengyouxiang"></use>
+					</svg>
+				</li>
+			</ul>
+    </div>
   </div>
-</div>
 </template>
 
 <style lang="scss">
 @import "../../assets/base/base";
 $FooterHeight: 0.8rem;
 div.Footer-wrap {
-  width: $childBaseWidth;
-  height: $FooterHeight;
-
-  display: flex;
+  margin-top: $distanceHeader + $spancin;
+	display: flex;
+	flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: $boxWidth;
+  ul {
+    display: inline-flex;
+    flex-direction: column;
+    padding: $spancin;
+
+    transition: all 0.5s ease;
+    li {
+      padding: 0.03rem 0;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      h3 {
+        font-size: 0.15rem;
+      }
+      p {
+        margin-bottom: $spancin;
+      }
+    }
+    li:hover {
+      color: $menuColor;
+    }
+    li.iconBox {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+			align-items: center;
+			margin-top: 0.5rem;
+      svg {
+        width: 0.3rem;
+        height: 0.3rem;
+        margin-right: 0.1rem;
+        transition: all 0.3s ease;
+      }
+      svg:nth-child(1) {
+        fill: #7e0ce8;
+      }
+      svg:nth-child(2) {
+        fill: #e8840c;
+      }
+      svg:nth-child(3) {
+        fill: #ff0000;
+      }
+      svg:hover {
+        fill: $menuColor;
+      }
+    }
+  }
+  ul:hover {
+    background: lighten($fontColor, 35%);
+  }
+  ul:last-child {
+    flex: 1 1 4rem;
+	}
+	div.about_me_wrap {	
+		padding: $spancin;
+		display: flex;
+		flex-direction: column;
+		width: $boxWidth;
+		margin-bottom: $spancin;
+		flex: 1;
+		p,
+		h3 {
+			margin-bottom: $spancin;
+			text-align: left;
+		}
+		h3 {
+			font-size: 0.5rem;
+		}
+	}
+  div.footer-box-wrap {
+    display: flex;
+    flex-direction: row;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		width: $boxWidth;
+		ul {
+			flex: 1 1 2.4rem;
+		}
+  }
 }
 </style>
 
@@ -57,42 +147,46 @@ export default {
   name: "Footer",
   data() {
     return {
-      des:
-      `
-        <p>我于06年毕业进入社会，第一份工作是上海的计算机技术维护，工作了2年左右，发现成长空间非常的小，自我反省后一个偶然的机会接触到了网站设计行业，由朋友领进门慢慢的成长至之，从一开始只会简单的做图到现在能独立完成一个中小型网站。</p>
-				<p>我的自学能力非常强，大多数技术都自主学习得来，所以我比起动嘴皮子，更善于手底下的功夫。</p>
-				<p>这个主页是为了展现我的能力而特别制作的，采用flex布局，使用的是Vue+NodeJS+JS+WebPack全家桶等等，耗时大概1个半月，目的是展示，所以功能并不是很多，但也包含了大部份实际工作中需要用到的技术，javascript、vuex、vue-router，axios等等。</p>
-				<p>我对未来的发展有明确的定位，创业失败后大概20年内不会有类似的想法了，一心专把技术研究吃透，未来能独立完成大型功能型网站，一部或多部3D短片，一些自我满足的手绘插画是我未来的发展方向。</p>
-				<p>&copy 2017-2018 lazy-studio.com</p>
-      `,
-      ts:[
-				{text:'PS-WebDesign'},
-				{text:'AE-MGAnimation'},
-				{text:'C4d-3DModel'},
-				{text:'HTML5/CSS3/SCSS'},
-				{text:'SVG/Illustrator'},
-				{text:'Vue'},
-				{text:'NodeJS'},
-				{text:'JavaScript'},
-				{text:'KOA2'},
-				{text:'Webpack'}
-			],
-			temp:[
-				{text:'Practice-one'},
-				{text:'Practice-two'},
-				{text:'sister-link'},
-				{text:'wife-link'}
-			],
-			ls:[
-				{text:'dribbble.com'},
-				{text:'artstation.com'},
-				{text:'wix.com'}
-			],
-			ct:[
-				{text:'github.com'},
-				{text:'codepen.io'},
-				{text:'iconfont.cn'}
-			]
+			des: `
+				<h3>ABOUT ME</h3>
+        <p>-实际上08年就开始工作了，但是从事WEB/H5前端开发（不包含UI/UE）只有3年，工作经验的累积让我对很多事情慢慢看开了，对工作以稳重为主，对人和事，公私分明。</p>
+				<p>-我的自学能力非常强，大多数技术都自主学习得来，所以动手能力强。</p>
+				<p>-年纪小的时候不爱学习，现在每天都在学习更新自己的知识库，却感觉时间远远不够。</p>
+				<p>-虽然很早就开始工作了，但也不是一直在IT行业，早期的时候做的是网络工程、计算机维护之类的工作，后来机缘巧合在朋友的带领下进入IT，主要是产品设计，网页设计（UI/UE），后来慢慢发展成WEB/H5前端开发。</p>
+				<p>-从前程无忧出来还自己创过业，我对未来的发展有明确方向，人生高峰低谷都经历过，现在只希望能稳定的职场上发展。</p>
+			`,
+			copydes: `<p>&copy 2017-2018 lazy-studio.com</p>`,
+      ts: [
+        { text: "VUE/VUE-CLI" },
+        { text: "AXIOS/FLY" },
+        { text: "JAVASCRIPT" },
+        { text: "HTML5/CSS3/SCSS" },
+        { text: "WEBPACK" },
+        { text: "NODEJS" },
+        { text: "KOA2/EGGJS" },
+        { text: "DESIGN/PS/XD/AE/AI" }
+      ],
+      temp: [
+        { text: "JAVASCRIPT EXAMPLE" },
+        { text: "CSS/CSS3 EXAMPLE" },
+        { text: "DESIGN/PS/XD... EXAMPLE" },
+        { text: "RESTFUL API EXAMPLE" },
+        { text: "MARKDOWN EXAMPLE" }
+      ],
+      ls: [
+        { text: "DRIBBBLE.COM" },
+        { text: "ARTSTATION.COM" },
+        { text: "WIX.COM" },
+        { text: "WWW.58PIC.com" },
+        { text: "UI.CN" }
+      ],
+      ct: [
+        { text: "GITHUB.COM" },
+        { text: "JSBIN.COM" },
+        { text: "ICONFONT.CN" },
+        { text: "NOTE.YOUDAO.COM" },
+        { text: "COLOR.ADOBE.COM" }
+      ]
     };
   }
 };

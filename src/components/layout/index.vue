@@ -29,7 +29,6 @@
 @import "../../assets/base/base";
 $parallaxBoxHeight: 5rem; // 视差盒子高度
 div.layout-wrap {
-  width: $childBaseWidth;
   transform: translateY(0.3rem);
 
   display: flex;
@@ -41,6 +40,7 @@ div.layout-wrap {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     div.l,
     div.r {

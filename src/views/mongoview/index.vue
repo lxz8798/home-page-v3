@@ -1,6 +1,8 @@
 <template>
 <div class="cssview-wrap">
-<Header :active="active"></Header>
+  <Header :active="active"></Header>
+  <!-- markdown -->
+  <i-editor v-model="content"></i-editor>
 </div>
 </template>
 
@@ -16,7 +18,8 @@ export default {
   name: "cssview",
   data() {
     return {
-      active: 4
+      active: 4,
+      content: ''
     };
   }
 };

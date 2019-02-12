@@ -13,15 +13,16 @@
 // 全屏宽度
 $childBaseWidth: 100vw;
 $childBaseHeight: 100vh;
+// 盒子宽度
 $boxWidth: 12rem;
+// 间隔
 $spancin: 0.1rem;
 $distanceHeader: 0.6rem;
+// 字体大小
 $iconSize: 0.17rem;
 html {
   font-size: 100px;
-}
-body {
-  color: $fontColor;
+  color: $fontColor;  
 }
 h1,
 h2,

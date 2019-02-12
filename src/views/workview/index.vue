@@ -53,6 +53,7 @@
         <p>{{item.des}}</p>
       </li>
     </Inscription>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -61,6 +62,10 @@
 @import "../../assets/base/color";
 div.workview-wrap {
   margin-top: $distanceHeader + $spancin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>
 
@@ -79,7 +84,7 @@ export default {
           year: "",
           name: "HomePage1.0",
           img: "",
-          imgsize: "请上传图片",
+          imgsize: "等待上传图片",
           des: "个人首页早期1.0版本，使用的是HTML+CSS+JS...完成。",
           link: "#"
         },
@@ -87,7 +92,7 @@ export default {
           year: "",
           name: "HomePage2.0",
           img: "",
-          imgsize: "请上传图片",
+          imgsize: "等待上传图片",
           des:
             "个人首页2.0版本，CLI生成的项目框架，使用的是VUE+AXIOS+CSS3+JS+NOJS/KOA2...完成。",
           link: "#"
@@ -96,7 +101,7 @@ export default {
           year: "",
           name: "HomePage3.0",
           img: "",
-          imgsize: "请上传图片",
+          imgsize: "等待上传图片",
           des:
             "个人首页3.0版本，CLI3生成的项目框架，使用的是VUE+FLY/MOCKJS+CSS3+JS+NODEJS/EGGJS...完成。",
           link: "#"
@@ -108,7 +113,7 @@ export default {
           year: "",
           name: "建工社解决方案",
           img: "",
-          imgsize: "请上传图片",
+          imgsize: "等待上传图片",
           des:
             "公司里接受北京建工出版社的需求，给其开发出全套解决方案，内容包含WEB端，移动端ANDROID/IOS，移动端H5，管理运营后台等等。",
           link: "#",
@@ -117,7 +122,7 @@ export default {
               year: "",
               name: "建工网上书城WEB端",
               img: "",
-              imgsize: "请上传图片",
+              imgsize: "等待上传图片",
               des: "微信公众号，主要是在微信和手机浏览器中访问。",
               link: "#"
             },
@@ -125,7 +130,7 @@ export default {
               year: "",
               name: "建工内嵌页",
               img: "",
-              imgsize: "请上传图片",
+              imgsize: "等待上传图片",
               des: "在PAD端，和ANDROID中访问。",
               link: "#"
             }
@@ -135,7 +140,7 @@ export default {
           year: "",
           name: "电子社解决方案",
           img: "",
-          imgsize: "请上传图片",
+          imgsize: "等待上传图片",
           des:
             "公司里接受北京电子出版社的需求，给其开发出全套解决方案，内容包含WEB端，移动端ANDROID/IOS，移动端H5，管理运营后台等等。",
           link: "#",
@@ -144,7 +149,7 @@ export default {
               year: "",
               name: "众智采集",
               img: "",
-              imgsize: "请上传图片",
+              imgsize: "等待上传图片",
               des: "微信公众号，主要是在微信和手机浏览器中访问。",
               link: "#"
             },
@@ -152,7 +157,7 @@ export default {
               year: "",
               name: "国之重器",
               img: "",
-              imgsize: "请上传图片",
+              imgsize: "等待上传图片",
               des: "微信公众号，主要是在微信和手机浏览器中访问。",
               link: "#"
             },
@@ -160,7 +165,7 @@ export default {
               year: "",
               name: "电子社网上书城WEB端",
               img: "",
-              imgsize: "请上传图片",
+              imgsize: "等待上传图片",
               des: "微信公众号，主要是在微信和手机浏览器中访问。",
               link: "#"
             }
@@ -170,7 +175,7 @@ export default {
           year: "",
           name: "可知",
           img: "",
-          imgsize: "请上传图片",
+          imgsize: "等待上传图片",
           des:
             "公司自营项目，内容包含WEB端，移动端ANDROID/IOS，移动端H5，管理运营后台/AQR授权分发系统/PMS机构管理系统，知识体系阅读解决方案等等。",
           link: "#"
@@ -179,7 +184,7 @@ export default {
           year: "",
           name: "项目管理后台",
           img: "",
-          imgsize: "请上传图片",
+          imgsize: "等待上传图片",
           des:
             "使用ELEMENTUI/IVIEW开发出来专门用于管理网站内容的后台管理平台。",
           link: "#"
@@ -191,7 +196,7 @@ export default {
           year: "",
           name: "个人主页移动端",
           img: "",
-          imgsize: "请上传图片",
+          imgsize: "等待上传图片",
           des: "个人主页3.0兼容移动端，使用vue开发的H5页面。",
           link: "#"
         },
@@ -199,7 +204,7 @@ export default {
           year: "",
           name: "独产开发的书城小程序",
           img: "",
-          imgsize: "请上传图片",
+          imgsize: "等待上传图片",
           des:
             "使用部份原生小程序和UNIAPP完成，发布小程序/H5/ANDROID/IOS版本。",
           link: "#"
@@ -208,7 +213,7 @@ export default {
           year: "",
           name: "书网互动公众号",
           img: "",
-          imgsize: "请上传图片",
+          imgsize: "等待上传图片",
           des: "微信公众号，主要是在微信和手机浏览器中访问。",
           link: "#"
         },
@@ -216,7 +221,7 @@ export default {
           year: "",
           name: "可知公众号",
           img: "",
-          imgsize: "请上传图片",
+          imgsize: "等待上传图片",
           des: "微信公众号，主要是在微信和手机浏览器中访问。",
           link: "#"
         },
@@ -224,7 +229,7 @@ export default {
           year: "",
           name: "移动端阅读器解决方案",
           img: "",
-          imgsize: "请上传图片",
+          imgsize: "等待上传图片",
           des:
             "主要是给移动端的电子书资源阅读使用，作为一个单独项目，独立于项目之外专门开发。",
           link: "#"
@@ -233,7 +238,7 @@ export default {
     };
   },
   created() {
-    this.getWorkViewList();
+    // this.getWorkViewList();
   },
   methods: {
     async getWorkViewList() {
