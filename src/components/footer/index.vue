@@ -1,7 +1,8 @@
 <template>
   <!-- footer 公共组件 -->
   <div class="Footer-wrap">
-		<div class="about_me_wrap" v-html="des"></div>
+    <div class="about_me_wrap"
+         v-html="des"></div>
     <div class="footer-box-wrap">
       <ul class="TS">
         <li>
@@ -32,21 +33,24 @@
             :key="index">{{item.text}}</li>
       </ul>
       <ul>
-				<li><h3>INFORMATION.</h3></li>
-				<li v-html="copydes">
-				</li>
-				<li class="iconBox iconfont">
-					<svg class="qq-icon" aria-hidden="true">
-						<use xlink:href="#icon-qq1-copy"></use>
-					</svg>
-					<svg class="wx-icon">
-						<use xlink:href="#icon-weixin-copy"></use>
-					</svg>
-					<svg class="mail-icon">
-						<use xlink:href="#icon-qunfengyouxiang"></use>
-					</svg>
-				</li>
-			</ul>
+        <li>
+          <h3>INFORMATION.</h3>
+        </li>
+        <li v-html="copydes">
+        </li>
+        <li class="iconBox iconfont">
+          <svg class="qq-icon"
+               aria-hidden="true">
+            <use xlink:href="#icon-qq1-copy"></use>
+          </svg>
+          <svg class="wx-icon">
+            <use xlink:href="#icon-weixin-copy"></use>
+          </svg>
+          <svg class="mail-icon">
+            <use xlink:href="#icon-qunfengyouxiang"></use>
+          </svg>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -56,8 +60,8 @@
 $FooterHeight: 0.8rem;
 div.Footer-wrap {
   margin-top: $distanceHeader + $spancin;
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: $boxWidth;
@@ -85,8 +89,8 @@ div.Footer-wrap {
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
-			align-items: center;
-			margin-top: 0.5rem;
+      align-items: center;
+      margin-top: 0.5rem;
       svg {
         width: 0.3rem;
         height: 0.3rem;
@@ -112,32 +116,32 @@ div.Footer-wrap {
   }
   ul:last-child {
     flex: 1 1 4rem;
-	}
-	div.about_me_wrap {	
-		padding: $spancin;
-		display: flex;
-		flex-direction: column;
-		width: $boxWidth;
-		margin-bottom: $spancin;
-		flex: 1;
-		p,
-		h3 {
-			margin-bottom: $spancin;
-			text-align: left;
-		}
-		h3 {
-			font-size: 0.5rem;
-		}
-	}
+  }
+  div.about_me_wrap {
+    padding: $spancin;
+    display: flex;
+    flex-direction: column;
+    width: $boxWidth;
+    margin-bottom: $spancin;
+    flex: 1;
+    p,
+    h3 {
+      margin-bottom: $spancin;
+      text-align: left;
+    }
+    h3 {
+      font-size: 0.5rem;
+    }
+  }
   div.footer-box-wrap {
     display: flex;
     flex-direction: row;
-		justify-content: flex-start;
-		flex-wrap: wrap;
-		width: $boxWidth;
-		ul {
-			flex: 1 1 2.4rem;
-		}
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: $boxWidth;
+    ul {
+      flex: 1 1 2.4rem;
+    }
   }
 }
 </style>
@@ -147,7 +151,7 @@ export default {
   name: "Footer",
   data() {
     return {
-			des: `
+      des: `
 				<h3>ABOUT ME</h3>
         <p>-实际上08年就开始工作了，但是从事WEB/H5前端开发（不包含UI/UE）只有3年，工作经验的累积让我对很多事情慢慢看开了，对工作以稳重为主，对人和事，公私分明。</p>
 				<p>-我的自学能力非常强，大多数技术都自主学习得来，所以动手能力强。</p>
@@ -155,7 +159,7 @@ export default {
 				<p>-虽然很早就开始工作了，但也不是一直在IT行业，早期的时候做的是网络工程、计算机维护之类的工作，后来机缘巧合在朋友的带领下进入IT，主要是产品设计，网页设计（UI/UE），后来慢慢发展成WEB/H5前端开发。</p>
 				<p>-从前程无忧出来还自己创过业，我对未来的发展有明确方向，人生高峰低谷都经历过，现在只希望能稳定的职场上发展。</p>
 			`,
-			copydes: `<p>&copy 2017-2018 lazy-studio.com</p>`,
+      copydes: `<p>&copy 2017-2018 lazy-studio.com</p>`,
       ts: [
         { text: "VUE/VUE-CLI" },
         { text: "AXIOS/FLY" },
