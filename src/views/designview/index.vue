@@ -1,32 +1,63 @@
 <template>
-  <div class="designview-wrap">
+  <div class="designview_wrap">
     <Header :active="active"></Header>
-    <div @click="impressPrevStep()">上一步</div>
-    <div class="designview-box-wrap"
-         tabindex="1"
-         ref="app"
-         @keyup.right.space="impressNextStep"
-         @keyup.left="impressPrevStep">
-      <impress-viewport ref="impress"
-                        :steps="steps"
-                        :config="config"></impress-viewport>
+    <div class="designview_box_wrap">
+      <div class="designview-prev" @click="impressPrevStep()">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-icon-zuo"></use>
+        </svg>
+      </div>
+      <div class="designview-box-wrap" tabindex="1" ref="designView" @keyup.right.space="impressNextStep"
+          @keyup.left="impressPrevStep">
+        <impress-viewport ref="impress" :steps="steps" :config="config"></impress-viewport>
+      </div>
+      <div class="designview-next" @click="impressNextStep()">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-icon"></use>
+        </svg>
+      </div>
     </div>
-    <div @click="impressNextStep()">下一步</div>
   </div>
 </template>
 
 <style lang="scss">
 @import "../../assets/base/base";
 @import "../../assets/base/color";
-div.designview-wrap {
+div.designview_wrap {
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-content: center;
+  flex-direction: column;
+  align-items: center;
   width: $childBaseWidth;
-  height: $childBaseHeight;
 
   background: url("./../../assets/img/psbg.png") repeat 0 0;
+  div.designview_box_wrap {
+    width: $boxWidth;
+    height: $childBaseHeight;
+  }
+  div.designview-prev,
+  div.designview-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    svg {
+      width: 0.6rem;
+      height: 0.8rem;
 
+      fill: $fontColor;
+      transition: all 0.5s ease;
+    }
+    svg:hover {
+      fill: $menuColor;
+    }
+  }
+  div.designview-prev {
+    left: 2%;
+  }
+  div.designview-next {
+    right: 2%;
+  }
   div.designview-box-wrap {
     width: $boxWidth;
     height: inherit;
@@ -126,9 +157,9 @@ export default {
       ]
     };
   },
-  // mounted() {
-  //   this.$refs.app.focus();
-  // },
+  mounted() {
+    this.$refs.designView.focus();
+  },
   methods: {
     impressPrevStep() {
       this.$refs.impress.prevStep();

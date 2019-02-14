@@ -13,10 +13,11 @@
         <Timeline-item v-for="(item, index) in timelineItem"
                        :key="index">
           <p class="time">{{item.time}}</p>
-          <p class="content">{{item.content}}</p>
+          <p class="content" v-html="item.content">{{item.content}}</p>
         </Timeline-item>
       </Timeline>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -24,7 +25,9 @@
 @import "../../assets/base/base";
 div.update_wrap {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-top: $distanceHeader + $spancin;
   width: $childBaseWidth;
 
@@ -88,6 +91,12 @@ export default {
           time: "2019年2月",
           content:
             "个人主页3.0版完成，使用的CLI3.0生成的项目框架，使用的技术栈是VUE全家桶（VUE2.0+FLY+SCSS+JS+WEBPACK3.0+MOCKJS...），且使用了FLEX布局、API集中管理、请求接口类的封装、全局注册插件等等实际工作中的技术完成集中管理和为后期迭代更新维护做准备，在一定程序上有适配能力，并使用NOJS/EGGJS采用前后端分离完成RESTful API服务器。",
+          cover: ""
+        },
+        {
+          time: "即将更新内容",
+          content:
+            "1、后台管理系统。<br />2、RESTful API服务器。<br />3、新增接口注册、登录、登出...。<br />4、TypeScript支持-需要重构组件script里面的内容。",
           cover: ""
         }
       ]

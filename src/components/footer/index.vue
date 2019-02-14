@@ -64,10 +64,13 @@ div.Footer-wrap {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid red;
   width: $boxWidth;
   ul {
     display: inline-flex;
     flex-direction: column;
+    flex: 1 1 2.4rem;
     padding: $spancin;
 
     transition: all 0.5s ease;
