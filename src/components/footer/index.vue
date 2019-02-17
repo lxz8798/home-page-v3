@@ -4,7 +4,7 @@
     <div class="about_me_wrap"
          v-html="des"></div>
     <div class="footer-box-wrap">
-      <ul class="TS">
+      <ul>
         <li>
           <h3>MY SKILLS.</h3>
         </li>
@@ -62,71 +62,15 @@ div.Footer-wrap {
   margin-top: $distanceHeader + $spancin;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  border: 1px solid red;
   width: $boxWidth;
-  ul {
-    display: inline-flex;
-    flex-direction: column;
-    flex: 1 1 2.4rem;
-    padding: $spancin;
-
-    transition: all 0.5s ease;
-    li {
-      padding: 0.03rem 0;
-      cursor: pointer;
-      transition: all 0.5s ease;
-      h3 {
-        font-size: 0.15rem;
-      }
-      p {
-        margin-bottom: $spancin;
-      }
-    }
-    li:hover {
-      color: $menuColor;
-    }
-    li.iconBox {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      margin-top: 0.5rem;
-      svg {
-        width: 0.3rem;
-        height: 0.3rem;
-        margin-right: 0.1rem;
-        transition: all 0.3s ease;
-      }
-      svg:nth-child(1) {
-        fill: #7e0ce8;
-      }
-      svg:nth-child(2) {
-        fill: #e8840c;
-      }
-      svg:nth-child(3) {
-        fill: #ff0000;
-      }
-      svg:hover {
-        fill: $menuColor;
-      }
-    }
-  }
-  ul:hover {
-    background: lighten($fontColor, 35%);
-  }
-  ul:last-child {
-    flex: 1 1 4rem;
-  }
   div.about_me_wrap {
     padding: $spancin;
     display: flex;
     flex-direction: column;
-    width: $boxWidth;
+    justify-content: flex-start;
+    word-break: break-all;
+    width: 100%;
     margin-bottom: $spancin;
-    flex: 1;
     p,
     h3 {
       margin-bottom: $spancin;
@@ -138,12 +82,56 @@ div.Footer-wrap {
   }
   div.footer-box-wrap {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
     flex-wrap: wrap;
-    width: $boxWidth;
+    width: 100%;
     ul {
+      display: flex;
+      flex-direction: column;
+      padding: $spancin;
+      transition: all 0.5s ease;
       flex: 1 1 2.4rem;
+      li {
+        padding: 0.03rem 0;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        h3 {
+          font-size: 0.15rem;
+        }
+        p {
+          margin-bottom: $spancin;
+        }
+      }
+      li:hover {
+        color: $menuColor;
+      }
+      li.iconBox {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 0.5rem;
+        svg {
+          width: 0.3rem;
+          height: 0.3rem;
+          margin-right: 0.1rem;
+          transition: all 0.3s ease;
+        }
+        svg:nth-child(1) {
+          fill: #7e0ce8;
+        }
+        svg:nth-child(2) {
+          fill: #e8840c;
+        }
+        svg:nth-child(3) {
+          fill: #ff0000;
+        }
+        svg:hover {
+          fill: $menuColor;
+        }
+      }
+    }
+    ul:hover {
+      background: lighten($fontColor, 35%);
     }
   }
 }

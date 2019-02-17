@@ -84,6 +84,24 @@ const router = new VueRouter({
       }
     },
     {
+      path:"/signupview",
+      name:'signupview',
+      component:getComponent("signupview"),
+      meta: {
+        auth: true,
+        keepAlive:false // 是否缓存
+      }
+    },
+    {
+      path:"/signinview",
+      name:'signinview',
+      component:getComponent("signinview"),
+      meta: {
+        auth: true,
+        keepAlive:false // 是否缓存
+      }
+    },
+    {
       path:"/web",
       beforeEnter(to, from, next) {
         window.location = "/web.html"

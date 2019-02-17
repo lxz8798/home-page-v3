@@ -6,7 +6,7 @@
              aria-hidden="true">
           <slot name="h2TitleIcon"></slot>
         </svg>
-        <slot name="h2Title">暂无标题</slot>
+        <slot name="h2Title"></slot>
       </div>
       <div class="inscription-content">
         <ul>

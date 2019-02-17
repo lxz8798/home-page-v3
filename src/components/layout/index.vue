@@ -2,24 +2,29 @@
   <div class="layout-wrap">
     <div class="layout-box-wrap">
       <div class="l">
-        <h2 v-html="jsDes"></h2>
-        <p>{{jsDesP1}}</p>
-        <p>{{jsDesP2}}</p>
-        <tag-comp :tagList="tagList"></tag-comp>
+        <div>
+          <slot name="layoutContent">
+            <slot name="layoutLH2"><h2 v-html="jsDes"></h2></slot>
+            <slot name="layoutLP"><p>{{jsDesP1}}</p></slot>
+            <slot name="layoutLDes"><p>{{jsDesP2}}</p></slot>
+            <slot name="layoutLTag"><tag-comp :tagList="tagList"></tag-comp></slot>
+          </slot>
+        </div>
       </div>
       <div class="r">
-        <div slot="S3DModule"
+        <slot name="layoutR">
+          <div slot="S3DModule"
              id="S3DModule"
              @mouseenter="show = !show">
           <ul id="ViewF">
             <li v-for="(item,index) in items"
                 class="list"
                 :key="index">
-              <slot :name="item.name"><img :src="item.img"
-                     :alt="item.name" /></slot>
+              <slot name="layoutRImg"><img :src="item.img" :alt="item.name" /></slot>
             </li>
           </ul>
         </div>
+        </slot>
       </div>
     </div>
   </div>
@@ -30,12 +35,12 @@
 $parallaxBoxHeight: 5rem; // 视差盒子高度
 div.layout-wrap {
   transform: translateY(0.3rem);
-
+  
   display: flex;
   justify-content: center;
   align-items: center;
   div.layout-box-wrap {
-    width: $boxWidth;
+    width: 100%;
 
     display: flex;
     flex-direction: row;

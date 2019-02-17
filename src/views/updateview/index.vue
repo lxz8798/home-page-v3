@@ -96,7 +96,18 @@ export default {
         {
           time: "即将更新内容",
           content:
-            "1、后台管理系统。<br />2、RESTful API服务器。<br />3、新增接口注册、登录、登出...。<br />4、TypeScript支持-需要重构组件script里面的内容。",
+            `
+            1、后台管理系统。<br />
+            2、RESTful API服务器。<br />
+            3、新增接口注册、登录、登出...。<br />
+            4、TypeScript支持-需要重构组件script里面的内容。<br />
+            5、完成注册，登录，登录API。<br/>
+            6、FLEX布局页面适配。<br/>
+            7、DESIGNVIEW 增加以前项目基其他项目设计图、手绘CG图等等。<br/>
+            8、WORKVIEW 增加连接。<br/>
+            9、首页增加内容，排版重新设计。<br/>
+            10、完成注册和登录页面。
+            `,
           cover: ""
         }
       ]

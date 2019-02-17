@@ -124,12 +124,12 @@ export default {
         },
         {
           name: "SIGN IN",
-          link: "loginview",
+          link: "signinview",
           key: 8
         },
         {
           name: "SIGN UP",
-          link: "logoutview",
+          link: "signupview",
           key: 9
         }
       ]
