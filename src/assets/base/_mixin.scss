@@ -12,14 +12,14 @@
   }
   100% {
     opacity: 0;
-    transform: translate3d(8rem, 1rem, 2rem);
+    transform: translate3d(14rem, 1rem, 2rem);
   }
 }
 @keyframes cloudTranslateAnimate2
 {
   0% { 
     opacity: 0;
-    transform: translate3d(8rem, 0, 0.1rem);
+    transform: translate3d(12rem, 0, 0.1rem);
   }
   5% {
     opacity: 1;
@@ -43,7 +43,7 @@
   }
   100% {
     opacity: 0;
-    transform: translate3d(2rem, 1rem, 0.2rem) skew(-60deg, 10deg);
+    transform: translate3d(6rem, 1rem, 0.2rem) skew(-60deg, 10deg);
   }
 }
 @keyframes cloudTranslateAnimate4
@@ -60,7 +60,7 @@
   }
   100% {
     opacity: 0;
-    transform: translate3d(6rem, 1rem, 1.5rem);
+    transform: translate3d(10rem, 1rem, 1.5rem);
   }
 }
 @keyframes cloudTranslateAnimate5
@@ -77,14 +77,14 @@
   }
   100% {
     opacity: 0;
-    transform: translate3d(8rem, 0.8rem, 1.5rem);
+    transform: translate3d(12rem, 0.8rem, 1.5rem);
   }
 }
 @keyframes cloudTranslateAnimate6
 {
   0% { 
     opacity: 0;
-    transform: translate3d(8rem, 0.5rem, 0);
+    transform: translate3d(10rem, 0.5rem, 0);
   }
   5% {
     opacity: 1;
@@ -101,7 +101,7 @@
 {
   0% { 
     opacity: 0;
-    transform: translate3d(8rem, 3rem, 1rem);
+    transform: translate3d(10rem, 3rem, 1rem);
   }
   5% {
     opacity: 1;

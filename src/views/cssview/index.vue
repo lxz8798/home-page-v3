@@ -23,7 +23,7 @@ div.cssview-wrap {
   background: linear-gradient(to bottom, #21468c, #8aaee2);
   
   div.cloud-wrap {
-    width: $childBaseWidth;
+    width: $childBaseWidth - 10vw;
     height: $childBaseHeight;
     overflow: hidden;
     ul {
@@ -78,17 +78,17 @@ div.cssview-wrap {
         animation-delay: 0.3s;
       }
       li.animate9 {
-        width: 8rem;
-        height: 10rem;
+        width: 10rem;
+        height: 12rem;
         bottom: 0.6rem;
         opacity: 1;
-        transform: translate3d(2rem, 0, 2rem);
+        transform: translate3d(1.8rem, 0, 1rem);
       }
       li.animate10 {
         width: 7rem;
         height: 7rem;
-        bottom: 0;
-        left: 0.1rem;
+        bottom: 2rem;
+        left: 0.5rem;
         opacity: 0.8;
       }
       li.animate11 {

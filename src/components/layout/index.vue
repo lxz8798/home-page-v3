@@ -39,18 +39,17 @@ div.layout-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  max-width: $boxWidth;
+  height: 6.5rem;
+  margin: $spancin;
   div.layout-box-wrap {
     width: 100%;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    div.l,
-    div.r {
-      margin-top: $distanceHeader + $spancin;
-    }
     div.l {
       flex: 1 1 4rem;
       display: flex;
@@ -61,13 +60,14 @@ div.layout-wrap {
       }
     }
     div.r {
-      flex: 1 1 8rem;
+      max-width: 7.5rem;
+      flex: 1 1 7.5rem;
       height: $parallaxBoxHeight;
       div#S3DModule {
         width: 100%;
         height: $parallaxBoxHeight;
         ul {
-          perspective: 12rem;
+          perspective: $boxWidth;
           transform-style: preserve-3d;
 
           width: 100%;
@@ -98,7 +98,7 @@ div.layout-wrap {
             height: 0.6rem;
 
             top: 0;
-            left: 1rem;           
+            left: 1rem;
             transform: translate3d(2rem, 1.3rem, 6rem);
           }
 
@@ -137,9 +137,8 @@ div.layout-wrap {
           li:nth-child(7) {
             width: 0.6rem;
             height: 0.3rem;
-
             top: 0;
-            right: 0;           
+            right: 0;
             transform: translate3d(-3.3rem, 1.8rem, 6rem);
           }
 
@@ -155,31 +154,30 @@ div.layout-wrap {
             height: 0.5rem;
             top: 0;
             right: 0; 
-            
           }
           li:nth-child(8) {
-            transform: translate3d(-4.1rem, 1.35rem, 2rem);
+            transform: translate3d(-3.7rem, 1.35rem, 2rem);
           }
           li:nth-child(9) {
-            transform: translate3d(-5.3rem, 1.7rem, 2.3rem);
+            transform: translate3d(-4.9rem, 1.7rem, 2.3rem);
           }
           li:nth-child(10) {
-            transform: translate3d(-5.05rem, 2.05rem, 2.6rem);
+            transform: translate3d(-4.7rem, 2.05rem, 2.6rem);
           }
           li:nth-child(11) {
-            transform: translate3d(-4.5rem, 2.1rem, 1.8rem);
+            transform: translate3d(-4rem, 2.1rem, 1.8rem);
           }
           li:nth-child(12) {
-            transform: translate3d(-4rem, 2.2rem, 2.3rem);
+            transform: translate3d(-3.6rem, 2.2rem, 2.3rem);
           }
           li:nth-child(13) {
-            transform: translate3d(-2.8rem, 2.3rem, 2.8rem);
+            transform: translate3d(-2.4rem, 2.3rem, 2.8rem);
           }
           li:nth-child(14) {
-            transform: translate3d(-2.3rem, 1.8rem, 2.3rem);
+            transform: translate3d(-2rem, 1.8rem, 2.3rem);
           }
           li:nth-child(15) {
-            transform: translate3d(-2.2rem, 1.5rem, 1.5rem);
+            transform: translate3d(-1.8rem, 1.5rem, 1.5rem);
           }
         }
       }

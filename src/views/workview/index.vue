@@ -251,10 +251,10 @@ export default {
       };
 
       // res = await api.workList(params);
-      this.$http.get("http://127.0.0.1:7001/api/v1/signin",params)
+      this.$http.get("http://127.0.0.1:7001/api/v1/signin", params)
       .then(res => {
-        console.log(res,'res')
-      })      
+        console.log(res, 'res');
+      });
     }
   }
 };

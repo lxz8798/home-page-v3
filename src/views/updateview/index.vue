@@ -36,7 +36,8 @@ div.update_wrap {
     flex-direction: column;
     justify-content: flex-start;
     padding: $spancin;
-    width: $boxWidth;
+    max-width: $boxWidth;
+    word-break: break-all;
     div.update_title {
       width: inherit;
       height: 0.27rem;
@@ -95,8 +96,7 @@ export default {
         },
         {
           time: "即将更新内容",
-          content:
-            `
+          content: `
             1、后台管理系统。<br />
             2、RESTful API服务器。<br />
             3、新增接口注册、登录、登出...。<br />

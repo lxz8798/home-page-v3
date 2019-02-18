@@ -9,8 +9,9 @@ import Footer from "@/components/footer";
 import Layer from "@/components/layout";
 import TagComp from "@/components/tag";
 import Inscription from "@/components/inscription";
+import rowLayout from "@/components/rowlayout";
 
-const compArray = [Header,Footer,Layer,TagComp,Inscription];
+const compArray = [Header,Footer,Layer,TagComp,Inscription,rowLayout];
 const reaComp = {
     install: function (Vue) {
         compArray.forEach(item => {

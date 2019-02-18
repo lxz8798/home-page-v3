@@ -103,31 +103,31 @@ module.exports = {
         .end()
     }
   },
-  configureWebpack: config => {
-    if (process.env.NODE_ENV === 'production') {
-      // 为生产环境修改配置...
-      config.plugins.push([
-        // 消除冗余的css
-        new purifyCssWebpack({
-          paths: glob.sync(path.join(__dirname, "../src/pages/*/*.html"))
-        }),
-        // 生产模式干掉console.log
-        new webpack.optimize.UglifyJsPlugin({
-          compress: {
-            warnings: false,
-            drop_console: true,
-            pure_funcs: ['console.log']
-          },
-          sourceMap: false
-        }),
-        // 作用域提升，让打包出来的代码更小
-        // new webpack.optimize.ModuleConcatenationPlugin()
-      ])
+  // configureWebpack: config => {
+  //   if (process.env.NODE_ENV === 'production') {
+  //     // 为生产环境修改配置...
+  //     config.plugins.push([
+  //       // 消除冗余的css
+  //       new purifyCssWebpack({
+  //         paths: glob.sync(path.join(__dirname, "../src/pages/*/*.html"))
+  //       }),
+  //       // 生产模式干掉console.log
+  //       new webpack.optimize.UglifyJsPlugin({
+  //         compress: {
+  //           warnings: false,
+  //           drop_console: true,
+  //           pure_funcs: ['console.log']
+  //         },
+  //         sourceMap: false
+  //       }),
+  //       // 作用域提升，让打包出来的代码更小
+  //       // new webpack.optimize.ModuleConcatenationPlugin()
+  //     ])
 
-    } else {
-      // 为开发环境修改配置...
-    }
-  },
+  //   } else {
+  //     // 为开发环境修改配置...
+  //   }
+  // },
   // cors 相关 https://jakearchibald.com/2017/es-modules-in-browsers/#always-cors
   // corsUseCredentials: false,
   // webpack 配置，键值对象时会合并配置，为方法时会改写配置

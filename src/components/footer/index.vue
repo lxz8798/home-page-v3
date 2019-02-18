@@ -57,20 +57,17 @@
 
 <style lang="scss">
 @import "../../assets/base/base";
-$FooterHeight: 0.8rem;
 div.Footer-wrap {
   margin-top: $distanceHeader + $spancin;
   display: flex;
   flex-direction: column;
-  width: $boxWidth;
+  max-width: $boxWidth;
   div.about_me_wrap {
-    padding: $spancin;
+    margin: $spancin;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     word-break: break-all;
-    width: 100%;
-    margin-bottom: $spancin;
     p,
     h3 {
       margin-bottom: $spancin;
@@ -83,13 +80,13 @@ div.Footer-wrap {
   div.footer-box-wrap {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    max-width: $boxWidth;
     ul {
       display: flex;
       flex-direction: column;
       padding: $spancin;
       transition: all 0.5s ease;
-      flex: 1 1 2.4rem;
+      flex: 1 1 2rem;
       li {
         padding: 0.03rem 0;
         cursor: pointer;
@@ -172,7 +169,7 @@ export default {
         { text: "DRIBBBLE.COM" },
         { text: "ARTSTATION.COM" },
         { text: "WIX.COM" },
-        { text: "WWW.58PIC.com" },
+        { text: "WWW.58PIC.COM" },
         { text: "UI.CN" }
       ],
       ct: [

@@ -2,14 +2,8 @@
 <div class="signinview_wrap">
   <Header :active="active"></Header>
   <div class="signinview_box_wrap">
-    <div class="l">
-      <h1>页面制作中，更新时间请看UPDATE。。。</h1>
-    </div>
-    <div class="r">
-      <img src="./../../assets/img/logo/logo-cg.png" alt="">
-    </div>
+    
   </div>
-  <Footer></Footer>
 </div>
 </template>
 
@@ -18,18 +12,25 @@
 @import "../../assets/base/color";
 div.signinview_wrap {
   width: $childBaseWidth;
+  height: $childBaseHeight;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column;  
+  
+  background: linear-gradient(to right bottom, darken($menuColor, 20%) 50%, $menuColor 50);
+  
   div.signinview_box_wrap {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: $boxWidth;
-    height: 5rem;
-    margin-top: $distanceHeader + $spancin;
+    width: inherit;
+    height: inherit;
+    mix-blend-mode: overlay;
+    background: url("http://pmek5nu6x.bkt.clouddn.com/bg.jpg") repeat 0 0;
+    background-size: cover;
+    opacity: 0.4;
   }
 }
 </style>

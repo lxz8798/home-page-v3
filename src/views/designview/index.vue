@@ -2,16 +2,7 @@
   <div class="designview_wrap">
     <Header :active="active"></Header>
     <div class="designview_box_wrap">
-      <layout>
-        <div slot="layoutContent">
-          <h2 slot="layoutLP">
-            <img :src="img1L.src" alt="">
-          </h2>
-        </div>
-        <div slot="layoutR" class="changeImg">
-          <img slot="layoutRImg" :src="img1R.src" alt="">
-        </div>
-      </layout>
+      <row-layout :config = "config"></row-layout>
     </div>
     <Footer></Footer>
   </div>
@@ -32,16 +23,6 @@ div.designview_wrap {
     flex-direction: row;
     width: $boxWidth;
     margin-top: $distanceHeader + $spancin;
-    
-    div.l,
-    div.r {
-      flex: 0;
-      margin: 0;
-      padding: 0;
-    }
-    div.changeImg {
-      transform: translateY(-1rem);
-    }
   }
 }
 </style>
@@ -52,11 +33,13 @@ export default {
   data() {
     return {
       active: 3,
-      img1L: {
-        src: require("./../../assets/img/design/des1.png")
-      },
-      img1R: {
-        src: require("./../../assets/img/design/jy1.png")
+      config: {
+        left: {
+          img: require("./../../assets/img/design/des1.png")
+        },
+        right: {
+          img: require("./../../assets/img/design/jy1.png")
+        }
       }
     };
   }

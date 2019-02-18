@@ -15,8 +15,6 @@ import global from "./utils/global";
 import api from "./api/api";
 import regCopm from "./utils/regComponents";
 import cryptoJS from "crypto-js";
-import VueImpress from "vue-impress";
-import "vue-impress/dist/vue-impress.css";
 
 Vue.use(_);
 Vue.use(normalize);
@@ -25,7 +23,6 @@ Vue.use(api);
 Vue.use(fly);
 Vue.use(cryptoJS);
 Vue.use(regCopm);
-Vue.use(VueImpress);
 
 process.env.NODE_ENV === "development" && require("@/mock/mock.js");
 
