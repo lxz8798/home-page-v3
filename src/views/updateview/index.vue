@@ -95,7 +95,7 @@ export default {
           cover: ""
         },
         {
-          time: "即将更新内容",
+          time: "homepage3.0 - 未来将会更新的内容",
           content: `
             1、后台管理系统。<br />
             2、RESTful API服务器。<br />
@@ -107,6 +107,14 @@ export default {
             8、WORKVIEW 增加连接。<br/>
             9、首页增加内容，排版重新设计。<br/>
             10、完成注册和登录页面。
+            `,
+          cover: ""
+        },
+        {
+          time: "2019年02月18更新内容",
+          content: `
+            1、注册页和登录页。<br />
+            2、公共底部和个别页面的FLEX布局的适配能力，可能还有些细节可能需要调整。
             `,
           cover: ""
         }

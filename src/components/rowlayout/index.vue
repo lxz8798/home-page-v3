@@ -1,10 +1,14 @@
 <template>
   <div class="rowlayout_wrap">
     <div class="l">
-      <img :src="config.left.img" alt="">
+      <slot name="divL">
+        <img :src="config.left.img" alt="">
+      </slot>
     </div>
     <div class="r">
-      <img :src="config.right.img" alt="">
+      <slot name="divR">
+        <img :src="config.right.img" alt="">
+      </slot>
     </div>
   </div>
 </template>
@@ -24,19 +28,26 @@ export default {
 @import "../../assets/base/color";
 div.rowlayout_wrap {
   width: $boxWidth;
+  padding: $spancin;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   div.l,
   div.r {
+    height: 100%;
     display: flex;
+    img {
+      width: inherit;
+    }
   }
   div.l {
     order: 1;
+    border-right: 1px solid $fontColor;
   }
   div.r {
     order: 2;
+    padding: 0 $spancin;
   }
 }
 </style>
