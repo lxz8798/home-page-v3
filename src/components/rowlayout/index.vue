@@ -43,7 +43,6 @@ div.rowlayout_wrap {
   }
   div.l {
     order: 1;
-    border-right: 1px solid $fontColor;
   }
   div.r {
     order: 2;

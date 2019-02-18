@@ -23,7 +23,7 @@ div.cssview-wrap {
   background: linear-gradient(to bottom, #21468c, #8aaee2);
   
   div.cloud-wrap {
-    width: $childBaseWidth - 10vw;
+    width: $childBaseWidth - 1vw;
     height: $childBaseHeight;
     overflow: hidden;
     ul {
@@ -87,8 +87,8 @@ div.cssview-wrap {
       li.animate10 {
         width: 7rem;
         height: 7rem;
-        bottom: 2rem;
-        left: 0.5rem;
+        bottom: 1.2rem;
+        left: 1rem;
         opacity: 0.8;
       }
       li.animate11 {
