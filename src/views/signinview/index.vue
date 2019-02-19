@@ -6,14 +6,23 @@
     <row-layout :config="config">
       <div slot="divL">
         <img class="bigPic" :src="config.left.img" alt="">
-        <img class="qiqiu1" :src="config.left.qiqiu1" alt="">
-        <img class="qiqiu2" :src="config.left.qiqiu2" alt="">
-        <img class="qiqiu3" :src="config.left.qiqiu3" alt="">
-        <img class="qiqiu4" :src="config.left.qiqiu4" alt="">
-        <img class="qiqiu5" :src="config.left.qiqiu5" alt="">
-        <img class="qiqiu6" :src="config.left.qiqiu6" alt="">
-        <img class="qiqiu7" :src="config.left.qiqiu7" alt="">
-        <img class="qiqiu8" :src="config.left.qiqiu8" alt="">
+        <img class="guang1" :src="config.left.guang1" alt="">
+        <img class="gunag2" :src="config.left.gunag2" alt="">
+        <img class="guang3" :src="config.left.guang3" alt="">
+        <img class="guang4" :src="config.left.guang4" alt="">
+        <img class="guang5" :src="config.left.guang5" alt="">
+        <img class="guang6" :src="config.left.guang6" alt="">
+        <img class="gaung7" :src="config.left.gaung7" alt="">
+        <img class="gaung8" :src="config.left.gaung8" alt="">
+        <img class="gaung9" :src="config.left.gaung9" alt="">
+        <p class="line1"></p>
+        <p class="line2"></p>
+        <p class="line3"></p>
+        <p class="line4"></p>
+        <p class="line5"></p>
+        <p class="line6"></p>
+        <p class="line7"></p>
+        <p class="line8"></p>
       </div>
       <div class="input_box" slot="divR">
         <div class="usernameInput">
@@ -74,6 +83,7 @@ $signinBoxHeight: 4rem;
 $inputBoxHeight: 0.6rem;
 $inputRadius: 0.05rem;
 $inputWidth: 2.5rem;
+$guangban: 0.2rem;
 div.signinview_wrap {
   width: $childBaseWidth;
   height: $childBaseHeight;
@@ -98,59 +108,139 @@ div.signinview_wrap {
       div.l {
         flex: 0 0 3rem;
         position: relative;
-        perspective: 3rem;
-        transform-style: preserve-3d;
+        // perspective: 3rem;
+        // transform-style: preserve-3d;
         .bigPic {
+          width: 3.5rem;
+          height: 3.5rem;
           position: absolute;
-          transform: translate3d(-0.8rem, 0, 0);
+          transform: translate3d(-0.3rem, 0.3rem, 0);
         }
-        .qiqiu1 {
-          width: 0.2rem;
-          height: 0.8rem;
+        .guang1 {
+          width: $guangban;
+          height: $guangban;
           animation-delay: 2s;
           transform: translate3d(2.7rem, 1.2rem, 0.1rem);
         }
-        .qiqiu2 {
-          width: 0.12rem;
-          height: 0.48rem;
+        .gunag2 {
+          width: 0.35rem;
+          height: 0.35rem;
           animation-delay: 1s;
-          transform: translate3d(2rem, -0.1rem, 0.1rem);
+          transform: translate3d(2rem, 1.3rem, 0.1rem);
         }
-        .qiqiu3 {
-          width: 0.15rem;
-          height: 0.6rem;
+        .guang3 {
+          width: 0.3rem;
+          height: 0.3rem;
           animation-delay: 2s;
-          transform: translate3d(-0.8rem, 0.8rem, 0.08rem);
+          transform: translate3d(1.2rem, 1.5rem, 0.08rem);
         }
-        .qiqiu4 {
-          width: 0.2rem;
-          height: 0.8rem;
+        .guang4 {
+          width: $guangban;
+          height: $guangban;
           animation-delay: 3s;
-          transform: translate3d(-0.4rem, -0.2rem, 0.1rem);
+          transform: translate3d(-0.6rem, 1.2rem, 0.1rem);
         }
-        .qiqiu5 {
+        .guang5 {
           width: 0.18rem;
-          height: 0.7rem;
+          height: 0.18rem;
           animation-delay: 1s;
-          transform: translate3d(-0.2rem, 2rem, 0.8rem);
+          transform: translate3d(-0.6rem, 2rem, 0.8rem);
         }
-        .qiqiu6 {
+        .guang6 {
           width: 0.2rem;
-          height: 0.8rem;
+          height: 0.2rem;
           animation-delay: 3s;
-          transform: translate3d(0.8rem, 1.3rem, 1rem);
+          transform: translate3d(0.4rem, 1.9rem, 1rem);
         }
-        .qiqiu7 {
+        .gaung7 {
           width: 0.18rem;
-          height: 0.7rem;
+          height: 0.18rem;
           animation-delay: 1s;
           transform: translate3d(-0.3rem, 0.5rem, 0.6rem);
         }
-        .qiqiu8 {
+        .gaung8 {
           width: 0.27rem;
-          height: 0.9rem;
+          height: 0.27rem;
           animation-delay: 2s;
-          transform: translate3d(0.1rem, 1.8rem, 0.6rem);
+          transform: translate3d(0.5rem, 2.4rem, 0.6rem);
+        }
+        .gaung9 {
+          width: 0.3rem;
+          height: 0.3rem;
+          animation-delay: 2s;
+          transform: translate3d(-1.2rem, 2.7rem, 0.6rem);
+        }
+        .line1,
+        .line2,
+        .line3,
+        .line4,
+        .line5,
+        .line6,
+        .line7,
+        .line8 {
+          position: absolute;
+          border-radius: 1rem;
+        }
+        .line1 {
+          width: 3.5rem;
+          height: 0.03rem;
+          transform: rotateZ(135deg);
+          background: adjust-hue($menuColor, 1deg);
+        }
+        .line2 {
+          width: 2rem;
+          height: 0.02rem;
+          top: 1.4rem;
+          left: -0.8rem;
+          transform: rotateZ(135deg);
+          background: adjust-hue($menuColor, 310deg);
+        }
+        .line3 {
+          width: 1.3rem;
+          height: 0.02rem;
+          top: 0.8rem;
+          left: -0.8rem;
+          transform: rotateZ(135deg);
+          background: adjust-hue($menuColor, 160deg);
+        }
+        .line4 {
+          width: 3rem;
+          height: 0.01rem;
+          top: 3.8rem;
+          left: 0.4rem;
+          transform: rotateZ(135deg);
+          background: adjust-hue($menuColor, 70deg);
+        }
+        .line5 {
+          width: 2rem;
+          height: 0.02rem;
+          top: 2.3rem;
+          left: 1.4rem;
+          transform: rotateZ(135deg);
+          background: adjust-hue($menuColor, 30deg);
+        }
+        .line6 {
+          width: 2.4rem;
+          height: 0.02rem;
+          top: 0.2rem;
+          transform: rotateZ(135deg);
+          background: adjust-hue($menuColor, 60deg);
+        }
+        .line7 {
+          width: 3.5rem;
+          height: 0.02rem;
+          top: 3.6rem;
+          left: -0.8rem;
+          transform: rotateZ(135deg);
+          background: adjust-hue($menuColor, 230deg);
+        }
+        .line8 {
+          width: 0.8rem;
+          height: 0.02rem;
+          top: 3.2rem;
+          left: 1.4rem;
+          transform: rotateZ(135deg);
+          background: adjust-hue($menuColor, 230deg);
         }
       }
       div.r {
@@ -289,15 +379,16 @@ export default {
       rememberText: "记住密码",
       config: {
         left: {
-          img: require("./../../assets/img/qiqiu/2019.png"),
-          qiqiu1: require("./../../assets/img/qiqiu/1.png"),
-          qiqiu2: require("./../../assets/img/qiqiu/2.png"),
-          qiqiu3: require("./../../assets/img/qiqiu/3.png"),
-          qiqiu4: require("./../../assets/img/qiqiu/4.png"),
-          qiqiu5: require("./../../assets/img/qiqiu/5.png"),
-          qiqiu6: require("./../../assets/img/qiqiu/3.png"),
-          qiqiu7: require("./../../assets/img/qiqiu/2.png"),
-          qiqiu8: require("./../../assets/img/qiqiu/4.png")
+          img: require("./../../assets/img/guang/lifang.png"),
+          guang1: require("./../../assets/img/guang/1.png"),
+          gunag2: require("./../../assets/img/guang/2.png"),
+          guang3: require("./../../assets/img/guang/3.png"),
+          guang4: require("./../../assets/img/guang/4.png"),
+          guang5: require("./../../assets/img/guang/5.png"),
+          guang6: require("./../../assets/img/guang/6.png"),
+          gaung7: require("./../../assets/img/guang/7.png"),
+          gaung8: require("./../../assets/img/guang/7.png"),
+          gaung9: require("./../../assets/img/guang/7.png"),
         },
         right: {
           img: require("./../../assets/img/design/jy1.png")
