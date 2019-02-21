@@ -11,7 +11,7 @@ const productionGzipExtensions = ['js', 'css'];
 const isProduction = process.env.NODE_ENV === 'production';
 module.exports = {
   // baseUrl
-  baseUrl: isProduction ? '/' : './',
+  baseUrl: isProduction ? './' : '/',
   // 输出目录
   // outputDir: 'dist',
   // js、css、img、fonts静态资源的目录
