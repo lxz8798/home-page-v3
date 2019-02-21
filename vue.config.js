@@ -6,30 +6,18 @@
  */
 const path = require("path");
 const glob = require('glob');
-const webpack = require('webpack');
-// 单页或多页入口
-// const utils = require("./src/utils/utils.js");
-// 去console插件
-// const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-// 压缩格式
-// const productionGzipExtensions = ["js", "css"];
-// gzip压缩插件
-// const CompressionWebpackPlugin = require("compression-webpack-plugin");
-// 把js放到页面底部
-// const HtmlWebpackPlugin = require("html-webpack-plugin");
-// 消除冗余的css
-const purifyCssWebpack = require("purifycss-webpack");
-// const webpack = require('webpack');
-
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const productionGzipExtensions = ['js', 'css'];
+const isProduction = process.env.NODE_ENV === 'production';
 module.exports = {
   // baseUrl
-  baseUrl: process.env.NODE_ENV === 'prodcution' ? '/' : './',
+  baseUrl: isProduction ? '/' : './',
   // 输出目录
-  outputDir: 'dist',
+  // outputDir: 'dist',
   // js、css、img、fonts静态资源的目录
   // assetsDir:'',
   // 生成的index.html
-  indexPath: 'index.html',
+  // indexPath: 'index.html',
   // 生成的静态资源是否使用哈希，默认是true
   filenameHashing: true,
   // 入口文件的配置项
@@ -88,10 +76,21 @@ module.exports = {
       }
     }
   },
+  configureWebpack: config => {
+    if (isProduction) {
+      config.plugins.push(new CompressionWebpackPlugin({
+          algorithm: 'gzip',
+          test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
+          threshold: 10240,
+          minRatio: 0.8
+        })
+      )
+    }
+  },
   // 对内部的 webpack 配置（比如修改、增加Loader选项）(链式操作)
   // https://github.com/mozilla-neutrino/webpack-chain
   chainWebpack: config => {
-    if (process.env.NODE_ENV === 'production') {
+    if (isProduction) {
       // 为生产环境修改配置...
     } else {
       // 为开发环境修改配置...
@@ -102,41 +101,5 @@ module.exports = {
         .loader('babel-loader')
         .end()
     }
-  },
-  // configureWebpack: config => {
-  //   if (process.env.NODE_ENV === 'production') {
-  //     // 为生产环境修改配置...
-  //     config.plugins.push([
-  //       // 消除冗余的css
-  //       new purifyCssWebpack({
-  //         paths: glob.sync(path.join(__dirname, "../src/pages/*/*.html"))
-  //       }),
-  //       // 生产模式干掉console.log
-  //       new webpack.optimize.UglifyJsPlugin({
-  //         compress: {
-  //           warnings: false,
-  //           drop_console: true,
-  //           pure_funcs: ['console.log']
-  //         },
-  //         sourceMap: false
-  //       }),
-  //       // 作用域提升，让打包出来的代码更小
-  //       // new webpack.optimize.ModuleConcatenationPlugin()
-  //     ])
-
-  //   } else {
-  //     // 为开发环境修改配置...
-  //   }
-  // },
-  // cors 相关 https://jakearchibald.com/2017/es-modules-in-browsers/#always-cors
-  // corsUseCredentials: false,
-  // webpack 配置，键值对象时会合并配置，为方法时会改写配置
-  // https://cli.vuejs.org/guide/webpack.html#simple-configuration
-  // vue-loader 配置
-  // https://vue-loader.vuejs.org/en/options.html
-  // vueLoader: {},
-  // 第三方插件配置
-  // pluginOptions:{
-
-  // }
+  }
 }
