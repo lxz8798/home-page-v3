@@ -108,12 +108,12 @@ div.first_screen_wrap {
   }
 }
 .img1 {
-  background: url("http://pmek5nu6x.bkt.clouddn.com/girl-on-the-meadow,-yellow-meadow,-high-grass-204975.jpg")
+  background: url("http://pmek5nu6x.bkt.clouddn.com/banner2.webp")
     no-repeat 0 55%;
   background-size: cover;
 }
 .img2 {
-  background: url("http://pmek5nu6x.bkt.clouddn.com/timg.jpg") no-repeat 0 0%;
+  background: url("http://pmek5nu6x.bkt.clouddn.com/banner1.webp") no-repeat 0 0%;
   background-size: cover;
 }
 </style>

@@ -173,7 +173,7 @@ export default {
           class: "bounceInLeft animated animate8"
         },
         {
-          url: "http://pmek5nu6x.bkt.clouddn.com/xiake.png",
+          url: "http://pmek5nu6x.bkt.clouddn.com/xiake.webp",
           name: "xiake",
           class: "animate9"
         },
