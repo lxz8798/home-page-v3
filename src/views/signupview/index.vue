@@ -44,19 +44,13 @@
           </div>
         </div>
         <div class="rememberAndforget">
-          <Checkbox v-model="single">{{rememberText}}</Checkbox>
-          <p>忘记密码？</p>
+          <Checkbox style="visibility: hidden;" v-model="single">{{rememberText}}</Checkbox>
+          <p style="visibility: hidden;">忘记密码？</p>
         </div>
         <div class="siginupInput">
           <span>
             <p>注   册</p>
             <p>SIGN UP</p>
-          </span>
-        </div>
-        <div class="sigiinpInput">
-          <span>
-            <p>登   录</p>
-            <p>SING IN</p>
           </span>
         </div>
       </div>
@@ -272,7 +266,7 @@ export default {
     return {
       active: 8,
       single: false,
-      isSignup: true,
+      // isSignup: true,
       rememberText: "记住密码",
       config: {
         left: {
@@ -292,8 +286,25 @@ export default {
       }
     };
   },
+  created() {
+    this.signUp();
+  },
   mounted() {
     this.$Loading.finish();
+  },
+  methods: {
+    async signUp() {
+      let params, res;
+
+      params = {
+        username: "123456789",
+        password: "123456789",
+        phonenumber: "123456789"
+      };
+
+      res = await this.$http.get("http://127.0.0.1:7001/api/v1/signup", params)
+      console.log(res,'res');
+    }
   }
 };
 </script>

@@ -237,28 +237,8 @@ export default {
       ]
     };
   },
-  created() {
-    // this.getWorkViewList();
-  },
   mounted() {
     this.$Loading.finish();
-  },
-  methods: {
-    async getWorkViewList() {
-      let params, res;
-
-      params = {
-        username: "123456789",
-        password: "123456789",
-        phonenumber: "123456789"
-      };
-
-      // res = await api.workList(params);
-      this.$http.get("http://127.0.0.1:7001/api/v1/signin", params)
-      .then(res => {
-        console.log(res, 'res');
-      });
-    }
   }
 };
 </script>

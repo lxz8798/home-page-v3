@@ -43,24 +43,9 @@
             <input type="text" value="" maxlength="20">
           </div>
         </div>
-        <div class="phoneNumberInput">
-          <label>手机号 / PHONE</label>
-          <div class="input">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-phone"></use>
-            </svg>
-            <input type="text" value="" maxlength="11">
-          </div>
-        </div>
         <div class="rememberAndforget">
           <Checkbox v-model="single">{{rememberText}}</Checkbox>
           <p>忘记密码？</p>
-        </div>
-        <div class="siginupInput">
-          <span>
-            <p>注   册</p>
-            <p>SIGN UP</p>
-          </span>
         </div>
         <div class="sigiinpInput">
           <span>
@@ -321,13 +306,15 @@ export default {
   name: "signinview",
   components: { Checkbox },
   // beforeRouteEnter(to, from, next) {
-    // if(to.name == "signinview") this.isSignup = false;
+  //   if(to.name == "signinview") {
+  //     this.isSignin = false;
+  //     next();
+  //   };
   // },
   data() {
     return {
       active: 7,
       single: false,
-      isSignup: true,
       rememberText: "记住密码",
       config: {
         left: {
@@ -348,8 +335,28 @@ export default {
       }
     };
   },
+  created() {
+    this.signIn();
+  },
   mounted() {
     this.$Loading.finish();
+  },
+  methods: {
+    async signIn() {
+      let params, res;
+
+      params = {
+        username: "123456789",
+        password: "123456789",
+        phonenumber: "123456789"
+      };
+
+      res = await this.$http.get("http://127.0.0.1:7001/api/v1/signin", params)
+      console.log(res,'res');
+      // .then(res => {
+      //   console.log(res, 'res');
+      // });
+    }
   }
 };
 </script>
