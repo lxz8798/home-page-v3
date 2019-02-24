@@ -67,8 +67,6 @@
 
 <style lang="scss">
 @import "../../assets/base/base";
-@import "../../assets/base/color";
-@import "../../assets/base/mixin";
 $signupBoxWidth: 6.5rem;
 $signupBoxHeight: 4rem;
 $inputBoxHeight: 0.6rem;
@@ -81,8 +79,7 @@ div.signupview_wrap {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(   to right bottom,
-  darken($menuColor, 20%) 50%,    $menuColor 50); 
+  background: linear-gradient( to right bottom, darken($menuColor, 20%) 50%, $menuColor 50); 
   div.signup_box {
     width: $signupBoxWidth;
     height: $signupBoxHeight;
@@ -102,55 +99,45 @@ div.signupview_wrap {
         transform-style: preserve-3d;
         .bigPic {
           position: absolute;
-          transform: translate3d(-0.8rem, 0, 0);
+          @include translateAnimate(guangAnimate, 5s, 1s);
+          @include polygonSize2(4.5rem, 3.9rem, 0.01rem, -0.6rem, transparent);
+        }
+        @for $i from 1 through 8 {
+          .qiqiu#{$i} {
+            position: absolute;
+          }
         }
         .qiqiu1 {
-          width: 0.2rem;
-          height: 0.8rem;
-          animation-delay: 2s;
-          transform: translate3d(2.7rem, 1.2rem, 0.1rem);
+          @include translateAnimate(guangAnimate, 5s, 1s);
+          @include polygonSize2(0.2rem, 0.8rem, 1.7rem, 2.2rem, transparent);
         }
         .qiqiu2 {
-          width: 0.12rem;
-          height: 0.48rem;
-          animation-delay: 1s;
-          transform: translate3d(2rem, -0.1rem, 0.1rem);
+          @include translateAnimate(guangAnimate, 6s, 3s);
+          @include polygonSize2(0.12rem, 0.48rem, 2rem, 0.3rem, transparent);
         }
         .qiqiu3 {
-          width: 0.15rem;
-          height: 0.6rem;
-          animation-delay: 2s;
-          transform: translate3d(-0.8rem, 0.8rem, 0.08rem);
+          @include translateAnimate(guangAnimate, 6s, 3s);
+          @include polygonSize2(0.15rem, 0.6rem, -0.3rem, 0.8rem, transparent);
         }
         .qiqiu4 {
-          width: 0.2rem;
-          height: 0.8rem;
-          animation-delay: 3s;
-          transform: translate3d(-0.4rem, -0.2rem, 0.1rem);
+          @include translateAnimate(guangAnimate, 4s, 2s);
+          @include polygonSize2(0.2rem, 0.8rem, 0.3rem, 0.1rem, transparent);
         }
         .qiqiu5 {
-          width: 0.18rem;
-          height: 0.7rem;
-          animation-delay: 1s;
-          transform: translate3d(-0.2rem, 2rem, 0.8rem);
+          @include translateAnimate(guangAnimate, 5s, 2s);
+          @include polygonSize2(0.18rem, 0.7rem, 1rem, 1.6rem, transparent);
         }
         .qiqiu6 {
-          width: 0.2rem;
-          height: 0.8rem;
-          animation-delay: 3s;
-          transform: translate3d(0.8rem, 1.3rem, 1rem);
+          @include translateAnimate(guangAnimate, 3s, 3s);
+          @include polygonSize2(0.2rem, 0.8rem, 1rem, 0.6rem, transparent);
         }
         .qiqiu7 {
-          width: 0.18rem;
-          height: 0.7rem;
-          animation-delay: 1s;
-          transform: translate3d(-0.3rem, 0.5rem, 0.6rem);
+          @include translateAnimate(guangAnimate, 5s, 1s);
+          @include polygonSize2(0.18rem, 0.7rem, 0.3rem, -0.7rem, transparent);
         }
         .qiqiu8 {
-          width: 0.27rem;
-          height: 0.9rem;
-          animation-delay: 2s;
-          transform: translate3d(0.1rem, 1.8rem, 0.6rem);
+          @include translateAnimate(guangAnimate, 5s, 1s);
+          @include polygonSize2(0.27rem, 0.9rem, 0.8rem, 2.7rem, transparent);
         }
       }
       div.r {
@@ -304,6 +291,9 @@ export default {
         }
       }
     };
+  },
+  mounted() {
+    this.$Loading.finish();
   }
 };
 </script>

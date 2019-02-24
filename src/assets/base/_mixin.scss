@@ -1,3 +1,4 @@
+@import "defaultVar";
 @keyframes cloudTranslateAnimate
 {
   0% { 
@@ -116,4 +117,7 @@
     opacity: 0;
     transform: translate3d(3rem, 1rem, -1rem);
   }
+}
+@mixin translateAnimate($name, $time, $delay: $Delay) {
+  animation: $name $time $type $delay $count $direction;
 }

@@ -32,7 +32,6 @@
 <style lang="scss">
 @import "compass/css3";
 @import "./../../assets/base/base.scss";
-@import "./../../assets/base/fn.scss";
 div.example-wrap {
   width: $childBaseWidth;
   display: flex;

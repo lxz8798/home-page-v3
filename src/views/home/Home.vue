@@ -28,6 +28,7 @@ export default {
   },
   mounted() {
     this.switchImgFn();
+    this.$Loading.finish();
   },
   methods: {
     switchImgFn() {

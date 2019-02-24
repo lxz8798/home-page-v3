@@ -27,6 +27,9 @@ export default {
     return {
       active: 1
     };
+  },
+  mounted() {
+    this.$Loading.finish();
   }
 };
 </script>

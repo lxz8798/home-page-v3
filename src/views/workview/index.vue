@@ -240,6 +240,9 @@ export default {
   created() {
     // this.getWorkViewList();
   },
+  mounted() {
+    this.$Loading.finish();
+  },
   methods: {
     async getWorkViewList() {
       let params, res;

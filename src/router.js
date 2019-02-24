@@ -6,9 +6,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "@/views/home/Home";
-
+import {LoadingBar} from "iview";
 Vue.use(VueRouter);
-
+Vue.use(LoadingBar);
+Vue.prototype.$Loading = LoadingBar;
 const getComponent = name => () => import(`./views/${name}/index.vue`);
 
 const router = new VueRouter({
@@ -18,7 +19,11 @@ const router = new VueRouter({
     {
       path: "/",
       name: "home",
-      component:Home
+      component:Home,
+      meta: {
+        auth: true,
+        keepAlive:false // 是否缓存
+      }
     },
     {
       path:"/example",
@@ -122,8 +127,12 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     // 合法性校验
     if (to.meta.auth) {
+      LoadingBar.start();
       next();
-    }
-    next();
+    };
+    // next();
 });
+// router.afterEach(route => {
+//   LoadingBar.finish();
+// });
 export default router;

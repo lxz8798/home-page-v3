@@ -7,14 +7,14 @@
       <div slot="divL">
         <img class="bigPic" :src="config.left.img" alt="">
         <img class="guang1" :src="config.left.guang1" alt="">
-        <img class="gunag2" :src="config.left.gunag2" alt="">
+        <img class="guang2" :src="config.left.guang2" alt="">
         <img class="guang3" :src="config.left.guang3" alt="">
         <img class="guang4" :src="config.left.guang4" alt="">
         <img class="guang5" :src="config.left.guang5" alt="">
         <img class="guang6" :src="config.left.guang6" alt="">
-        <img class="gaung7" :src="config.left.gaung7" alt="">
-        <img class="gaung8" :src="config.left.gaung8" alt="">
-        <img class="gaung9" :src="config.left.gaung9" alt="">
+        <img class="guang7" :src="config.left.guang7" alt="">
+        <img class="guang8" :src="config.left.guang8" alt="">
+        <img class="guang9" :src="config.left.guang9" alt="">
         <p class="line1"></p>
         <p class="line2"></p>
         <p class="line3"></p>
@@ -76,8 +76,6 @@
 
 <style lang="scss">
 @import "../../assets/base/base";
-@import "../../assets/base/color";
-@import "../../assets/base/mixin";
 $signinBoxWidth: 6.5rem;
 $signinBoxHeight: 4rem;
 $inputBoxHeight: 0.6rem;
@@ -99,148 +97,97 @@ div.signinview_wrap {
 
     background: white;
     border-radius: 0.1rem;
-
     div.rowlayout_wrap {
       width: $signinBoxWidth;
       height: $signinBoxHeight;
-      z-index: 2;
-      position: relative;
       div.l {
         flex: 0 0 3rem;
         position: relative;
-        // perspective: 3rem;
-        // transform-style: preserve-3d;
         .bigPic {
-          width: 3.5rem;
-          height: 3.5rem;
           position: absolute;
-          transform: translate3d(-0.3rem, 0.3rem, 0);
+          z-index: 1;
+          @include translateAnimate(guangAnimate, 8s, 1s);
+          @include polygonSize(3rem, 0.2rem, 0, transparent);
+        }
+        @for $i from 1 through 9 {
+          .guang#{$i} {
+            position: absolute;
+          }
         }
         .guang1 {
-          width: $guangban;
-          height: $guangban;
-          animation-delay: 2s;
-          transform: translate3d(2.7rem, 1.2rem, 0.1rem);
+          @include translateAnimate(guangAnimate, 8s, 1s);
+          @include polygonSize(0.2rem, 0.5rem, 0.6rem, transparent);
         }
-        .gunag2 {
-          width: 0.35rem;
-          height: 0.35rem;
-          animation-delay: 1s;
-          transform: translate3d(2rem, 1.3rem, 0.1rem);
+        .guang2 {
+          @include translateAnimate(guangAnimate, 5s, 3s);
+          @include polygonSize(0.35rem, 1.8rem, 2.9rem, transparent);
         }
         .guang3 {
-          width: 0.3rem;
-          height: 0.3rem;
-          animation-delay: 2s;
-          transform: translate3d(1.2rem, 1.5rem, 0.08rem);
+          @include translateAnimate(guangAnimate, 6s, 2s);
+          @include polygonSize(0.3rem, 1.5rem, 2.3rem, transparent);
         }
         .guang4 {
-          width: $guangban;
-          height: $guangban;
-          animation-delay: 3s;
-          transform: translate3d(-0.6rem, 1.2rem, 0.1rem);
+          @include translateAnimate(guangAnimate, 6s, 3s);
+          @include polygonSize(0.3rem, 2.5rem, 0.3rem, transparent);
         }
         .guang5 {
-          width: 0.18rem;
-          height: 0.18rem;
-          animation-delay: 1s;
-          transform: translate3d(-0.6rem, 2rem, 0.8rem);
+          @include translateAnimate(guangAnimate, 4s, 1s);
+          @include polygonSize(0.3rem, 2.1rem, -0.2rem, transparent);
         }
         .guang6 {
-          width: 0.2rem;
-          height: 0.2rem;
-          animation-delay: 3s;
-          transform: translate3d(0.4rem, 1.9rem, 1rem);
+          @include translateAnimate(guangAnimate, 5s, 2s);
+          @include polygonSize(0.35rem, 1.4rem, 0.6rem, transparent);
         }
-        .gaung7 {
-          width: 0.18rem;
-          height: 0.18rem;
-          animation-delay: 1s;
-          transform: translate3d(-0.3rem, 0.5rem, 0.6rem);
+        .guang7 {
+          @include translateAnimate(guangAnimate, 5s, 1s);
+          @include polygonSize(0.4rem, 0, -0.3rem, transparent);
         }
-        .gaung8 {
-          width: 0.27rem;
-          height: 0.27rem;
-          animation-delay: 2s;
-          transform: translate3d(0.5rem, 2.4rem, 0.6rem);
+        .guang8 {
+          @include translateAnimate(guangAnimate, 5s, 2s);
+          @include polygonSize(0.3rem, 0.6rem, 2.8rem, transparent);
         }
-        .gaung9 {
-          width: 0.3rem;
-          height: 0.3rem;
-          animation-delay: 2s;
-          transform: translate3d(-1.2rem, 2.7rem, 0.6rem);
+        .guang9 {
+          @include translateAnimate(guangAnimate, 5s, 2s);
+          @include polygonSize(0.3rem, 2.7rem, -0.7rem, transparent);
         }
-        .line1,
-        .line2,
-        .line3,
-        .line4,
-        .line5,
-        .line6,
-        .line7,
-        .line8 {
-          position: absolute;
-          border-radius: 1rem;
+        @for $i from 1 through 8 {
+          .line#{$i} {
+            position: absolute;
+            @include polygon(99.4% 0, 100% 0.6%, 0.6% 100%, 0% 99.4%);
+          }
         }
         .line1 {
-          width: 3.5rem;
-          height: 0.03rem;
-          transform: rotateZ(135deg);
-          background: adjust-hue($menuColor, 1deg);
+            z-index: 2;
+            @include translateAnimate(lineAnimate, 8s, 1s);
+            @include polygonSize(3.2rem, 0rem, 0.6rem, adjust-hue($menuColor,310deg));
         }
         .line2 {
-          width: 2rem;
-          height: 0.02rem;
-          top: 1.4rem;
-          left: -0.8rem;
-          transform: rotateZ(135deg);
-          background: adjust-hue($menuColor, 310deg);
+            @include translateAnimate(lineAnimate, 9s, 3s);
+            @include polygonSize(2rem, 1.4rem, -1.8rem, adjust-hue($menuColor,210deg));
         }
         .line3 {
-          width: 1.3rem;
-          height: 0.02rem;
-          top: 0.8rem;
-          left: -0.8rem;
-          transform: rotateZ(135deg);
-          background: adjust-hue($menuColor, 160deg);
+            @include translateAnimate(lineAnimate, 12s, 2s);
+            @include polygonSize(1.3rem, 0.8rem, -0.8rem, adjust-hue($menuColor,160deg));
         }
         .line4 {
-          width: 3rem;
-          height: 0.01rem;
-          top: 3.8rem;
-          left: 0.4rem;
-          transform: rotateZ(135deg);
-          background: adjust-hue($menuColor, 70deg);
+            @include translateAnimate(lineAnimate, 7s, 1s);
+            @include polygonSize(3.5rem, 0.8rem, 0.2rem, adjust-hue($menuColor,70deg));
         }
         .line5 {
-          width: 2rem;
-          height: 0.02rem;
-          top: 2.3rem;
-          left: 1.4rem;
-          transform: rotateZ(135deg);
-          background: adjust-hue($menuColor, 30deg);
+            @include translateAnimate(lineAnimate, 10s, 3s);
+            @include polygonSize(1.3rem, 2.1rem, 1.8rem, adjust-hue($menuColor,30deg));
         }
         .line6 {
-          width: 2.4rem;
-          height: 0.02rem;
-          top: 0.2rem;
-          transform: rotateZ(135deg);
-          background: adjust-hue($menuColor, 60deg);
+            @include translateAnimate(lineAnimate, 11s, 1s);
+            @include polygonSize(2.4rem, 0.3rem, -0.3rem, adjust-hue($menuColor,60deg));
         }
         .line7 {
-          width: 3.5rem;
-          height: 0.02rem;
-          top: 3.6rem;
-          left: -0.8rem;
-          transform: rotateZ(135deg);
-          background: adjust-hue($menuColor, 230deg);
+            @include translateAnimate(lineAnimate, 9s, 2s);
+            @include polygonSize(4.5rem, -0.6rem, -2.8rem, adjust-hue($menuColor,130deg));
         }
         .line8 {
-          width: 0.8rem;
-          height: 0.02rem;
-          top: 3.2rem;
-          left: 1.4rem;
-          transform: rotateZ(135deg);
-          background: adjust-hue($menuColor, 230deg);
+            @include translateAnimate(lineAnimate, 8s, 2s);
+            @include polygonSize(1rem, 3.2rem, 1.4rem, adjust-hue($menuColor,230deg));
         }
       }
       div.r {
@@ -248,6 +195,7 @@ div.signinview_wrap {
         display: flex;
         justify-content: center;
         align-items: center;
+        z-index: 99;
         div.input_box {
           width: $inputWidth;
           div.usernameInput,
@@ -275,6 +223,7 @@ div.signinview_wrap {
               outline: none;
               transition: all 0.3s ease;
               color: $fontColor;
+              background: white;
               .icon {
                 transition: all 0.3s ease;
               }
@@ -371,30 +320,36 @@ import { Checkbox } from "iview";
 export default {
   name: "signinview",
   components: { Checkbox },
+  // beforeRouteEnter(to, from, next) {
+    // if(to.name == "signinview") this.isSignup = false;
+  // },
   data() {
     return {
       active: 7,
       single: false,
-      isSignup: false,
+      isSignup: true,
       rememberText: "记住密码",
       config: {
         left: {
           img: require("./../../assets/img/guang/lifang.png"),
           guang1: require("./../../assets/img/guang/1.png"),
-          gunag2: require("./../../assets/img/guang/2.png"),
+          guang2: require("./../../assets/img/guang/2.png"),
           guang3: require("./../../assets/img/guang/3.png"),
           guang4: require("./../../assets/img/guang/4.png"),
           guang5: require("./../../assets/img/guang/5.png"),
           guang6: require("./../../assets/img/guang/6.png"),
-          gaung7: require("./../../assets/img/guang/7.png"),
-          gaung8: require("./../../assets/img/guang/7.png"),
-          gaung9: require("./../../assets/img/guang/7.png"),
+          guang7: require("./../../assets/img/guang/7.png"),
+          guang8: require("./../../assets/img/guang/7.png"),
+          guang9: require("./../../assets/img/guang/7.png")
         },
         right: {
           img: require("./../../assets/img/design/jy1.png")
         }
       }
     };
+  },
+  mounted() {
+    this.$Loading.finish();
   }
 };
 </script>

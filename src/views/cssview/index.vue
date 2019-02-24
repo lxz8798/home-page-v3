@@ -189,6 +189,9 @@ export default {
         }
       ]
     };
+  },
+  mounted() {
+    this.$Loading.finish();
   }
 };
 </script>
