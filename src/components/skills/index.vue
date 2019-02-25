@@ -25,6 +25,8 @@
     <span class="skills_des">
       <slot name="skillsDes">{{ config.des }}</slot>
     </span>
+
+    <div class="mask_wrap"></div>
   </div>
 </template>
 
@@ -59,7 +61,16 @@ div.skills_box_wrap {
   padding: $spancin;
   margin-bottom: $spancin;
   transition: all 0.5s ease;
+  position: relative;
   cursor: pointer;
+  div.mask_wrap {
+    transition: all 0.5s ease;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1));
+    position: absolute;
+    bottom: 0;
+  }
   div.skills_icon,
   div.skills_rage,
   span.skills_des {
@@ -97,6 +108,10 @@ div.skills_box_wrap {
 }
 div.skills_box_wrap:hover {
   background: lighten($fontColor, 35%);
+  div.mask_wrap {
+    opacity: 0;
+    overflow: hidden;
+  }
   div.skills_icon {
     svg {
       fill: $menuColor;
@@ -105,6 +120,71 @@ div.skills_box_wrap:hover {
   div.skills_rage {
     h2 {
       color: $menuColor;
+    }
+  }
+}
+div.skills_box_wrap:nth-child(2):hover {
+  background: lighten($fontColor, 35%);
+  div.skills_icon {
+    svg {
+      fill: adjust-hue($menuColor, 60deg);
+    }
+  }
+  div.skills_rage {
+    h2 {
+      color: adjust-hue($menuColor, 60deg);
+    }
+  }
+}
+div.skills_box_wrap:nth-child(3):hover {
+  background: lighten($fontColor, 35%);
+  div.skills_icon {
+    svg {
+      fill: adjust-hue($menuColor, 120deg);
+    }
+  }
+  div.skills_rage {
+    h2 {
+      color: adjust-hue($menuColor, 120deg);
+    }
+  }
+}
+div.skills_box_wrap:nth-child(4):hover {
+  background: lighten($fontColor, 35%);
+  div.skills_icon {
+    svg {
+      fill: adjust-hue($menuColor, 160deg);
+    }
+  }
+  div.skills_rage {
+    h2 {
+      color: adjust-hue($menuColor, 160deg);
+    }
+  }
+}
+div.skills_box_wrap:nth-child(5):hover {
+  background: lighten($fontColor, 35%);
+  div.skills_icon {
+    svg {
+      fill: adjust-hue($menuColor, 190deg);
+    }
+  }
+  div.skills_rage {
+    h2 {
+      color: adjust-hue($menuColor, 190deg);
+    }
+  }
+}
+div.skills_box_wrap:nth-child(6):hover {
+  background: lighten($fontColor, 35%);
+  div.skills_icon {
+    svg {
+      fill: adjust-hue($menuColor, 20deg);
+    }
+  }
+  div.skills_rage {
+    h2 {
+      color: adjust-hue($menuColor, 20deg);
     }
   }
 }

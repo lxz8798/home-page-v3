@@ -64,7 +64,7 @@
         <!-- 框架技能 -->
         <skills-layout>
           <use xlink:href="#icon-frame" slot="skillsIcon"></use>
-          <h2 slot="skillsH2" style="line-height: 160%;">{{ frame.title }}</h2>
+          <h2 slot="skillsH2">{{ frame.title }}</h2>
           <Rate
             show-text
             allow-half
@@ -94,7 +94,7 @@
         <!-- 服务端技能 -->
         <skills-layout>
           <use xlink:href="#icon-egg" slot="skillsIcon"></use>
-          <h2 slot="skillsH2" style="line-height: 160%;">
+          <h2 slot="skillsH2">
             {{ Service.title }}
           </h2>
           <Rate
