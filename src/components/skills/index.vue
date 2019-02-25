@@ -1,41 +1,49 @@
 <template>
-<div class="skills_box_wrap">
-  <div class="skills_icon">
-    <svg class="qq-icon" aria-hidden="true">
-      <slot name="skillsIcon">
-        <use xlink:href="#icon-socialnodejs" slot="skillsIcon"></use>
-      </slot>
-    </svg>
-  </div>
-  <div class="skills_rage">
-    <slot name="skillsH2"><h2>{{config.title}}</h2></slot>
-    <slot name="skillsRate">
-      <Rate show-text allow-half v-model="config.valueCustomText" icon="ios-cafe">
+  <div class="skills_box_wrap">
+    <div class="skills_icon">
+      <svg class="qq-icon" aria-hidden="true">
+        <slot name="skillsIcon">
+          <use xlink:href="#icon-socialnodejs" slot="skillsIcon"></use>
+        </slot>
+      </svg>
+    </div>
+    <div class="skills_rage">
+      <slot name="skillsH2"
+        ><h2>{{ config.title }}</h2></slot
+      >
+      <slot name="skillsRate">
+        <Rate
+          show-text
+          allow-half
+          v-model="config.valueCustomText"
+          icon="ios-cafe"
+        >
           <span style="color: #f5a623">{{ config.valueCustomText }}</span>
-      </Rate>
-    </slot>
+        </Rate>
+      </slot>
+    </div>
+    <span class="skills_des">
+      <slot name="skillsDes">{{ config.des }}</slot>
+    </span>
   </div>
-  <span class="skills_des">
-    <slot name="skillsDes">{{config.des}}</slot>
-  </span>
-</div>
 </template>
 
 <script>
-import {Rate} from "iview";
+import { Rate } from "iview";
 export default {
   name: "skillsLayout",
-  components: {Rate},
+  components: { Rate },
   data() {
     return {
       config: {
         title: "占位标题!",
         valueCustomText: 5,
-        des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia libero cum et quisquam repellendus voluptas ipsum molestias. Doloremque ad aliquam totam maxime voluptatibus officia, quod, tenetur, hic nisi laborum repudiandae."
+        des:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia libero cum et quisquam repellendus voluptas ipsum molestias. Doloremque ad aliquam totam maxime voluptatibus officia, quod, tenetur, hic nisi laborum repudiandae."
       }
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss">
