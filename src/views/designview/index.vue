@@ -2,7 +2,7 @@
   <div class="designview_wrap">
     <Header :active="active"></Header>
     <div class="designview_box_wrap">
-      <row-layout :config = "config"></row-layout>
+      <row-layout :config="config"></row-layout>
     </div>
     <Footer></Footer>
   </div>
@@ -23,7 +23,7 @@ div.designview_wrap {
     flex-direction: row;
     width: $boxWidth;
     margin-top: $distanceHeader + $spancin;
-    div.rowlayout_wrap  {
+    div.rowlayout_wrap {
       div.l {
         border-right: 0;
       }

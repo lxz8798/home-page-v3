@@ -1,62 +1,64 @@
 <template>
-<div class="signupview_wrap">
-  <Header :active="active"></Header>
-  <div class="signupview_box_wrap"></div>
-  <div class="signup_box">
-    <row-layout :config="config">
-      <div slot="divL">
-        <img class="bigPic" :src="config.left.img" alt="">
-        <img class="qiqiu1" :src="config.left.qiqiu1" alt="">
-        <img class="qiqiu2" :src="config.left.qiqiu2" alt="">
-        <img class="qiqiu3" :src="config.left.qiqiu3" alt="">
-        <img class="qiqiu4" :src="config.left.qiqiu4" alt="">
-        <img class="qiqiu5" :src="config.left.qiqiu5" alt="">
-        <img class="qiqiu6" :src="config.left.qiqiu6" alt="">
-        <img class="qiqiu7" :src="config.left.qiqiu7" alt="">
-        <img class="qiqiu8" :src="config.left.qiqiu8" alt="">
-      </div>
-      <div class="input_box" slot="divR">
-        <div class="usernameInput">
-          <label>用户名 / USERNAME</label>
-          <div class="input">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-zhuce1"></use>
-            </svg>
-            <input type="text" value="" maxlength="20">
+  <div class="signupview_wrap">
+    <Header :active="active"></Header>
+    <div class="signupview_box_wrap"></div>
+    <div class="signup_box">
+      <row-layout :config="config">
+        <div slot="divL">
+          <img class="bigPic" :src="config.left.img" alt="" />
+          <img class="qiqiu1" :src="config.left.qiqiu1" alt="" />
+          <img class="qiqiu2" :src="config.left.qiqiu2" alt="" />
+          <img class="qiqiu3" :src="config.left.qiqiu3" alt="" />
+          <img class="qiqiu4" :src="config.left.qiqiu4" alt="" />
+          <img class="qiqiu5" :src="config.left.qiqiu5" alt="" />
+          <img class="qiqiu6" :src="config.left.qiqiu6" alt="" />
+          <img class="qiqiu7" :src="config.left.qiqiu7" alt="" />
+          <img class="qiqiu8" :src="config.left.qiqiu8" alt="" />
+        </div>
+        <div class="input_box" slot="divR">
+          <div class="usernameInput">
+            <label>用户名 / USERNAME</label>
+            <div class="input">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-zhuce1"></use>
+              </svg>
+              <input type="text" value="" maxlength="20" />
+            </div>
+          </div>
+          <div class="passwordInput">
+            <label>密码 / PASSWORD</label>
+            <div class="input">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-zhucedenglumima1"></use>
+              </svg>
+              <input type="text" value="" maxlength="20" />
+            </div>
+          </div>
+          <div class="phoneNumberInput">
+            <label>手机号 / PHONE</label>
+            <div class="input">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-phone"></use>
+              </svg>
+              <input type="text" value="" maxlength="11" />
+            </div>
+          </div>
+          <div class="rememberAndforget">
+            <Checkbox style="visibility: hidden;" v-model="single">{{
+              rememberText
+            }}</Checkbox>
+            <p style="visibility: hidden;">忘记密码？</p>
+          </div>
+          <div class="siginupInput">
+            <span>
+              <p>注 册</p>
+              <p>SIGN UP</p>
+            </span>
           </div>
         </div>
-        <div class="passwordInput">
-          <label>密码 / PASSWORD</label>
-          <div class="input">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-zhucedenglumima1"></use>
-            </svg>
-            <input type="text" value="" maxlength="20">
-          </div>
-        </div>
-        <div class="phoneNumberInput">
-          <label>手机号 / PHONE</label>
-          <div class="input">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-phone"></use>
-            </svg>
-            <input type="text" value="" maxlength="11">
-          </div>
-        </div>
-        <div class="rememberAndforget">
-          <Checkbox style="visibility: hidden;" v-model="single">{{rememberText}}</Checkbox>
-          <p style="visibility: hidden;">忘记密码？</p>
-        </div>
-        <div class="siginupInput">
-          <span>
-            <p>注   册</p>
-            <p>SIGN UP</p>
-          </span>
-        </div>
-      </div>
-    </row-layout>
+      </row-layout>
+    </div>
   </div>
-</div>
 </template>
 
 <style lang="scss">
@@ -73,7 +75,11 @@ div.signupview_wrap {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient( to right bottom, darken($menuColor, 20%) 50%, $menuColor 50); 
+  background: linear-gradient(
+    to right bottom,
+    darken($menuColor, 20%) 50%,
+    $menuColor 50
+  );
   div.signup_box {
     width: $signupBoxWidth;
     height: $signupBoxHeight;
@@ -302,8 +308,8 @@ export default {
         phonenumber: "123456789"
       };
 
-      res = await this.$http.get("http://127.0.0.1:7001/api/v1/signup", params)
-      console.log(res,'res');
+      res = await this.$http.get("http://127.0.0.1:7001/api/v1/signup", params);
+      console.log(res, "res");
     }
   }
 };

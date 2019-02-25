@@ -61,7 +61,7 @@ div.Footer-wrap {
   margin-top: $distanceHeader + $spancin;
   display: flex;
   flex-direction: column;
-  max-width: $boxWidth;
+  margin: $spancin;
   div.about_me_wrap {
     margin: $spancin;
     display: flex;
@@ -86,7 +86,7 @@ div.Footer-wrap {
       flex-direction: column;
       padding: $spancin;
       transition: all 0.5s ease;
-      flex: 1 1 2rem;
+      flex: 1 1 2.35rem;
       li {
         padding: 0.03rem 0;
         cursor: pointer;
@@ -141,11 +141,11 @@ export default {
     return {
       des: `
 				<h3>ABOUT ME</h3>
-        <p>-实际上08年就开始工作了，但是从事WEB/H5前端开发（不包含UI/UE）只有3年，工作经验的累积让我对很多事情慢慢看开了，对工作以稳重为主，对人和事，公私分明。</p>
-				<p>-我的自学能力非常强，大多数技术都自主学习得来，所以动手能力强。</p>
-				<p>-年纪小的时候不爱学习，现在每天都在学习更新自己的知识库，却感觉时间远远不够。</p>
-				<p>-虽然很早就开始工作了，但也不是一直在IT行业，早期的时候做的是网络工程、计算机维护之类的工作，后来机缘巧合在朋友的带领下进入IT，主要是产品设计，网页设计（UI/UE），后来慢慢发展成WEB/H5前端开发。</p>
-				<p>-从前程无忧出来还自己创过业，我对未来的发展有明确方向，人生高峰低谷都经历过，现在只希望能稳定的职场上发展。</p>
+        <p>实际上08年就开始工作了，但是从事WEB/H5前端开发（不包含UI/UE）只有3年，工作经验的累积让我对很多事情慢慢看开了，对工作以稳重为主，对人和事，公私分明。</p>
+				<p>我的自学能力非常强，大多数技术都自主学习得来，所以动手能力强。</p>
+				<p>年纪小的时候不爱学习，现在每天都在学习更新自己的知识库，却感觉时间远远不够。</p>
+				<p>虽然很早就开始工作了，但也不是一直在IT行业，早期的时候做的是网络工程、计算机维护之类的工作，后来机缘巧合在朋友的带领下进入IT，主要是产品设计，网页设计（UI/UE），后来慢慢发展成WEB/H5前端开发。</p>
+				<p>从前程无忧出来还自己创过业，我对未来的发展有明确方向，人生高峰低谷都经历过，现在只希望能稳定的职场上发展。</p>
 			`,
       copydes: `<p>&copy 2017-2018 lazy-studio.com</p>`,
       ts: [

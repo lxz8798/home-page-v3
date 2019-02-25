@@ -1,14 +1,14 @@
 <template>
-<div class="cssview-wrap">
-<Header :active="active"></Header>
-<div class="cloud-wrap">
-  <ul>
-    <li v-for="(cloud, index) in clouds" :key="index" :class="cloud.class">
-      <img :src="cloud.url" alt="">
-    </li>
-  </ul>
-</div>
-</div>
+  <div class="cssview-wrap">
+    <Header :active="active"></Header>
+    <div class="cloud-wrap">
+      <ul>
+        <li v-for="(cloud, index) in clouds" :key="index" :class="cloud.class">
+          <img :src="cloud.url" alt="" />
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <style lang="scss">
@@ -21,7 +21,7 @@ div.cssview-wrap {
   align-items: center;
   width: $childBaseWidth;
   background: linear-gradient(to bottom, #21468c, #8aaee2);
-  
+
   div.cloud-wrap {
     width: $childBaseWidth - 1vw;
     height: $childBaseHeight;
@@ -102,7 +102,6 @@ div.cssview-wrap {
   div.footer-box-wrap {
     ul {
       li {
-        
         h3 {
           color: lighten($menuColor, 30%) !important;
         }
@@ -119,7 +118,6 @@ div.cssview-wrap {
     }
     ul:hover {
       background: darken(#8aaee2, 5%) !important;
-      
     }
   }
 }

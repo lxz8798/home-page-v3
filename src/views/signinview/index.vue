@@ -1,62 +1,62 @@
 <template>
-<div class="signinview_wrap">
-  <Header :active="active"></Header>
-  <div class="signinview_box_wrap"></div>
-  <div class="signin_box">
-    <row-layout :config="config">
-      <div slot="divL">
-        <img class="bigPic" :src="config.left.img" alt="">
-        <img class="guang1" :src="config.left.guang1" alt="">
-        <img class="guang2" :src="config.left.guang2" alt="">
-        <img class="guang3" :src="config.left.guang3" alt="">
-        <img class="guang4" :src="config.left.guang4" alt="">
-        <img class="guang5" :src="config.left.guang5" alt="">
-        <img class="guang6" :src="config.left.guang6" alt="">
-        <img class="guang7" :src="config.left.guang7" alt="">
-        <img class="guang8" :src="config.left.guang8" alt="">
-        <img class="guang9" :src="config.left.guang9" alt="">
-        <p class="line1"></p>
-        <p class="line2"></p>
-        <p class="line3"></p>
-        <p class="line4"></p>
-        <p class="line5"></p>
-        <p class="line6"></p>
-        <p class="line7"></p>
-        <p class="line8"></p>
-      </div>
-      <div class="input_box" slot="divR">
-        <div class="usernameInput">
-          <label>用户名 / USERNAME</label>
-          <div class="input">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-zhuce1"></use>
-            </svg>
-            <input type="text" value="" maxlength="20">
+  <div class="signinview_wrap">
+    <Header :active="active"></Header>
+    <div class="signinview_box_wrap"></div>
+    <div class="signin_box">
+      <row-layout :config="config">
+        <div slot="divL">
+          <img class="bigPic" :src="config.left.img" alt="" />
+          <img class="guang1" :src="config.left.guang1" alt="" />
+          <img class="guang2" :src="config.left.guang2" alt="" />
+          <img class="guang3" :src="config.left.guang3" alt="" />
+          <img class="guang4" :src="config.left.guang4" alt="" />
+          <img class="guang5" :src="config.left.guang5" alt="" />
+          <img class="guang6" :src="config.left.guang6" alt="" />
+          <img class="guang7" :src="config.left.guang7" alt="" />
+          <img class="guang8" :src="config.left.guang8" alt="" />
+          <img class="guang9" :src="config.left.guang9" alt="" />
+          <p class="line1"></p>
+          <p class="line2"></p>
+          <p class="line3"></p>
+          <p class="line4"></p>
+          <p class="line5"></p>
+          <p class="line6"></p>
+          <p class="line7"></p>
+          <p class="line8"></p>
+        </div>
+        <div class="input_box" slot="divR">
+          <div class="usernameInput">
+            <label>用户名 / USERNAME</label>
+            <div class="input">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-zhuce1"></use>
+              </svg>
+              <input type="text" value="" maxlength="20" />
+            </div>
+          </div>
+          <div class="passwordInput">
+            <label>密码 / PASSWORD</label>
+            <div class="input">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-zhucedenglumima1"></use>
+              </svg>
+              <input type="text" value="" maxlength="20" />
+            </div>
+          </div>
+          <div class="rememberAndforget">
+            <Checkbox v-model="single">{{ rememberText }}</Checkbox>
+            <p>忘记密码？</p>
+          </div>
+          <div class="sigiinpInput">
+            <span>
+              <p>登 录</p>
+              <p>SING IN</p>
+            </span>
           </div>
         </div>
-        <div class="passwordInput">
-          <label>密码 / PASSWORD</label>
-          <div class="input">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-zhucedenglumima1"></use>
-            </svg>
-            <input type="text" value="" maxlength="20">
-          </div>
-        </div>
-        <div class="rememberAndforget">
-          <Checkbox v-model="single">{{rememberText}}</Checkbox>
-          <p>忘记密码？</p>
-        </div>
-        <div class="sigiinpInput">
-          <span>
-            <p>登   录</p>
-            <p>SING IN</p>
-          </span>
-        </div>
-      </div>
-    </row-layout>
+      </row-layout>
+    </div>
   </div>
-</div>
 </template>
 
 <style lang="scss">
@@ -74,8 +74,11 @@ div.signinview_wrap {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(   to right bottom,
-  darken($menuColor, 20%) 50%,    $menuColor 50); 
+  background: linear-gradient(
+    to right bottom,
+    darken($menuColor, 20%) 50%,
+    $menuColor 50
+  );
   div.signin_box {
     width: $signinBoxWidth;
     height: $signinBoxHeight;
@@ -142,37 +145,77 @@ div.signinview_wrap {
           }
         }
         .line1 {
-            z-index: 2;
-            @include translateAnimate(lineAnimate, 8s, 1s);
-            @include polygonSize(3.2rem, 0rem, 0.6rem, adjust-hue($menuColor,310deg));
+          z-index: 2;
+          @include translateAnimate(lineAnimate, 8s, 1s);
+          @include polygonSize(
+            3.2rem,
+            0rem,
+            0.6rem,
+            adjust-hue($menuColor, 310deg)
+          );
         }
         .line2 {
-            @include translateAnimate(lineAnimate, 9s, 3s);
-            @include polygonSize(2rem, 1.4rem, -1.8rem, adjust-hue($menuColor,210deg));
+          @include translateAnimate(lineAnimate, 9s, 3s);
+          @include polygonSize(
+            2rem,
+            1.4rem,
+            -1.8rem,
+            adjust-hue($menuColor, 210deg)
+          );
         }
         .line3 {
-            @include translateAnimate(lineAnimate, 12s, 2s);
-            @include polygonSize(1.3rem, 0.8rem, -0.8rem, adjust-hue($menuColor,160deg));
+          @include translateAnimate(lineAnimate, 12s, 2s);
+          @include polygonSize(
+            1.3rem,
+            0.8rem,
+            -0.8rem,
+            adjust-hue($menuColor, 160deg)
+          );
         }
         .line4 {
-            @include translateAnimate(lineAnimate, 7s, 1s);
-            @include polygonSize(3.5rem, 0.8rem, 0.2rem, adjust-hue($menuColor,70deg));
+          @include translateAnimate(lineAnimate, 7s, 1s);
+          @include polygonSize(
+            3.5rem,
+            0.8rem,
+            0.2rem,
+            adjust-hue($menuColor, 70deg)
+          );
         }
         .line5 {
-            @include translateAnimate(lineAnimate, 10s, 3s);
-            @include polygonSize(1.3rem, 2.1rem, 1.8rem, adjust-hue($menuColor,30deg));
+          @include translateAnimate(lineAnimate, 10s, 3s);
+          @include polygonSize(
+            1.3rem,
+            2.1rem,
+            1.8rem,
+            adjust-hue($menuColor, 30deg)
+          );
         }
         .line6 {
-            @include translateAnimate(lineAnimate, 11s, 1s);
-            @include polygonSize(2.4rem, 0.3rem, -0.3rem, adjust-hue($menuColor,60deg));
+          @include translateAnimate(lineAnimate, 11s, 1s);
+          @include polygonSize(
+            2.4rem,
+            0.3rem,
+            -0.3rem,
+            adjust-hue($menuColor, 60deg)
+          );
         }
         .line7 {
-            @include translateAnimate(lineAnimate, 9s, 2s);
-            @include polygonSize(4.5rem, -0.6rem, -2.8rem, adjust-hue($menuColor,130deg));
+          @include translateAnimate(lineAnimate, 9s, 2s);
+          @include polygonSize(
+            4.5rem,
+            -0.6rem,
+            -2.8rem,
+            adjust-hue($menuColor, 130deg)
+          );
         }
         .line8 {
-            @include translateAnimate(lineAnimate, 8s, 2s);
-            @include polygonSize(1rem, 3.2rem, 1.4rem, adjust-hue($menuColor,230deg));
+          @include translateAnimate(lineAnimate, 8s, 2s);
+          @include polygonSize(
+            1rem,
+            3.2rem,
+            1.4rem,
+            adjust-hue($menuColor, 230deg)
+          );
         }
       }
       div.r {
@@ -351,8 +394,8 @@ export default {
         phonenumber: "123456789"
       };
 
-      res = await this.$http.get("http://127.0.0.1:7001/api/v1/signin", params)
-      console.log(res,'res');
+      res = await this.$http.get("http://127.0.0.1:7001/api/v1/signin", params);
+      console.log(res, "res");
       // .then(res => {
       //   console.log(res, 'res');
       // });

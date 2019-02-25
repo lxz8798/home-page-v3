@@ -5,25 +5,29 @@
         <div>
           <slot name="layoutContent">
             <slot name="layoutLH2"><h2 v-html="jsDes"></h2></slot>
-            <slot name="layoutLP"><p>{{jsDesP1}}</p></slot>
-            <slot name="layoutLDes"><p>{{jsDesP2}}</p></slot>
-            <slot name="layoutLTag"><tag-comp :tagList="tagList"></tag-comp></slot>
+            <slot name="layoutLP"
+              ><p>{{ jsDesP1 }}</p></slot
+            >
+            <slot name="layoutLDes"
+              ><p>{{ jsDesP2 }}</p></slot
+            >
+            <slot name="layoutLTag"
+              ><tag-comp :tagList="tagList"></tag-comp
+            ></slot>
           </slot>
         </div>
       </div>
       <div class="r">
         <slot name="layoutR">
-          <div slot="S3DModule"
-             id="S3DModule"
-             @mouseenter="show = !show">
-          <ul id="ViewF">
-            <li v-for="(item,index) in items"
-                class="list"
-                :key="index">
-              <slot name="layoutRImg"><img :src="item.img" :alt="item.name" /></slot>
-            </li>
-          </ul>
-        </div>
+          <div slot="S3DModule" id="S3DModule" @mouseenter="show = !show">
+            <ul id="ViewF">
+              <li v-for="(item, index) in items" class="list" :key="index">
+                <slot name="layoutRImg"
+                  ><img :src="item.img" :alt="item.name"
+                /></slot>
+              </li>
+            </ul>
+          </div>
         </slot>
       </div>
     </div>
@@ -35,7 +39,7 @@
 $parallaxBoxHeight: 5rem; // 视差盒子高度
 div.layout-wrap {
   transform: translateY(0.3rem);
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,7 +81,7 @@ div.layout-wrap {
 
           li {
             position: absolute;
-            
+
             img {
               width: inherit;
               height: inherit;
@@ -107,7 +111,7 @@ div.layout-wrap {
             height: 0.65rem;
 
             top: 0;
-            left: 1rem;           
+            left: 1rem;
             transform: translate3d(1.5rem, 1.6rem, 8rem);
           }
           li:nth-child(4) {
@@ -115,7 +119,7 @@ div.layout-wrap {
             height: 0.8rem;
 
             top: 0;
-            right: 1rem;           
+            right: 1rem;
             transform: translate3d(-1.4rem, 2.1rem, 6rem);
           }
           li:nth-child(5) {
@@ -123,7 +127,7 @@ div.layout-wrap {
             height: 0.85rem;
 
             top: 0;
-            right: 1rem;           
+            right: 1rem;
             transform: translate3d(-0.5rem, 2.4rem, 4rem);
           }
           li:nth-child(6) {
@@ -131,7 +135,7 @@ div.layout-wrap {
             height: 0.3rem;
 
             top: 0;
-            right: 0;           
+            right: 0;
             transform: translate3d(-0.5rem, 1rem, 2rem);
           }
           li:nth-child(7) {
@@ -153,7 +157,7 @@ div.layout-wrap {
             width: 0.6rem;
             height: 0.5rem;
             top: 0;
-            right: 0; 
+            right: 0;
           }
           li:nth-child(8) {
             transform: translate3d(-3.7rem, 1.35rem, 2rem);
@@ -192,8 +196,10 @@ export default {
   data() {
     return {
       jsDes: `参考国外的大神的资料使用c4d建模制作而成，<br />而后使用JS完成视差交互`,
-      jsDesP1: "建模完成后，通过分层渲染得到单个图片文件，然后使用JS配合css的transform-style: preserve-3d 完成视差效果，制作完成后感觉还过得去。",
-      jsDesP2: "重构的山体的样式，2.0使用position和z-index来定位，现在使用translate3D来定位，使用flex来布局。",
+      jsDesP1:
+        "建模完成后，通过分层渲染得到单个图片文件，然后使用JS配合css的transform-style: preserve-3d 完成视差效果，制作完成后感觉还过得去。",
+      jsDesP2:
+        "重构的山体的样式，2.0使用position和z-index来定位，现在使用translate3D来定位，使用flex来布局。",
       show: true,
       S3DData: [
         {
@@ -274,7 +280,7 @@ export default {
           img: require("../../assets/img/shan/7.png")
         }
       ],
-      tagList:[
+      tagList: [
         {
           color: this.getRandomColor(),
           name: "javascript"
@@ -289,21 +295,31 @@ export default {
   mounted() {
     this.parallax();
   },
-  methods:{
+  methods: {
     parallax() {
-			this.s3ddom = $('#ViewF');
-			$(this.s3ddom).mousemove((event) => {
-				this.cx = Math.ceil(this.s3ddom.width() / 1.2);
-				this.cy = Math.ceil(this.s3ddom.height() / 1.2);
-				this.dx = event.pageX - this.cx;
-				this.dy = event.pageY - this.cy;
-				this.tx = -(this.dy / this.cy);
-				this.ty = -(this.dx / this.cx);
-				this.radius = Math.sqrt(Math.pow(this.tx, 2) + Math.pow(this.ty, 2));
-				this.degree = this.radius * 2;
+      this.s3ddom = $("#ViewF");
+      $(this.s3ddom).mousemove(event => {
+        this.cx = Math.ceil(this.s3ddom.width() / 1.2);
+        this.cy = Math.ceil(this.s3ddom.height() / 1.2);
+        this.dx = event.pageX - this.cx;
+        this.dy = event.pageY - this.cy;
+        this.tx = -(this.dy / this.cy);
+        this.ty = -(this.dx / this.cx);
+        this.radius = Math.sqrt(Math.pow(this.tx, 2) + Math.pow(this.ty, 2));
+        this.degree = this.radius * 2;
 
-				TweenLite.to(this.s3ddom,1,{transform:'rotate3d('+this.tx+','+this.ty+',0,'+this.degree+'deg)',ease:Power4.easeOut});
-			});
+        TweenLite.to(this.s3ddom, 1, {
+          transform:
+            "rotate3d(" +
+            this.tx +
+            "," +
+            this.ty +
+            ",0," +
+            this.degree +
+            "deg)",
+          ease: Power4.easeOut
+        });
+      });
     }
   }
 };
