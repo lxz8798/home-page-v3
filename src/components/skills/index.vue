@@ -51,7 +51,7 @@ export default {
 <style lang="scss">
 @import "../../assets/base/base";
 div.skills_box_wrap {
-  flex: 1 1 4rem;
+  flex: 1 1 5.8rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -59,15 +59,17 @@ div.skills_box_wrap {
   flex-wrap: wrap;
   word-break: break-all;
   padding: $spancin;
-  margin-bottom: $spancin;
+  margin: $spancin;
   transition: all 0.5s ease;
+  border-radius: 0.05rem;
+  background: white;
   position: relative;
   cursor: pointer;
   div.mask_wrap {
     transition: all 0.5s ease;
     width: 100%;
     height: 50%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1));
+    background: linear-gradient(to bottom,rgba(0, 0, 0, 0),rgba(255, 255, 255, 1));
     position: absolute;
     bottom: 0;
   }
@@ -92,99 +94,38 @@ div.skills_box_wrap {
     flex-direction: column;
     justify-content: center;
     h2 {
-      height: 0.55rem;
-      line-height: 0.55rem;
+      height: 0.4rem;
+      line-height: 0.4rem;
       margin-top: $spancin;
       color: lighten($fontColor, 15%);
       transition: all 0.5s ease;
     }
   }
   span.skills_des {
-    height: 1.4rem;
+    height: 1rem;
     line-height: 180%;
     margin-top: $spancin;
     font-size: 0.12rem;
   }
 }
 div.skills_box_wrap:hover {
-  background: lighten($fontColor, 35%);
   div.mask_wrap {
     opacity: 0;
     overflow: hidden;
   }
-  div.skills_icon {
-    svg {
-      fill: $menuColor;
-    }
-  }
-  div.skills_rage {
-    h2 {
-      color: $menuColor;
-    }
-  }
 }
-div.skills_box_wrap:nth-child(2):hover {
-  background: lighten($fontColor, 35%);
-  div.skills_icon {
-    svg {
-      fill: adjust-hue($menuColor, 60deg);
+@for $i from 1 through 6 {
+  div.skills_box_wrap:nth-child(#{$i}):hover {
+    background: lighten($fontColor, 45%);
+    div.skills_icon {
+      svg {
+        fill: adjust-hue($menuColor, 65deg * $i);
+      }
     }
-  }
-  div.skills_rage {
-    h2 {
-      color: adjust-hue($menuColor, 60deg);
-    }
-  }
-}
-div.skills_box_wrap:nth-child(3):hover {
-  background: lighten($fontColor, 35%);
-  div.skills_icon {
-    svg {
-      fill: adjust-hue($menuColor, 120deg);
-    }
-  }
-  div.skills_rage {
-    h2 {
-      color: adjust-hue($menuColor, 120deg);
-    }
-  }
-}
-div.skills_box_wrap:nth-child(4):hover {
-  background: lighten($fontColor, 35%);
-  div.skills_icon {
-    svg {
-      fill: adjust-hue($menuColor, 160deg);
-    }
-  }
-  div.skills_rage {
-    h2 {
-      color: adjust-hue($menuColor, 160deg);
-    }
-  }
-}
-div.skills_box_wrap:nth-child(5):hover {
-  background: lighten($fontColor, 35%);
-  div.skills_icon {
-    svg {
-      fill: adjust-hue($menuColor, 190deg);
-    }
-  }
-  div.skills_rage {
-    h2 {
-      color: adjust-hue($menuColor, 190deg);
-    }
-  }
-}
-div.skills_box_wrap:nth-child(6):hover {
-  background: lighten($fontColor, 35%);
-  div.skills_icon {
-    svg {
-      fill: adjust-hue($menuColor, 20deg);
-    }
-  }
-  div.skills_rage {
-    h2 {
-      color: adjust-hue($menuColor, 20deg);
+    div.skills_rage {
+      h2 {
+        color: adjust-hue($menuColor, 65deg * $i);
+      }
     }
   }
 }

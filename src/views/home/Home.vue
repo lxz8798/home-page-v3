@@ -2,6 +2,7 @@
   <div class="first_screen_wrap">
     <!-- 公共头部 -->
     <Header :active="active"></Header>
+    <!-- 第一屏内容 -->
     <div class="first_box_wrap" :class="switchImg ? 'img1' : 'img2'">
       <div :class="switchImg ? 'offsetNeg' : 'offsetPos'">
         <h1>懒虫的窝</h1>
@@ -12,6 +13,8 @@
         <li :class="switchImg ? 'ifOpacityB' : 'ifOpacityA'"></li>
       </ul>
     </div>
+    <!-- 第二屏内容 -->
+    <div style="height: 100vh;"></div>
     <div class="second_box_wrap">
       <div class="skills_wrap">
         <!-- JS技能 -->
@@ -47,7 +50,7 @@
         <!-- VUE/EGG技能 -->
         <skills-layout>
           <use xlink:href="#icon-vue" slot="skillsIcon"></use>
-          <h2 slot="skillsH2" style="line-height: 160%;">
+          <h2 slot="skillsH2">
             {{ vueFamily.title }}
           </h2>
           <Rate
@@ -79,7 +82,7 @@
         <!-- 设计技能 -->
         <skills-layout>
           <use xlink:href="#icon-design" slot="skillsIcon"></use>
-          <h2 slot="skillsH2" style="line-height: 160%;">{{ Design.title }}</h2>
+          <h2 slot="skillsH2">{{ Design.title }}</h2>
           <Rate
             show-text
             allow-half
@@ -110,7 +113,14 @@
         </skills-layout>
       </div>
     </div>
+    <!-- 公共底部 -->
     <Footer></Footer>
+    <!-- 背景层 -->
+    <!-- <div class="bg_wrap">
+      <div class="bg1"></div>
+      <div class="bg2"></div>
+      <div class="bg3"></div>
+    </div> -->
   </div>
 </template>
 
@@ -165,7 +175,7 @@ export default {
     };
   },
   mounted() {
-    this.switchImgFn();
+    // this.switchImgFn();
     this.$Loading.finish();
   },
   methods: {
@@ -180,6 +190,35 @@ export default {
 
 <style lang="scss">
 @import "../../assets/base/base";
+div.bg_wrap {
+  width: 100%;
+  height: 200vh;
+  position: absolute;
+  top: 63%;
+  left: 0%;
+  overflow: hidden;
+
+  .bg1,
+  .bg2,
+  .bg3 {
+    position: absolute;
+    width: inherit;
+  }
+  .bg1 {
+    height: 60vh;
+    clip-path: polygon(100% 21%, 0 68%, 0 100%);
+    transform: scale(5, 5);
+    background: darken($menuColor, 20%);
+    z-index: -2;
+  }
+  .bg2 {
+    height: 60vh;
+    clip-path: polygon(0 7%, 0 56%, 81% 100%);
+    transform: scale(5, 5);
+    z-index: -1;
+    background: $menuColor;
+  }
+}
 div.second_box_wrap {
   width: $childBaseWidth;
   display: flex;
@@ -188,7 +227,6 @@ div.second_box_wrap {
   margin-top: 0.5rem;
   div.skills_wrap {
     width: $boxWidth;
-    height: 6.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -224,13 +262,17 @@ div.first_screen_wrap {
     }
   }
   div.first_box_wrap {
-    width: $childBaseWidth;
+    width: 100%;
     height: $childBaseHeight;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
   }
   div.offsetPos,
   div.offsetNeg {
