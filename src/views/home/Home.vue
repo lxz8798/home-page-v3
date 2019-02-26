@@ -116,11 +116,11 @@
     <!-- 公共底部 -->
     <Footer></Footer>
     <!-- 背景层 -->
-    <!-- <div class="bg_wrap">
-      <div class="bg1"></div>
-      <div class="bg2"></div>
-      <div class="bg3"></div>
-    </div> -->
+    <div class="bg_wrap">
+      <div class="bg1">1111111</div>
+      <div class="bg2">22222222</div>
+      <!-- <div class="bg3">333333</div> -->
+    </div>
   </div>
 </template>
 
@@ -191,32 +191,29 @@ export default {
 <style lang="scss">
 @import "../../assets/base/base";
 div.bg_wrap {
-  width: 100%;
-  height: 200vh;
+  width: 2rem;
+  height: 4rem;
   position: absolute;
-  top: 63%;
-  left: 0%;
+  top: 30%;
+  left: 40%;
   overflow: hidden;
+  border: 1px solid red;
+  background: white;
 
   .bg1,
   .bg2,
   .bg3 {
     position: absolute;
-    width: inherit;
+    width: 100%;
   }
   .bg1 {
-    height: 60vh;
-    clip-path: polygon(100% 21%, 0 68%, 0 100%);
-    transform: scale(5, 5);
-    background: darken($menuColor, 20%);
-    z-index: -2;
+    height: 1rem;
+    background: $fontColor;
   }
   .bg2 {
-    height: 60vh;
-    clip-path: polygon(0 7%, 0 56%, 81% 100%);
-    transform: scale(5, 5);
-    z-index: -1;
-    background: $menuColor;
+    height: 0.3rem;
+    background: #000;
+    transform: skewY(-30deg);
   }
 }
 div.second_box_wrap {
