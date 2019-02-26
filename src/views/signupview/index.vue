@@ -256,7 +256,7 @@ div.signupview_wrap {
     width: inherit;
     height: inherit;
     mix-blend-mode: overlay;
-    background: url("http://pmek5nu6x.bkt.clouddn.com/bg.jpg") repeat 0 0;
+    background: url("http://pmek5nu6x.bkt.clouddn.com/bg.webp") repeat 0 0;
     background-size: cover;
     opacity: 0.4;
   }

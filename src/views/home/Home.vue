@@ -175,7 +175,7 @@ export default {
     };
   },
   mounted() {
-    // this.switchImgFn();
+    this.switchImgFn();
     this.$Loading.finish();
   },
   methods: {

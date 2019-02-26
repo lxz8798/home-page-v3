@@ -35,8 +35,8 @@ div.cssview-wrap {
         position: absolute;
         opacity: 0;
         img {
-          width: inherit;
-          height: inherit;
+          width: 100%;
+          height: 100%;
         }
       }
       li.animate1 {
@@ -161,12 +161,12 @@ export default {
           class: "animate6"
         },
         {
-          url: "http://pmek5nu6x.bkt.clouddn.com/shan.png",
+          url: "http://pmek5nu6x.bkt.clouddn.com/shan.webp",
           name: "cloud7",
           class: "bounceInRight animated animate7"
         },
         {
-          url: "http://pmek5nu6x.bkt.clouddn.com/shan3.png",
+          url: "http://pmek5nu6x.bkt.clouddn.com/shan3.webp",
           name: "cloud8",
           class: "bounceInLeft animated animate8"
         },
@@ -176,7 +176,7 @@ export default {
           class: "animate9"
         },
         {
-          url: "http://pmek5nu6x.bkt.clouddn.com/jianghu.png",
+          url: "http://pmek5nu6x.bkt.clouddn.com/jianghu.webp",
           name: "jianghu",
           class: "flipInX animated animate10"
         },

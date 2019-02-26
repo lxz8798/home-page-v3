@@ -9,7 +9,6 @@ const PAGE_PATH = './src/pages';  // 注意是./ 而不是../ 这可能和commen
 module.exports = {
     getPages: (v) => {
         if (v == 'spa') {
-           
             index = {
                 // page 的入口
                 entry: 'src/main.js',

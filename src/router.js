@@ -33,15 +33,15 @@ const router = new VueRouter({
         keepAlive: false // 是否缓存
       }
     },
-    {
-      path: "/example",
-      name: 'example',
-      component: getComponent("example"),
-      meta: {
-        auth: true,
-        keepAlive: false // 是否缓存
-      }
-    },
+    // {
+    //   path: "/example",
+    //   name: 'example',
+    //   component: getComponent("example"),
+    //   meta: {
+    //     auth: true,
+    //     keepAlive: false // 是否缓存
+    //   }
+    // },
     {
       path: "/jsview",
       name: 'jsview',
@@ -114,18 +114,18 @@ const router = new VueRouter({
         keepAlive: false // 是否缓存
       }
     },
-    {
-      path: "/web",
-      beforeEnter(to, from, next) {
-        window.location = "/web.html"
-      }
-    },
-    {
-      path: "/home",
-      beforeEnter(to, from, next) {
-        window.location = "/home.html"
-      }
-    }
+    // {
+    //   path: "/web",
+    //   beforeEnter(to, from, next) {
+    //     window.location = "/web.html"
+    //   }
+    // },
+    // {
+    //   path: "/home",
+    //   beforeEnter(to, from, next) {
+    //     window.location = "/home.html"
+    //   }
+    // }
   ]
 });
 
