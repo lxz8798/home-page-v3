@@ -17,6 +17,12 @@ div.jsview-wrap {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
+  width: $childBaseWidth;
+
+  div.jsview-box-wrap {
+    width: $boxWidth
+  }
 }
 </style>
 

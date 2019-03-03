@@ -1,13 +1,13 @@
 <!-- header 公共组件 -->
 <template>
   <!-- header 公共组件 -->
-  <div class="Header-wrap">
+  <header class="Header-wrap">
     <ul>
       <li v-for="(item,index) in menuList" :key="index" :class="{'activeHover':index == active}">
         <router-link :to="item.link">{{item.name}}</router-link>
       </li>
     </ul>
-  </div>
+  </header>
 </template>
 
 <style lang="scss">
@@ -15,9 +15,9 @@
 @import "../../assets/base/color";
 $HeaderHeight: 0.6rem;
 
-div.Header-wrap {
+header.Header-wrap {
   width: $childBaseWidth;
-  background: rgba(240, 240, 240, 0.3);
+  background: rgba(240, 240, 240, 0.4);
 
   display: flex;
   justify-content: center;

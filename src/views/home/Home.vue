@@ -1,21 +1,18 @@
 <template>
-  <div class="first_screen_wrap">
+  <section class="home_screen_wrap">
     <!-- 公共头部 -->
     <Header :active="active"></Header>
     <!-- 第一屏内容 -->
-    <div class="first_box_wrap" :class="switchImg ? 'img1' : 'img2'">
-      <div :class="switchImg ? 'offsetNeg' : 'offsetPos'">
-        <h1>懒虫的窝</h1>
-        <p>LAZY-STUDIO.COM</p>
-      </div>
-      <ul class="banner_button_ul">
-        <li :class="switchImg ? 'ifOpacityA' : 'ifOpacityB'"></li>
-        <li :class="switchImg ? 'ifOpacityB' : 'ifOpacityA'"></li>
-      </ul>
-    </div>
+    <!-- <div class="first_box_wrap" :class="switchImg ? 'img1' : 'img2'"> -->
+    <section class="first_box_wrap">
+      <video id="homeVideo" autoplay muted loop poster="http://pmek5nu6x.bkt.clouddn.com/banner2.webp">
+        <source src="//pmek5nu6x.bkt.clouddn.com/video.mp4" type="video/mp4">
+        您的浏览器不支持video标签，建议更新浏览器版本
+      </video>
+      
+    </section>
     <!-- 第二屏内容 -->
-    <div style="height: 100vh;"></div>
-    <div class="second_box_wrap">
+    <section class="second_box_wrap">
       <div class="skills_wrap">
         <!-- JS技能 -->
         <skills-layout>
@@ -112,20 +109,21 @@
           <p slot="skillsDes">{{ Service.des }}</p>
         </skills-layout>
       </div>
-    </div>
+    </section>
     <!-- 公共底部 -->
     <Footer></Footer>
     <!-- 背景层 -->
-    <div class="bg_wrap">
+    <!-- <div class="bg_wrap">
       <div class="bg1">1111111</div>
       <div class="bg2">22222222</div>
-      <!-- <div class="bg3">333333</div> -->
-    </div>
-  </div>
+      <div class="bg3">333333</div>
+    </div> -->
+  </section>
 </template>
 
 <script>
 import { Rate } from "iview";
+import { setTimeout } from 'timers';
 export default {
   components: { Rate },
   name: "home",
@@ -179,6 +177,18 @@ export default {
     this.$Loading.finish();
   },
   methods: {
+    /**
+     * @Description: 打开声音
+     * @Author: 李啸竹
+     */
+    openSounds() {
+      let $dom = document.getElementById("homeVideo");
+      $dom.muted = false;
+    },
+    /**
+     * @Description: 首频切换，换成video暂时没用
+     * @Author: 李啸竹
+     */
     switchImgFn() {
       setInterval(() => {
         this.switchImg = !this.switchImg;
@@ -193,30 +203,11 @@ export default {
 div.bg_wrap {
   width: 2rem;
   height: 4rem;
-  position: absolute;
-  top: 30%;
-  left: 40%;
   overflow: hidden;
   border: 1px solid red;
   background: white;
-
-  .bg1,
-  .bg2,
-  .bg3 {
-    position: absolute;
-    width: 100%;
-  }
-  .bg1 {
-    height: 1rem;
-    background: $fontColor;
-  }
-  .bg2 {
-    height: 0.3rem;
-    background: #000;
-    transform: skewY(-30deg);
-  }
 }
-div.second_box_wrap {
+.second_box_wrap {
   width: $childBaseWidth;
   display: flex;
   justify-content: center;
@@ -230,12 +221,27 @@ div.second_box_wrap {
     flex-wrap: wrap;
   }
 }
-div.first_screen_wrap {
+section.home_screen_wrap {
   width: $childBaseWidth;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: auto;
+  section.first_box_wrap {
+    width: 100%;
+    height: $childBaseHeight;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      // pointer-events: none;
+    }
+  }
   ul.banner_button_ul {
     display: inline-flex;
     flex-direction: row;
@@ -257,19 +263,6 @@ div.first_screen_wrap {
       margin-right: $spancin;
       cursor: pointer;
     }
-  }
-  div.first_box_wrap {
-    width: 100%;
-    height: $childBaseHeight;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -10;
   }
   div.offsetPos,
   div.offsetNeg {

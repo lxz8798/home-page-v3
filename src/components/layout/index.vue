@@ -43,8 +43,7 @@ div.layout-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  max-width: $boxWidth;
+  width: 100%;
   height: 6.5rem;
   margin: $spancin;
   div.layout-box-wrap {

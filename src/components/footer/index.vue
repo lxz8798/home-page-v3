@@ -1,8 +1,7 @@
 <template>
   <!-- footer 公共组件 -->
-  <div class="Footer-wrap">
-    <div class="about_me_wrap"
-         v-html="des"></div>
+  <footer class="Footer-wrap">
+    <div class="about_me_wrap" v-html="des"></div>
     <div class="footer-box-wrap">
       <ul>
         <li>
@@ -52,16 +51,22 @@
         </li>
       </ul>
     </div>
-  </div>
+  </footer>
 </template>
 
 <style lang="scss">
 @import "../../assets/base/base";
-div.Footer-wrap {
+footer.Footer-wrap {
+  width: $childBaseWidth;
   margin-top: $distanceHeader + $spancin;
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: $spancin;
+  div.about_me_wrap,
+  div.footer-box-wrap {
+    width: $boxWidth;
+  }
   div.about_me_wrap {
     margin: $spancin;
     display: flex;
@@ -80,7 +85,6 @@ div.Footer-wrap {
   div.footer-box-wrap {
     display: flex;
     flex-wrap: wrap;
-    max-width: $boxWidth;
     ul {
       display: flex;
       flex-direction: column;
