@@ -21,7 +21,7 @@ div.jsview-wrap {
   width: $childBaseWidth;
 
   div.jsview-box-wrap {
-    width: $boxWidth
+    width: $boxWidth;
   }
 }
 </style>

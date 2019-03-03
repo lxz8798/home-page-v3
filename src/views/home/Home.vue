@@ -9,7 +9,21 @@
         <source src="//pmek5nu6x.bkt.clouddn.com/video.mp4" type="video/mp4">
         您的浏览器不支持video标签，建议更新浏览器版本
       </video>
-      
+      <article class="video_des">
+        <!-- <h1 class="fadeInLeft animated">懒虫的窝</h1> -->
+        <h1 class="noshdow fadeInLeft animated">懒虫的窝</h1>
+        <p class="fadeInLeft animated">HTTP://V3.LAZY-STUDIO.COM</p>
+        <p class="fadeInRight animated">MORE VERSION: V1 / V2</p>
+        <p class="fadeInLeft animated">还有更多项目请看work视图，过段时间才能放链接。。</p>
+        <strong class="fadeInRight animated">主页内容不断填充ing...每天更新一点点。</strong>
+      </article>
+      <div class="openSounds loader39 loader" @click="openSounds()">
+        打开声音
+        <div class="loader-39">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="polygon fadeInRight animated"></div>
     </section>
     <!-- 第二屏内容 -->
     <section class="second_box_wrap">
@@ -123,7 +137,6 @@
 
 <script>
 import { Rate } from "iview";
-import { setTimeout } from 'timers';
 export default {
   components: { Rate },
   name: "home",
@@ -239,7 +252,61 @@ section.home_screen_wrap {
       object-fit: cover;
       width: 100%;
       height: 100%;
-      // pointer-events: none;
+      pointer-events: none;
+    }
+    .polygon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 110vh;
+      background:white;
+      clip-path: polygon(81% 0, 100% 0%, 100% 100%, 48% 100%);
+    }
+    .openSounds {
+      width: 0.5rem;
+      height: 0.4rem;
+      position: absolute;
+      bottom: $spancin - 0.5rem;
+      left: $spancin;
+      z-index: 1;
+      cursor: pointer;
+      color: white;
+    }
+    .video_des {
+      position: relative;
+      z-index: 1;
+      right: -5rem;
+      h1 {
+        padding: 0;
+        margin: 0;
+        font-size: 0.45rem;
+        color: transparent;
+        text-shadow: 0 0 15px $fontColor;
+        mix-blend-mode: overlay;
+      }
+      h1.noshdow {
+        color: $fontColor;
+        text-shadow: none;
+        animation-delay: 0.5s;
+      }
+      p,
+      strong {
+        line-height: 240%;
+      }
+      p:nth-child(1) {
+        animation-delay: 0.5s;
+      }
+      p:nth-child(2) {
+        animation-delay: 0.5s;
+      }
+      p:nth-child(3) {
+        animation-delay: 0.5s;
+      }
+      strong {
+        font-size: 0.16rem;
+        animation-delay: 1s;
+      }
     }
   }
   ul.banner_button_ul {
