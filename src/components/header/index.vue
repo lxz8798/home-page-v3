@@ -1,20 +1,31 @@
-<!-- header 公共组件 -->
 <template>
   <!-- header 公共组件 -->
-  <header class="Header-wrap">
+  <header class="Header-wrap" :class="scrollHidden ? 'displayTop' : 'hiddenTop'">
     <ul>
       <li v-for="(item,index) in menuList" :key="index" :class="{'activeHover':index == active}">
         <router-link :to="item.link">{{item.name}}</router-link>
       </li>
     </ul>
   </header>
+  <!-- <header v-else>
+    <ul>
+      <li v-for="(item,index) in menuList" :key="index" :class="{'activeHover':index == active}">
+        <router-link :to="item.link">{{item.name}}</router-link>
+      </li>
+    </ul>
+  </header> -->
 </template>
 
 <style lang="scss">
 @import "../../assets/base/base";
 @import "../../assets/base/color";
 $HeaderHeight: 0.6rem;
-
+.hiddenTop {
+  top: -100% !important;
+}
+.displayTop {
+  top: 0 !important;
+}
 header.Header-wrap {
   width: $childBaseWidth;
   background: rgba(240, 240, 240, 0.4);
@@ -27,6 +38,8 @@ header.Header-wrap {
   top: 0;
   left: 0;
   z-index: 99;
+  transition: all 0.5s ease;
+  
   ul {
     width: $boxWidth;
     display: inline-flex;
@@ -86,6 +99,7 @@ export default {
     return {
       prev: "",
       next: "",
+      scrollHidden: true,
       menuList: [
         {
           name: "LAZY-STUDIO.COM",
@@ -134,6 +148,22 @@ export default {
         }
       ]
     };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      let scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      if (scrollTop > 500) {
+        this.scrollHidden = false;
+      } else if (scrollTop < 500 || scrollTop == 0) {
+        this.scrollHidden = true;
+      }
+    }
   }
 };
 </script>

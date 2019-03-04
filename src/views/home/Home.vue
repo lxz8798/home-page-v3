@@ -4,7 +4,7 @@
     <Header :active="active"></Header>
     <!-- 第一屏内容 -->
     <!-- <div class="first_box_wrap" :class="switchImg ? 'img1' : 'img2'"> -->
-    <section class="first_box_wrap">
+    <section class="first_box_wrap" ref="firstBox">
       <video id="homeVideo" autoplay muted loop poster="http://pmek5nu6x.bkt.clouddn.com/banner2.webp">
         <source src="//pmek5nu6x.bkt.clouddn.com/video.mp4" type="video/mp4">
         您的浏览器不支持video标签，建议更新浏览器版本
@@ -217,7 +217,6 @@ div.bg_wrap {
   width: 2rem;
   height: 4rem;
   overflow: hidden;
-  border: 1px solid red;
   background: white;
 }
 .second_box_wrap {
@@ -225,7 +224,6 @@ div.bg_wrap {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 0.5rem;
   div.skills_wrap {
     width: $boxWidth;
     display: flex;
@@ -236,10 +234,11 @@ div.bg_wrap {
 }
 section.home_screen_wrap {
   width: $childBaseWidth;
-  height: auto;
   section.first_box_wrap {
     width: 100%;
-    height: $childBaseHeight;
+    height: $childBaseHeight + 6vh;
+    min-height: $childBaseHeight;
+    max-height: $childBaseHeight + 6vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -251,7 +250,8 @@ section.home_screen_wrap {
       left: 0;
       object-fit: cover;
       width: 100%;
-      height: 100%;
+      min-height: 100%;
+      max-height: 100%;
       pointer-events: none;
     }
     .polygon {
@@ -259,8 +259,8 @@ section.home_screen_wrap {
       top: 0;
       right: 0;
       width: 100%;
-      height: 110vh;
-      background:white;
+      height: inherit;
+      background: white;
       clip-path: polygon(81% 0, 100% 0%, 100% 100%, 48% 100%);
     }
     .openSounds {
@@ -274,9 +274,13 @@ section.home_screen_wrap {
       color: white;
     }
     .video_des {
-      position: relative;
+      position: absolute;
+      top: 35%;
+      right: 1.5rem;
+      width: 3.2rem;
+      word-break: break-all;
       z-index: 1;
-      right: -5rem;
+      // transform: translateX(180%);
       h1 {
         padding: 0;
         margin: 0;
