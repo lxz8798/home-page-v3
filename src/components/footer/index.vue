@@ -57,7 +57,7 @@
 <style lang="scss">
 @import "../../assets/base/base";
 footer.Footer-wrap {
-  width: $childBaseWidth;
+  width: $boxWidth;
   margin-top: $distanceHeader + $spancin;
   display: flex;
   flex-direction: column;
@@ -65,7 +65,7 @@ footer.Footer-wrap {
   margin: $spancin;
   div.about_me_wrap,
   div.footer-box-wrap {
-    width: $boxWidth;
+    width: 100%;
   }
   div.about_me_wrap {
     margin: $spancin;
