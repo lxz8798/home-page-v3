@@ -234,6 +234,10 @@ div.bg_wrap {
 }
 section.home_screen_wrap {
   width: $childBaseWidth;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   section.first_box_wrap {
     width: 100%;
     height: $childBaseHeight + 6vh;
