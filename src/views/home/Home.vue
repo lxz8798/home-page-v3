@@ -17,12 +17,16 @@
         <p class="fadeInLeft animated">还有更多项目请看work视图，过段时间才能放链接。。</p>
         <strong class="fadeInRight animated">主页内容不断填充ing...每天更新一点点。</strong>
       </article>
-      <div class="openSounds loader39 loader" @click="openSounds()">
+      <!-- <div class="openSounds loader21" @click="openSounds()">
         打开声音
-        <div class="loader-39">
-          <span></span><span></span><span></span><span></span><span></span>
+        <div class="loader-21">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-      </div>
+      </div> -->
       <div class="polygon fadeInRight animated"></div>
     </section>
     <!-- 第二屏内容 -->
@@ -132,19 +136,24 @@
       <div class="bg2">22222222</div>
       <div class="bg3">333333</div>
     </div> -->
+    <!-- 模态框 -->
+    <Modal v-model="loading">
+
+    </Modal>
   </section>
 </template>
-
 <script>
 import { Rate } from "iview";
+import { Modal } from "iview";
 export default {
-  components: { Rate },
+  components: { Rate, Modal },
   name: "home",
   data() {
     return {
       active: 0,
       imgLen: 2,
       itemLen: 4,
+      loading: false,
       Javascript: {
         title: "JAVASCRIPT / jQUERY / ZEPTO",
         valueCustomText: 4.7,
@@ -213,6 +222,9 @@ export default {
 
 <style lang="scss">
 @import "../../assets/base/base";
+.ivu-modal {
+  display: none;
+}
 div.bg_wrap {
   width: 2rem;
   height: 4rem;

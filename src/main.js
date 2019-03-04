@@ -11,6 +11,7 @@ import store from "./store/index";
 import _ from "lodash";
 import fly from "./http";
 import normalize from "normalize.css";
+import loading from "./assets/loading.css";
 import global from "./utils/global";
 import api from "./api/api";
 import regCopm from "./utils/regComponents";
@@ -18,6 +19,7 @@ import cryptoJS from "crypto-js";
 
 Vue.use(_);
 Vue.use(normalize);
+Vue.use(loading);
 Vue.use(global);
 Vue.use(api);
 Vue.use(fly);
