@@ -24,12 +24,13 @@ $liWAndH: 2.4rem;
 div.inscription-wrap {
   display: flex;
   justify-content: center;
-  width: $childBaseWidth - 5vw;
+  width: inherit;
   overflow: hidden;
+  padding: $spancin;
   div.inscription-box-wrap {
     display: flex;
     flex-direction: column;
-    width: $boxWidth;
+    width: inherit;
     div.inscription-title {
       display: flex;
       flex-direction: row;

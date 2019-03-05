@@ -13,15 +13,17 @@
 <style lang="scss">
 @import "../../assets/base/base";
 div.jsview-wrap {
+  width: $childBaseWidth;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
-  width: $childBaseWidth;
-
   div.jsview-box-wrap {
     width: $boxWidth;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 }
 </style>

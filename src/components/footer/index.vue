@@ -1,138 +1,150 @@
 <template>
   <!-- footer 公共组件 -->
-  <footer class="Footer-wrap">
-    <div class="about_me_wrap" v-html="des"></div>
-    <div class="footer-box-wrap">
-      <ul>
-        <li>
-          <h3>MY SKILLS.</h3>
-        </li>
-        <li v-for="(item, index) in ts"
-            :key="index">{{item.text}}</li>
-      </ul>
-      <ul>
-        <li>
-          <h3>MYHOME CONTENT.</h3>
-        </li>
-        <li v-for="(item, index) in temp"
-            :key="index">{{item.text}}</li>
-      </ul>
-      <ul>
-        <li>
-          <h3>MATERIAL SITE.</h3>
-        </li>
-        <li v-for="(item, index) in ls"
-            :key="index">{{item.text}}</li>
-      </ul>
-      <ul>
-        <li>
-          <h3>GOOD TOOL.</h3>
-        </li>
-        <li v-for="(item, index) in ct"
-            :key="index">{{item.text}}</li>
-      </ul>
-      <ul>
-        <li>
-          <h3>INFORMATION.</h3>
-        </li>
-        <li v-html="copydes">
-        </li>
-        <li class="iconBox iconfont">
-          <svg class="qq-icon"
-               aria-hidden="true">
-            <use xlink:href="#icon-qq1-copy"></use>
-          </svg>
-          <svg class="wx-icon">
-            <use xlink:href="#icon-weixin-copy"></use>
-          </svg>
-          <svg class="mail-icon">
-            <use xlink:href="#icon-qunfengyouxiang"></use>
-          </svg>
-        </li>
-      </ul>
+  <footer class="Footer_wrap">
+    <div class="Footer_wrap_box">
+      <div class="about_me_wrap" v-html="des"></div>
+        <div class="footer_box_wrap">
+          <ul>
+            <li>
+              <h3>MY SKILLS.</h3>
+            </li>
+            <li v-for="(item, index) in ts"
+                :key="index">{{item.text}}</li>
+          </ul>
+          <ul>
+            <li>
+              <h3>MYHOME CONTENT.</h3>
+            </li>
+            <li v-for="(item, index) in temp"
+                :key="index">{{item.text}}</li>
+          </ul>
+          <ul>
+            <li>
+              <h3>MATERIAL SITE.</h3>
+            </li>
+            <li v-for="(item, index) in ls"
+                :key="index">{{item.text}}</li>
+          </ul>
+          <ul>
+            <li>
+              <h3>GOOD TOOL.</h3>
+            </li>
+            <li v-for="(item, index) in ct"
+                :key="index">{{item.text}}</li>
+          </ul>
+          <ul>
+            <li>
+              <h3>INFORMATION.</h3>
+            </li>
+            <li v-html="copydes">
+            </li>
+            <li class="iconBox iconfont">
+              <svg class="qq-icon"
+                  aria-hidden="true">
+                <use xlink:href="#icon-qq1-copy"></use>
+              </svg>
+              <svg class="wx-icon">
+                <use xlink:href="#icon-weixin-copy"></use>
+              </svg>
+              <svg class="mail-icon">
+                <use xlink:href="#icon-qunfengyouxiang"></use>
+              </svg>
+            </li>
+          </ul>
+        </div>
     </div>
   </footer>
 </template>
 
 <style lang="scss">
 @import "../../assets/base/base";
-footer.Footer-wrap {
-  width: $boxWidth;
+footer.Footer_wrap {
+  width: $childBaseWidth;
   margin-top: $distanceHeader + $spancin;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: $spancin;
-  div.about_me_wrap,
-  div.footer-box-wrap {
-    width: 100%;
-  }
-  div.about_me_wrap {
-    margin: $spancin;
+  div.Footer_wrap_box { 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    word-break: break-all;
-    p,
-    h3 {
-      margin-bottom: $spancin;
-      text-align: left;
-    }
-    h3 {
-      font-size: 0.5rem;
-    }
-  }
-  div.footer-box-wrap {
-    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    ul {
+    
+    div.about_me_wrap,
+    div.footer_box_wrap {
+      width: 100%;
+      padding: $spancin;
+    }
+    div.about_me_wrap {
+      padding: $spancin * 2;
+      padding-bottom: 0;
       display: flex;
       flex-direction: column;
-      padding: $spancin;
-      transition: all 0.5s ease;
-      flex: 1 1 2.35rem;
-      li {
-        padding: 0.03rem 0;
-        cursor: pointer;
-        transition: all 0.5s ease;
-        h3 {
-          font-size: 0.15rem;
-        }
-        p {
-          margin-bottom: $spancin;
-        }
+      justify-content: flex-start;
+      word-break: break-all;
+      p,
+      h3 {
+        margin-bottom: $spancin;
+        text-align: left;
       }
-      li:hover {
-        color: $menuColor;
-      }
-      li.iconBox {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        margin-top: 0.5rem;
-        svg {
-          width: 0.3rem;
-          height: 0.3rem;
-          margin-right: 0.1rem;
-          transition: all 0.3s ease;
-        }
-        svg:nth-child(1) {
-          fill: #7e0ce8;
-        }
-        svg:nth-child(2) {
-          fill: #e8840c;
-        }
-        svg:nth-child(3) {
-          fill: #ff0000;
-        }
-        svg:hover {
-          fill: $menuColor;
-        }
+      h3 {
+        font-size: 0.5rem;
       }
     }
-    ul:hover {
-      background: lighten($fontColor, 35%);
+    div.footer_box_wrap {
+      display: flex;
+      flex-wrap: wrap;
+      ul {
+        display: flex;
+        flex-direction: column;
+        padding: $spancin;
+        transition: all 0.5s ease;
+        flex: 1 1 2.35rem;
+        li {
+          padding: 0.03rem 0;
+          cursor: pointer;
+          transition: all 0.5s ease;
+          h3 {
+            font-size: 0.15rem;
+          }
+          p {
+            margin-bottom: $spancin;
+          }
+        }
+        li:hover {
+          color: $menuColor;
+        }
+        li.iconBox {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          margin-top: 0.5rem;
+          svg {
+            width: 0.3rem;
+            height: 0.3rem;
+            margin-right: 0.1rem;
+            transition: all 0.3s ease;
+          }
+          svg:nth-child(1) {
+            fill: #7e0ce8;
+          }
+          svg:nth-child(2) {
+            fill: #e8840c;
+          }
+          svg:nth-child(3) {
+            fill: #ff0000;
+          }
+          svg:hover {
+            fill: $menuColor;
+          }
+        }
+      }
+      ul:hover {
+        background: lighten($fontColor, 35%);
+      }
     }
   }
 }

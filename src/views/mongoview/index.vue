@@ -65,34 +65,14 @@ div.mongoview-wrap {
     margin-top: $distanceHeader + $spancin;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     width: $boxWidth;
     div.mongo_api_title {
-      padding-left: $spancin;
+      padding-left: $spancin * 2;
       font-size: 0.12rem;
       font-weight: bold;
     }
-    div.inscription-wrap {
-      width: inherit;
-    }
     div.inscription-title {
       display: none;
-    }
-    div.inscription-content {
-      padding: $spancin;
-      ul {
-        background: lighten($fontColor, 35%);
-        padding: $spancin 0;
-        li {
-          span.title {
-            font-size: 0.12rem;
-            font-weight: bold;
-          }
-        }
-        li:hover {
-          background: none;
-        }
-      }
     }
   }
 }
