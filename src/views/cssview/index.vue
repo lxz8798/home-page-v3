@@ -161,22 +161,22 @@ export default {
           class: "animate6"
         },
         {
-          url: "http://pmek5nu6x.bkt.clouddn.com/shan.webp",
+          url: "http://pnxgkoyon.bkt.clouddn.com/shan.webp",
           name: "cloud7",
           class: "bounceInRight animated animate7"
         },
         {
-          url: "http://pmek5nu6x.bkt.clouddn.com/shan3.webp",
+          url: "http://pnxgkoyon.bkt.clouddn.com/shan3.webp",
           name: "cloud8",
           class: "bounceInLeft animated animate8"
         },
         {
-          url: "http://pmek5nu6x.bkt.clouddn.com/xiake.webp",
+          url: "http://pnxgkoyon.bkt.clouddn.com/xiake.webp",
           name: "xiake",
           class: "animate9"
         },
         {
-          url: "http://pmek5nu6x.bkt.clouddn.com/jianghu.webp",
+          url: "http://pnxgkoyon.bkt.clouddn.com/jianghu.webp",
           name: "jianghu",
           class: "flipInX animated animate10"
         },

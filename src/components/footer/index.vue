@@ -65,13 +65,12 @@ footer.Footer_wrap {
   flex-direction: column;
   align-items: center;
   margin: $spancin;
-  div.Footer_wrap_box { 
+  div.Footer_wrap_box {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    
     div.about_me_wrap,
     div.footer_box_wrap {
       width: 100%;

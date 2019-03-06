@@ -5,8 +5,8 @@
     <!-- 第一屏内容 -->
     <!-- <div class="first_box_wrap" :class="switchImg ? 'img1' : 'img2'"> -->
     <section class="first_box_wrap" ref="firstBox">
-      <video id="homeVideo" autoplay muted loop poster="http://pmek5nu6x.bkt.clouddn.com/banner2.webp">
-        <source src="//pmek5nu6x.bkt.clouddn.com/video.mp4" type="video/mp4">
+      <video id="homeVideo" autoplay muted loop poster="http://pnxgkoyon.bkt.clouddn.com/banner2.webp">
+        <source src="//pnxgkoyon.bkt.clouddn.com/video.mp4" type="video/mp4">
         您的浏览器不支持video标签，建议更新浏览器版本
       </video>
       <article class="video_des">
@@ -379,12 +379,12 @@ section.home_screen_wrap {
   }
 }
 .img1 {
-  background: url("http://pmek5nu6x.bkt.clouddn.com/banner2.webp") no-repeat 0
+  background: url("http://pnxgkoyon.bkt.clouddn.com/banner2.webp") no-repeat 0
     55%;
   background-size: cover;
 }
 .img2 {
-  background: url("http://pmek5nu6x.bkt.clouddn.com/banner1.webp") no-repeat 0
+  background: url("http://pnxgkoyon.bkt.clouddn.com/banner1.webp") no-repeat 0
     0%;
   background-size: cover;
 }
