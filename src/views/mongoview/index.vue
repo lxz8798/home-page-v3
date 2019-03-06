@@ -17,9 +17,8 @@
           <span v-html="signUpContent.dataContent"></span>
         </li>
       </Inscription>
-    </div>
       <!-- 登录接口信息 -->
-      <!-- <div class="mongo_api_title">{{ signinContent.title }}</div>
+      <div class="mongo_api_title">{{ signinContent.title }}</div>
       <Inscription>
         <li slot="projectList">
           <span>api: {{ signinContent.api }}</span>
@@ -32,9 +31,9 @@
           <br />
           <span v-html="signinContent.dataContent"></span>
         </li>
-      </Inscription> -->
+      </Inscription>
       <!-- 登出接口信息 -->
-      <!-- <div class="mongo_api_title">{{ signOutContent.title }}</div>
+      <div class="mongo_api_title">{{ signOutContent.title }}</div>
       <Inscription>
         <li slot="projectList">
           <span>api: {{ signOutContent.api }}</span>
@@ -47,10 +46,8 @@
           <br />
           <span v-html="signOutContent.dataContent"></span>
         </li>
-      </Inscription> -->
-    <!-- <div class="mongo_box_wrap">
-      
-    </div> -->
+      </Inscription>
+    </div>
     <Footer></Footer>
   </div>
 </template>
@@ -64,44 +61,27 @@ div.mongoview-wrap {
   flex-direction: column;
   align-items: center;
   div.mongo_box_wrap {
-    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    flex: 1;
-    border: 1px solid red;    
-    .mongo_api_title {
-      width: 12rem;
-      flex: 1;
+    div.inscription-wrap {
+      div.inscription-content {
+        ul {
+          li {
+            width: 100%;
+          }
+        }
+      }
     }
-    // margin-top: $distanceHeader + $spancin;
-    // display: flex;
-    // justify-content: flex-start;
-    // align-items: center;
-    // flex-direction: column;
-    // width: $boxWidth;
-    // div.mongo_api_title {
-    //   padding-left: $spancin * 2;
-    //   font-size: 0.12rem;
-    //   font-weight: bold;
-    //   width: $boxWidth;
-    // }
-    // div.inscription-title {
-    //   display: none;
-    // }
-    // div.inscription-content {
-    //   ul {
-    //     li {
-    //       flex: 1;
-    //       background: lighten($backgroundColor, 75%);
-    //     }
-    //     li:hover {
-    //       background: lighten($backgroundColor, 70%);
-    //     }
-    //   }
-    // }
+    div.inscription-title {
+      display: none;
+    }
+    div.mongo_api_title {
+      width: $boxWidth;
+      padding: $spancin;
+    }
   }
 }
 </style>

@@ -94,8 +94,6 @@ div.skills_box_wrap {
     flex-direction: column;
     justify-content: center;
     h2 {
-      height: 0.4rem;
-      line-height: 0.4rem;
       margin-top: $spancin;
       color: lighten($fontColor, 15%);
       transition: all 0.5s ease;
