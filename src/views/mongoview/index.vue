@@ -3,7 +3,9 @@
     <Header :active="active"></Header>
     <!-- 注册接口信息 -->
     <div class="mongo_box_wrap">
-      <div class="mongo_api_title">{{ signUpContent.title }}</div>
+      <div class="mongo_api_title">
+        <span>{{ signUpContent.title }}</span>
+      </div>
       <Inscription>
         <li slot="projectList">
           <span>api: {{ signUpContent.api }}</span>
@@ -18,7 +20,11 @@
         </li>
       </Inscription>
       <!-- 登录接口信息 -->
-      <div class="mongo_api_title">{{ signinContent.title }}</div>
+      <div class="mongo_api_title">
+        <span>
+          {{ signinContent.title }}
+        </span>
+      </div>
       <Inscription>
         <li slot="projectList">
           <span>api: {{ signinContent.api }}</span>
@@ -33,7 +39,9 @@
         </li>
       </Inscription>
       <!-- 登出接口信息 -->
-      <div class="mongo_api_title">{{ signOutContent.title }}</div>
+      <div class="mongo_api_title">
+        <span>{{ signOutContent.title }}</span>
+      </div>
       <Inscription>
         <li slot="projectList">
           <span>api: {{ signOutContent.api }}</span>
@@ -63,12 +71,17 @@ div.mongoview-wrap {
   div.mongo_box_wrap {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     width: 100%;
     div.inscription-wrap {
+      div.inscription-box-wrap {
+        padding: 0;
+      }
       div.inscription-content {
+        margin: $spancin;
         ul {
+          padding: 0;
+          background: lighten($fontColor, 35%);
           li {
             width: 100%;
           }
@@ -79,8 +92,24 @@ div.mongoview-wrap {
       display: none;
     }
     div.mongo_api_title {
-      width: $boxWidth;
-      padding: $spancin;
+      width: $childBaseWidth;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      span {
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: $boxWidth;
+        height: 0.4rem;
+        padding: $spancin;
+        margin: $spancin;
+        margin-right: $spancin * 2.8;
+        font-size: 0.16rem;
+        font-weight: bold;
+        background: lighten($fontColor, 35%);
+        border-radius: $boxRadius;
+      }
     }
   }
 }

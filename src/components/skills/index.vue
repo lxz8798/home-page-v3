@@ -59,7 +59,7 @@ div.skills_box_wrap {
   flex-wrap: wrap;
   word-break: break-all;
   padding: $spancin;
-  margin: $spancin;
+  padding-right: $spancin * 2.8;
   transition: all 0.5s ease;
   border-radius: 0.05rem;
   background: white;
@@ -69,7 +69,11 @@ div.skills_box_wrap {
     transition: all 0.5s ease;
     width: 100%;
     height: 50%;
-    background: linear-gradient(to bottom,rgba(0, 0, 0, 0),rgba(255, 255, 255, 1));
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(255, 255, 255, 1)
+    );
     position: absolute;
     bottom: 0;
   }

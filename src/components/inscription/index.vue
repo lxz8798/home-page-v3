@@ -44,7 +44,8 @@ div.inscription-wrap {
       ul {
         width: 100%;
         display: flex;
-        background: lighten($fontColor, 38%);
+        flex-wrap: wrap;
+        padding: $spancin;
         li {
           display: inline-flex;
           flex-direction: column;
@@ -54,6 +55,7 @@ div.inscription-wrap {
           padding: $spancin;
           transition: all 0.5s ease-out;
           overflow: hidden;
+          position: relative;
           img,
           p:first-child,
           span.img-box {
@@ -104,7 +106,8 @@ div.inscription-wrap {
           }
         }
         li:hover {
-          background: lighten($fontColor, 38%);
+          border-radius: $boxRadius;
+          background: lighten($fontColor, 35%);
           cursor: pointer;
         }
       }

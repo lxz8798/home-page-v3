@@ -65,6 +65,7 @@ footer.Footer_wrap {
   flex-direction: column;
   align-items: center;
   margin: $spancin;
+  margin-bottom: 0;
   div.Footer_wrap_box {
     display: flex;
     flex-direction: column;
@@ -74,10 +75,10 @@ footer.Footer_wrap {
     div.about_me_wrap,
     div.footer_box_wrap {
       width: 100%;
-      padding: $spancin;
     }
     div.about_me_wrap {
-      padding: $spancin * 2;
+      padding: $spancin;
+      padding-right: $spancin * 2.8;
       padding-bottom: 0;
       display: flex;
       flex-direction: column;
@@ -98,11 +99,13 @@ footer.Footer_wrap {
       ul {
         display: flex;
         flex-direction: column;
+        margin-right: $spancin * 2.8;
         padding: $spancin;
+        border-radius: $boxRadius;
         transition: all 0.5s ease;
         flex: 1 1 2.35rem;
         li {
-          padding: 0.03rem 0;
+          padding: 0.02rem 0;
           cursor: pointer;
           transition: all 0.5s ease;
           h3 {

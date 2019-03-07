@@ -66,6 +66,15 @@ div.workview-wrap {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .Footer_wrap {
+    padding: $spancin;
+    padding-right: 0;
+    div.footer_box_wrap {
+      ul {
+        margin-right: $spancin * 2 !important;
+      }
+    }
+  }
 }
 </style>
 
