@@ -31,6 +31,8 @@ div.inscription-wrap {
     display: flex;
     flex-direction: column;
     div.inscription-title {
+      height: 0.4rem;
+      margin: 0 $spancin;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -46,6 +48,7 @@ div.inscription-wrap {
         display: flex;
         flex-wrap: wrap;
         padding: $spancin;
+        padding-top: 0;
         li {
           display: inline-flex;
           flex-direction: column;

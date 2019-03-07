@@ -39,13 +39,12 @@
 $parallaxBoxHeight: 5rem; // 视差盒子高度
 div.layout-wrap {
   transform: translateY(0.3rem);
-
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 6.5rem;
-  margin: $spancin;
+  margin-top: $spancin * 30;
   div.layout-box-wrap {
     width: 100%;
     display: flex;
@@ -53,6 +52,15 @@ div.layout-wrap {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    @media screen and (max-width: 750px) {
+      div.l {
+        flex: 0 1 5.8rem !important;
+      }
+      div.r {
+        margin-top: $spancin *  2;
+        margin-bottom: $spancin *  2;
+      }
+    }
     div.l {
       flex: 1 1 4rem;
       display: flex;

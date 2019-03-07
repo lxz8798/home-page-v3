@@ -23,7 +23,9 @@ div.designview_wrap {
     flex-direction: row;
     width: $boxWidth;
     margin-top: $distanceHeader + $spancin;
+    
     div.rowlayout_wrap {
+      
       div.l {
         border-right: 0;
       }

@@ -100,15 +100,19 @@ div.mongoview-wrap {
         display: inline-flex;
         justify-content: flex-start;
         align-items: center;
-        width: $boxWidth;
-        height: 0.4rem;
-        padding: $spancin;
-        margin: $spancin;
+        padding: 0 $spancin * 2;
+        margin: 0 $spancin * 2;
         margin-right: $spancin * 2.8;
+        width: $boxWidth;
         font-size: 0.16rem;
         font-weight: bold;
-        background: lighten($fontColor, 35%);
         border-radius: $boxRadius;
+      }
+      @media screen and (max-width: 750px) {
+        span {
+          padding: 0 $spancin;
+          margin: 0;
+        }
       }
     }
   }
