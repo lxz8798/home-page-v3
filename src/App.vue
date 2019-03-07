@@ -15,3 +15,26 @@
   overflow-x: hidden;
 }
 </style>
+
+<script>
+export default {
+  data() {
+    return {
+
+    }
+  },
+  mounted() {
+    this.minWidth750();
+  },
+  computed: {
+  },
+  methods: {
+    minWidth750() {
+      let currWidth = window.innerWidth || 
+              document.documentElement.clientWidth || 
+              document.body.clientWidth;
+      
+    }
+  }
+}
+</script>

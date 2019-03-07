@@ -261,13 +261,10 @@ section.home_screen_wrap {
     align-items: center;
     transition: all 0.3s ease;
     @media screen and (max-width: 750px) {
-      .first_box_wrap {
-        
-      }
       .polygon {
         display: none;
       }
-      .video_des { 
+      .video_des {
         top: 0;
         left: 28%;
         h1,
