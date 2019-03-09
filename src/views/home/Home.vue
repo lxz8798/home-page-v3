@@ -5,8 +5,14 @@
     <!-- 第一屏内容 -->
     <!-- <div class="first_box_wrap" :class="switchImg ? 'img1' : 'img2'"> -->
     <section class="first_box_wrap" ref="firstBox">
-      <video id="homeVideo" autoplay muted loop poster="http://pnxgkoyon.bkt.clouddn.com/banner2.webp">
-        <source src="//pnxgkoyon.bkt.clouddn.com/video.mp4" type="video/mp4">
+      <video
+        id="homeVideo"
+        autoplay
+        muted
+        loop
+        poster="http://pnxgkoyon.bkt.clouddn.com/banner2.webp"
+      >
+        <source src="//pnxgkoyon.bkt.clouddn.com/video.mp4" type="video/mp4" />
         您的浏览器不支持video标签，建议更新浏览器版本
       </video>
       <article class="video_des">
@@ -14,8 +20,12 @@
         <h1 class="noshdow fadeInLeft animated">懒虫的窝</h1>
         <p class="fadeInLeft animated">HTTP://V3.LAZY-STUDIO.COM</p>
         <p class="fadeInRight animated">MORE VERSION: V1 / V2</p>
-        <p class="fadeInLeft animated">还有更多项目请看work视图，过段时间才能放链接。。</p>
-        <strong class="fadeInRight animated">主页内容不断填充ing...每天更新一点点。</strong>
+        <p class="fadeInLeft animated">
+          还有更多项目请看work视图，过段时间才能放链接。。
+        </p>
+        <strong class="fadeInRight animated"
+          >主页内容不断填充ing...每天更新一点点。</strong
+        >
       </article>
       <!-- <div class="openSounds loader21" @click="openSounds()">
         打开声音
@@ -137,14 +147,13 @@
       <div class="bg3">333333</div>
     </div> -->
     <!-- 模态框 -->
-    <Modal v-model="loading">
-
-    </Modal>
+    <Modal v-model="loading"> </Modal>
   </section>
 </template>
 <script>
 import { Rate } from "iview";
 import { Modal } from "iview";
+import { mapState, mapMutations } from "vuex";
 export default {
   components: { Rate, Modal },
   name: "home",
@@ -197,8 +206,14 @@ export default {
   mounted() {
     this.switchImgFn();
     this.$Loading.finish();
+    console.log(this.$store);
+    this.HOME_CURR_PUBLIC_WIDTH();
+  },
+  computed: {
+    ...mapState(["currWidth", "hasH5"])
   },
   methods: {
+    ...mapMutations(["HOME_CURR_PUBLIC_WIDTH", "HAS_H5"]),
     /**
      * @Description: 打开声音
      * @Author: 李啸竹
