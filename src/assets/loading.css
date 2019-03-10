@@ -18,6 +18,7 @@
 	height: 35px;
 	background: #fff;
 	border-radius: 2px;
+	margin-right: 0.03rem;
 	display: inline-block;
 }
 .loader-21 div:nth-child(1) {

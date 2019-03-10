@@ -1,21 +1,29 @@
 <template>
   <!-- header 公共组件 -->
-  <header class="Header-wrap" :class="scrollHidden ? 'displayTop' : 'hiddenTop'">
+  <header v-if="hasH5" class="Header-wrap" :class="scrollHidden ? 'displayTop' : 'hiddenTop'">
     <ul>
       <li v-for="(item,index) in menuList" :key="index" :class="{'activeHover':index == active}">
         <router-link :to="item.link">{{item.name}}</router-link>
       </li>
     </ul>
   </header>
-  <!-- <header class="Header-wrap_mini" v-else>
-    <ul class="iconfont icon-mulu">
-      <li v-for="(item,index) in menuList" :key="index" :class="{'activeHover':index == active}">
-        <router-link :to="item.link">
-          <img src="#" :class="item.icon" alt="">
-        </router-link>
-      </li>
-    </ul>
-  </header> -->
+  <header class="Header_wrap_mini" v-else>
+    <div class="Menu_List">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-mulu1"></use>
+      </svg>
+      <ul class="iconfont icon-mulu">
+        <li v-for="(item,index) in menuList" :key="index" :class="{'activeHover':index == active}">
+          <svg class="icon" aria-hidden="true">
+            <use :xlink:href="'#'+item.icon"></use>
+          </svg>
+          <!-- <i :class="item.icon">
+            <router-link :to="item.link"></router-link>
+          </i> -->
+        </li>
+      </ul>
+    </div>    
+  </header>
 </template>
 
 <style lang="scss">
@@ -27,8 +35,7 @@
 .displayTop {
   top: 0 !important;
 }
-header.Header-wrap,
-header.Header-wrap_mini {
+header.Header-wrap {
   width: $childBaseWidth;
   background: rgba(240, 240, 240, 0.4);
   display: flex;
@@ -77,13 +84,58 @@ header.Header-wrap {
     }
   }
 }
-// header.Header-wrap_mini {
+header.Header_wrap_mini {
+  z-index: 99;
+  div.Menu_List {
+    position: fixed;
+    top: $spancin;
+    left: $spancin;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 0.05rem;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: white;
+    }
+  }
+  div.Menu_List:hover,
+  div.Menu_List:active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    svg {
+      fill: $menuColor;
+      display: none;
+    }
+    ul {
+      width: $h5Width;
+      height: $childBaseHeight;
+      border-radius: 0;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      li {
+        width: inherit;
+        height: inherit;
+        flex: 1;
+        box-sizing: border-box;
 
-// }
+        i {
+          color: red;
+          width: inherit;
+          height: inherit;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
 div.Header-wrap:hover {
   background: rgba(255, 255, 255, 1);
   transition: all 0.3s ease;
-
   ul {
     li {
       a {
@@ -95,13 +147,12 @@ div.Header-wrap:hover {
 </style>
 
 <script>
+import { mapState, mapMutations } from "vuex";
 export default {
   name: "Header",
   props: ["active"],
   data() {
     return {
-      prev: "",
-      next: "",
       scrollHidden: true,
       menuList: [
         {
@@ -161,11 +212,21 @@ export default {
       ]
     };
   },
+  computed: {
+    ...mapState(["hasH5"]),
+  },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
     this.handleScroll();
+    this.HOME_CURR_PUBLIC_WIDTH();
   },
   methods: {
+    ...mapMutations(["HOME_CURR_PUBLIC_WIDTH"]),
+    /**
+     * @Description: 有滑动的时候隐藏导航
+     * @Author: 李啸竹
+     * @Date: 2019-03-11 01:11:28
+     */
     handleScroll() {
       let scrollTop =
         window.pageYOffset ||

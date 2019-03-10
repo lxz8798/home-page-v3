@@ -3,7 +3,6 @@
     <!-- 公共头部 -->
     <Header :active="active"></Header>
     <!-- 第一屏内容 -->
-    <!-- <div class="first_box_wrap" :class="switchImg ? 'img1' : 'img2'"> -->
     <section class="first_box_wrap" ref="firstBox">
       <video
         id="homeVideo"
@@ -27,8 +26,7 @@
           >主页内容不断填充ing...每天更新一点点。</strong
         >
       </article>
-      <!-- <div class="openSounds loader21" @click="openSounds()">
-        打开声音
+      <div class="openSounds loader21" @click="openSounds()">
         <div class="loader-21">
           <div></div>
           <div></div>
@@ -36,7 +34,7 @@
           <div></div>
           <div></div>
         </div>
-      </div> -->
+      </div>
       <div class="polygon fadeInRight animated"></div>
     </section>
     <!-- 第二屏内容 -->
@@ -151,9 +149,7 @@
   </section>
 </template>
 <script>
-import { Rate } from "iview";
-import { Modal } from "iview";
-import { mapState, mapMutations } from "vuex";
+import { Rate, Modal } from "iview";
 export default {
   components: { Rate, Modal },
   name: "home",
@@ -204,32 +200,16 @@ export default {
     };
   },
   mounted() {
-    this.switchImgFn();
     this.$Loading.finish();
-    console.log(this.$store);
-    this.HOME_CURR_PUBLIC_WIDTH();
-  },
-  computed: {
-    ...mapState(["currWidth", "hasH5"])
   },
   methods: {
-    ...mapMutations(["HOME_CURR_PUBLIC_WIDTH", "HAS_H5"]),
     /**
      * @Description: 打开声音
      * @Author: 李啸竹
      */
     openSounds() {
       let $dom = document.getElementById("homeVideo");
-      $dom.muted = false;
-    },
-    /**
-     * @Description: 首频切换，换成video暂时没用
-     * @Author: 李啸竹
-     */
-    switchImgFn() {
-      setInterval(() => {
-        this.switchImg = !this.switchImg;
-      }, 6000);
+      $dom.muted = !$dom.muted;
     }
   }
 };
@@ -239,12 +219,6 @@ export default {
 @import "../../assets/base/base";
 .ivu-modal {
   display: none;
-}
-div.bg_wrap {
-  width: 2rem;
-  height: 4rem;
-  overflow: hidden;
-  background: white;
 }
 .second_box_wrap {
   width: $childBaseWidth;
@@ -312,8 +286,8 @@ section.home_screen_wrap {
       width: 0.5rem;
       height: 0.4rem;
       position: absolute;
-      bottom: $spancin - 0.5rem;
-      left: $spancin;
+      bottom: $spancin + 0.1rem;
+      right: $spancin + 0.1rem;
       z-index: 1;
       cursor: pointer;
       color: white;
@@ -400,21 +374,5 @@ section.home_screen_wrap {
       transform: translateX(3%);
     }
   }
-  div.offsetPos {
-    margin-right: -4.5rem;
-  }
-  div.offsetNeg {
-    margin-right: 4.5rem;
-  }
-}
-.img1 {
-  background: url("http://pnxgkoyon.bkt.clouddn.com/banner2.webp") no-repeat 0
-    55%;
-  background-size: cover;
-}
-.img2 {
-  background: url("http://pnxgkoyon.bkt.clouddn.com/banner1.webp") no-repeat 0
-    0%;
-  background-size: cover;
 }
 </style>
