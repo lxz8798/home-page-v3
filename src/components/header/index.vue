@@ -8,20 +8,25 @@
     </ul>
   </header>
   <header class="Header_wrap_mini" v-else>
-    <svg class="icon" aria-hidden="true" @click="openToc()">
+    <svg class="icon" aria-hidden="true" @click="openTocList = !openTocList">
       <use xlink:href="#icon-mulu1"></use>
     </svg>
-    <div class="Menu_List">      
-      <ul class="iconfont icon-mulu">
-        <li v-for="(item,index) in menuList" :key="index" :class="{'activeHover':index == active}">
-          <svg class="icon" aria-hidden="true">
-            <use :xlink:href="item.icon"></use>
-          </svg>
-          <!-- <i :class="item.icon">
-            <router-link :to="item.link"></router-link>
-          </i> -->
-        </li>
-      </ul>
+    <div class="Menu_List">
+      <p :class="openTocList ? 'circle_bg' : 'bg_scale'"></p>  
+      <transition name="fade">
+        <ul class="iconfont" :class="openTocList ? 'close' : 'open'">
+          <li v-for="(item,index) in menuList" :key="index" :class="{'mini_activeHover':index == active}" @click.stop="$goPath(item.link)">
+            <svg class="icon" aria-hidden="true">
+              <use :xlink:href="item.icon"></use>
+            </svg>
+          </li>
+          <li class="closeMenu" @click.stop="openTocList = true">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-jiantouarrow498"></use>
+            </svg>
+          </li>
+        </ul>
+      </transition>
     </div>    
   </header>
 </template>
@@ -29,6 +34,7 @@
 <style lang="scss">
 @import "../../assets/base/base";
 @import "../../assets/base/color";
+$circleSize: 1.8rem;
 .hiddenTop {
   top: -100% !important;
 }
@@ -76,7 +82,7 @@ header.Header-wrap {
       }
     }
 
-    li.activeHover {
+    li.mini_activeHover {
       border-top: 0.02rem solid $menuColor;
       a {
         color: darken($menuColor, 30%);
@@ -87,33 +93,96 @@ header.Header-wrap {
 header.Header_wrap_mini {
   z-index: 99;
   svg {
-    position: fixed;
-    top: $boxRadius;
-    left: $boxRadius;
     width: 0.4rem;
     height: 0.4rem;
-    fill: white;
+    fill: $fontColor;
+    position: absolute;
+    top: 0.1rem;
+    left: 0.1rem;
+    z-index: 2;
   }
   div.Menu_List {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: absolute;
+    top: -($circleSize / 2);
+    left: -($circleSize / 2);
     width: $h5Width;
     height: $childBaseHeight;
+    ul.close {
+      opacity: 0;
+      height: 0;
+    }
+    ul.open {
+      opacity: 1;
+      height: $childBaseHeight;
+    }
+    p {
+      transition: all 0.5s ease-in-out;
+    }
+    .circle_bg {
+      position: absolute;
+      z-index: 1;
+      width: $circleSize;
+      height: $circleSize;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.8);
+    }
+    .bg_scale {
+      position: absolute;
+      z-index: 1;
+      width: $childBaseWidth / 2;
+      height: $childBaseHeight / 2;
+      transform: scale(2, 2);
+      opacity: 0;
+    }
     ul {
+      position: absolute;
+      top: $h5Width + 0.1rem;
+      left: $h5Width;
+      z-index:2;
       width: $h5Width;
       height: inherit;
       display: flex;
       flex-direction: column;
+      transition: all 0.3s ease-in-out;
       li {
         flex: 1;
         width: $h5Width;
         height: 0.4rem;
-        border: 1px solid red;
-
+        background: white;
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: center;
+        transition: all 0.3 ease-in-out;
         svg {
-          width: $h5Width;
-          height: inherit;
+          position: static;
+          top: 0;
+          left: 0;
+          transform: translateX(50%);
+          width: 0.4rem;
+          height: 0.4rem;
+          transition: all 0.3s ease-in-out;
+          fill: $fontColor;
+        }
+      }
+      li:hover {
+        width: $childBaseWidth / 2.5;
+        transition: all 0.3s ease-in-out;
+        svg {
+          fill: $menuColor;
+        }
+      }
+      li.closeMenu {
+        background: $menuColor;
+        svg {
+          fill: rgba(255, 255, 255, 1);
+        }
+      }
+      li.closeMenu:hover {
+        width: $h5Width;
+      }
+      li.mini_activeHover {
+        svg {
+          fill: $menuColor;
         }
       }
     }
@@ -128,68 +197,68 @@ export default {
   props: ["active"],
   data() {
     return {
-      openTocList: false,
+      openTocList: true,
       scrollHidden: true,
       menuList: [
         {
           name: "LAZY-STUDIO.COM",
           link: "/",
-          icon: "#icon-ERP_shouye",
+          icon: "#icon-home",
           key: 1
         },
         {
           name: "JAVASCRIPT/NODE",
           link: "jsview",
-          icon: "#icon--java-script",
+          icon: "#icon-socialnodejs",
           key: 2
         },
         {
           name: "CSS/ANIMATION",
           link: "cssview",
-          icon: "#icon-css",
+          icon: "#icon-html-css",
           key: 3
         },
         {
           name: "DESIGN/PS/XD/AI/AE",
           link: "designview",
-          icon: "#icon-caidanshejishi",
+          icon: "#icon-design",
           key: 4
         },
         {
           name: "MONGODB/EGG/API",
           link: "mongoview",
-          icon: "",
+          icon: "#icon-mongo",
           key: 5
         },
         {
           name: "WORKS COLLECTION",
           link: "workview",
-          icon: "#icon-3dcube",
+          icon: "#icon-vue",
           key: 6
         },
         {
           name: "UPDATE",
           link: "updateview",
-          icon: "#icon-gengxin",
+          icon: "#icon-update",
           key: 7
         },
         {
           name: "SIGN IN",
           link: "signinview",
-          icon: "#icon-iddenglufanbai",
+          icon: "#icon-id",
           key: 8
         },
         {
           name: "SIGN UP",
           link: "signupview",
-          icon: "#icon-signout",
+          icon: "#icon-out",
           key: 9
         }
       ]
     };
   },
   computed: {
-    ...mapState(["hasH5"]),
+    ...mapState(["hasH5"])
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -198,9 +267,6 @@ export default {
   },
   methods: {
     ...mapMutations(["HOME_CURR_PUBLIC_WIDTH"]),
-    openToc() {
-      this.openTocList = true;
-    },
     /**
      * @Description: 有滑动的时候隐藏导航
      * @Author: 李啸竹

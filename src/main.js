@@ -15,7 +15,6 @@ import loading from "./assets/loading.css";
 import global from "./utils/global";
 import api from "./api/api";
 import regCopm from "./utils/regComponents";
-import cryptoJS from "crypto-js";
 
 Vue.use(_);
 Vue.use(normalize);
@@ -23,7 +22,6 @@ Vue.use(loading);
 Vue.use(global);
 Vue.use(api);
 Vue.use(fly);
-Vue.use(cryptoJS);
 Vue.use(regCopm);
 
 process.env.NODE_ENV === "development" && require("@/mock/mock.js");

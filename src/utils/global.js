@@ -40,6 +40,7 @@ export default {
      * @Author: 李啸竹
      */
     Vue.prototype.$goPath = function (path, query) {
+      query = query ? query : null
       this.$router.push({
         path: path,
         query: query

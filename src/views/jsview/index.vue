@@ -18,6 +18,9 @@ div.jsview-wrap {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  div.layout-wrap {
+    margin-top: 0.8rem;
+  }
   div.jsview-box-wrap {
     width: $boxWidth;
     display: flex;
