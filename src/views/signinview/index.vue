@@ -348,12 +348,6 @@ import { Checkbox } from "iview";
 export default {
   name: "signinview",
   components: { Checkbox },
-  // beforeRouteEnter(to, from, next) {
-  //   if(to.name == "signinview") {
-  //     this.isSignin = false;
-  //     next();
-  //   };
-  // },
   data() {
     return {
       active: 7,
@@ -394,7 +388,7 @@ export default {
         phonenumber: "123456789"
       };
 
-      res = await this.$http.get("http://127.0.0.1:7001/api/v1/signin", params);
+      res = await this.$http.post("http://127.0.0.1:7001/api/v1/signin", params);
       console.log(res, "res");
       // .then(res => {
       //   console.log(res, 'res');

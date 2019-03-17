@@ -11,8 +11,8 @@
     <svg class="icon" aria-hidden="true" @click="openTocList = !openTocList">
       <use xlink:href="#icon-mulu1"></use>
     </svg>
+    <p :class="openTocList ? 'circle_bg' : 'bg_scale'"  @click="openTocList = !openTocList"></p>  
     <div class="Menu_List">
-      <p :class="openTocList ? 'circle_bg' : 'bg_scale'"></p>  
       <transition name="fade">
         <ul class="iconfont" :class="openTocList ? 'close' : 'open'">
           <li v-for="(item,index) in menuList" :key="index" :class="{'mini_activeHover':index == active}" @click.stop="$goPath(item.link)">
@@ -96,17 +96,40 @@ header.Header_wrap_mini {
     width: 0.4rem;
     height: 0.4rem;
     fill: $fontColor;
-    position: absolute;
+    position: fixed;
     top: 0.1rem;
     left: 0.1rem;
     z-index: 2;
   }
+  .circle_bg {
+    position: fixed;
+    top: -($circleSize / 2);
+    left: -($circleSize / 2);
+    z-index: 1;
+    width: $circleSize;
+    height: $circleSize;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.5s ease-in-out;
+  }
+  .bg_scale {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: $childBaseWidth / 2;
+    height: $childBaseHeight / 2;
+    transform: scale(2, 2);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
   div.Menu_List {
-    position: absolute;
+    position: fixed;
     top: -($circleSize / 2);
     left: -($circleSize / 2);
     width: $h5Width;
     height: $childBaseHeight;
+    z-index: 3;
     ul.close {
       opacity: 0;
       height: 0;
@@ -115,25 +138,7 @@ header.Header_wrap_mini {
       opacity: 1;
       height: $childBaseHeight;
     }
-    p {
-      transition: all 0.5s ease-in-out;
-    }
-    .circle_bg {
-      position: absolute;
-      z-index: 1;
-      width: $circleSize;
-      height: $circleSize;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.8);
-    }
-    .bg_scale {
-      position: absolute;
-      z-index: 1;
-      width: $childBaseWidth / 2;
-      height: $childBaseHeight / 2;
-      transform: scale(2, 2);
-      opacity: 0;
-    }
+    
     ul {
       position: absolute;
       top: $h5Width + 0.1rem;
