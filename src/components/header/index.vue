@@ -100,6 +100,7 @@ header.Header_wrap_mini {
     top: 0.1rem;
     left: 0.1rem;
     z-index: 2;
+    background: transparent;
   }
   .circle_bg {
     position: fixed;
@@ -162,7 +163,7 @@ header.Header_wrap_mini {
           position: static;
           top: 0;
           left: 0;
-          transform: translateX(50%);
+          transform: translateX(60%);
           width: 0.4rem;
           height: 0.4rem;
           transition: all 0.3s ease-in-out;
@@ -259,16 +260,30 @@ export default {
           icon: "#icon-out",
           key: 9
         }
-      ]
+      ],
+      currWidth: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
     };
   },
   computed: {
-    ...mapState(["hasH5"])
+    ...mapState(['hasH5'])
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
-    this.handleScroll();
-    this.HOME_CURR_PUBLIC_WIDTH();
+    window.onresize = () => {
+      return (() => {
+        window.screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        this.currWidth = window.screenWidth
+      })()
+    }
+  },
+  watch: {
+    currWidth: function(newVal, oldVal) {
+      if (newVal < 750) {
+        this.HOME_CURR_PUBLIC_WIDTH(false);
+      } else {
+        this.HOME_CURR_PUBLIC_WIDTH(true);      
+      }
+    }
   },
   methods: {
     ...mapMutations(["HOME_CURR_PUBLIC_WIDTH"]),

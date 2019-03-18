@@ -16,20 +16,3 @@
   overflow-x: hidden;
 }
 </style>
-
-<script>
-import { mapMutations } from "vuex";
-export default {
-  data() {
-    return {};
-  },
-  mounted() {
-    window.onresize = () => {
-      this.HOME_CURR_PUBLIC_WIDTH();
-    };
-  },
-  methods: {
-    ...mapMutations(["HOME_CURR_PUBLIC_WIDTH"]),
-  }
-};
-</script>
