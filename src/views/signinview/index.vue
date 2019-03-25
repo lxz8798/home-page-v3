@@ -344,6 +344,7 @@ div.signinview_wrap {
 </style>
 
 <script>
+import { mapState, mapMutations } from "vuex";
 import { Checkbox } from "iview";
 export default {
   name: "signinview",
@@ -371,6 +372,9 @@ export default {
         }
       }
     };
+  },
+  computed: {
+    ...mapState(['hasH5'])
   },
   created() {
     this.signIn();

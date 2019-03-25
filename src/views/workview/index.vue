@@ -11,7 +11,8 @@
           <use xlink:href="#icon-link"></use>
         </svg>
         <span class="img-box">
-          <p>{{item.imgsize}}</p>
+          <p v-if="item.img == ''">{{item.imgsize}}</p>
+          <img v-else :src="item.img" alt="" @click="gotoSize(item.link)">
         </span>
         <h4>{{item.name}}</h4>
         <p>{{item.des}}</p>
@@ -29,7 +30,8 @@
           <use xlink:href="#icon-link"></use>
         </svg>
         <span class="img-box">
-          <p>{{item.imgsize}}</p>
+          <p v-if="item.img == ''">{{item.imgsize}}</p>
+          <img v-else :src="item.img" alt="" @click="gotoSize(item.link)">
         </span>
         <h4>{{item.name}}</h4>
         <p>{{item.des}}</p>
@@ -47,7 +49,8 @@
           <use xlink:href="#icon-link"></use>
         </svg>
         <span class="img-box">
-          <p>{{item.imgsize}}</p>
+          <p v-if="item.img == ''">{{item.imgsize}}</p>
+          <img v-else :src="item.img" alt="" @click="gotoSize(item.link)">
         </span>
         <h4>{{item.name}}</h4>
         <p>{{item.des}}</p>
@@ -92,24 +95,24 @@ export default {
         {
           year: "",
           name: "HomePage1.0",
-          img: "",
+          img: "http://pnxgkoyon.bkt.clouddn.com/work1.webp",
           imgsize: "等待上传图片",
           des: "个人首页早期1.0版本，使用的是HTML+CSS+JS...完成。",
-          link: "#"
+          link: "http://v1.lazy-studio.com"
         },
         {
           year: "",
           name: "HomePage2.0",
-          img: "",
+          img: "http://pnxgkoyon.bkt.clouddn.com/work2.webp",
           imgsize: "等待上传图片",
           des:
             "个人首页2.0版本，CLI生成的项目框架，使用的是VUE+AXIOS+CSS3+JS+NOJS/KOA2...完成。",
-          link: "#"
+          link: "http://v2.lazy-studio.com"
         },
         {
           year: "",
           name: "HomePage3.0",
-          img: "",
+          img: "http://pnxgkoyon.bkt.clouddn.com/work3.webp",
           imgsize: "等待上传图片",
           des:
             "个人首页3.0版本，CLI3生成的项目框架，使用的是VUE+FLY/MOCKJS+CSS3+JS+NODEJS/EGGJS...完成。",
@@ -121,11 +124,11 @@ export default {
         {
           year: "",
           name: "建工社解决方案",
-          img: "",
+          img: "http://pnxgkoyon.bkt.clouddn.com/work4.webp",
           imgsize: "等待上传图片",
           des:
             "公司里接受北京建工出版社的需求，给其开发出全套解决方案，内容包含WEB端，移动端ANDROID/IOS，移动端H5，管理运营后台等等。",
-          link: "#",
+          link: "http://hyj.cabplink.com:50695",
           childs: [
             {
               year: "",
@@ -148,11 +151,11 @@ export default {
         {
           year: "",
           name: "电子社解决方案",
-          img: "",
+          img: "http://pnxgkoyon.bkt.clouddn.com/work5.webp",
           imgsize: "等待上传图片",
           des:
             "公司里接受北京电子出版社的需求，给其开发出全套解决方案，内容包含WEB端，移动端ANDROID/IOS，移动端H5，管理运营后台等等。",
-          link: "#",
+          link: "http://www.51zhy.cn",
           childs: [
             {
               year: "",
@@ -183,16 +186,16 @@ export default {
         {
           year: "",
           name: "可知",
-          img: "",
+          img: "http://pnxgkoyon.bkt.clouddn.com/work6.webp",
           imgsize: "等待上传图片",
           des:
             "公司自营项目，内容包含WEB端，移动端ANDROID/IOS，移动端H5，管理运营后台/AQR授权分发系统/PMS机构管理系统，知识体系阅读解决方案等等。",
-          link: "#"
+          link: "http://www.keledge.com"
         },
         {
           year: "",
           name: "项目管理后台",
-          img: "",
+          img: "http://pnxgkoyon.bkt.clouddn.com/work9.webp",
           imgsize: "等待上传图片",
           des:
             "使用ELEMENTUI/IVIEW开发出来专门用于管理网站内容的后台管理平台。",
@@ -203,36 +206,35 @@ export default {
       moveH5ProjectList: [
         {
           year: "",
+          name: "个人APP项目【一览书海】",
+          img: "http://pnxgkoyon.bkt.clouddn.com/default.webp",
+          imgsize: "等待上传图片",
+          des: "使用UNIAPP开发【正在开发中】,发布页面正在审核中。。。支持小程序、移动H5、公众号、ANDROID和IOS版本。",
+          link: "#"
+        },
+        {
+          year: "",
           name: "个人主页移动端",
-          img: "",
+          img: "http://pnxgkoyon.bkt.clouddn.com/work7.webp",
           imgsize: "等待上传图片",
           des: "个人主页3.0兼容移动端，使用vue开发的H5页面。",
           link: "#"
         },
         {
           year: "",
-          name: "独产开发的书城小程序",
-          img: "",
-          imgsize: "等待上传图片",
-          des:
-            "使用部份原生小程序和UNIAPP完成，发布小程序/H5/ANDROID/IOS版本。",
-          link: "#"
-        },
-        {
-          year: "",
           name: "书网互动公众号",
-          img: "",
+          img: "http://pnxgkoyon.bkt.clouddn.com/work8.webp",
           imgsize: "等待上传图片",
-          des: "微信公众号，主要是在微信和手机浏览器中访问。",
-          link: "#"
+          des: "需要关注微信公众号，主要是在微信和手机浏览器中访问。",
+          link: "http://develop.kingchannels.cn:50024"
         },
         {
           year: "",
           name: "可知公众号",
-          img: "",
+          img: "http://pnxgkoyon.bkt.clouddn.com/work6.webp",
           imgsize: "等待上传图片",
-          des: "微信公众号，主要是在微信和手机浏览器中访问。",
-          link: "#"
+          des: "需要关注微信公众号，主要是在微信和手机浏览器中访问。",
+          link: "http://m.keledge.com"
         },
         {
           year: "",
@@ -240,7 +242,16 @@ export default {
           img: "",
           imgsize: "等待上传图片",
           des:
-            "主要是给移动端的电子书资源阅读使用，作为一个单独项目，独立于项目之外专门开发。",
+            "主要是给移动端的电子书资源阅读使用的核心技术，一个EPUB、PDF的通用阅读器，作为一个单独项目，独立于项目之外专门开发。",
+          link: "#"
+        },
+        {
+          year: "",
+          name: "工信书院-小程序&公众号",
+          img: "",
+          imgsize: "等待上传图片",
+          des:
+            "主要是给移动端的电子书资源阅读使用的核心技术，一个EPUB、PDF的通用阅读器，作为一个单独项目，独立于项目之外专门开发。",
           link: "#"
         }
       ]
@@ -248,6 +259,11 @@ export default {
   },
   mounted() {
     this.$Loading.finish();
+  },
+  methods: {
+    gotoSize(link) {
+      window.open(link);
+    }
   }
 };
 </script>
