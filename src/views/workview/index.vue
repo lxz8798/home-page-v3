@@ -123,6 +123,15 @@ export default {
       otherProjectList: [
         {
           year: "",
+          name: "北京信息技术-乔帮主WEB端",
+          img: "",
+          imgsize: "等待上传图片",
+          des:
+            "与北京总公司合作的，信息技术需求，对乔帮主项目进行新需求拓展。",
+          link: "http://qbz.kingchannels.com",
+        },
+        {
+          year: "",
           name: "建工社解决方案",
           img: "http://pnxgkoyon.bkt.clouddn.com/work4.webp",
           imgsize: "等待上传图片",

@@ -1,6 +1,6 @@
 <template>
   <div class="rowlayout_wrap">
-    <div class="l">
+    <div v-if="hasH5" class="l">
       <slot name="divL">
         <img :src="config.left.img" alt="">
       </slot>
@@ -14,11 +14,15 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
 export default {
   name: "rowLayout",
   props: ["config"],
   data() {
     return {};
+  },
+  computed: {
+    ...mapState(['hasH5'])
   }
 };
 </script>

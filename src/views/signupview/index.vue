@@ -2,7 +2,7 @@
   <div class="signupview_wrap">
     <Header :active="active"></Header>
     <div class="signupview_box_wrap"></div>
-    <div class="signup_box">
+    <div class="signup_box" :class="!hasH5 ? 'hasH5_box' : ''">
       <row-layout :config="config">
         <div slot="divL">
           <img class="bigPic" :src="config.left.img" alt="" />
@@ -16,6 +16,7 @@
           <img class="qiqiu8" :src="config.left.qiqiu8" alt="" />
         </div>
         <div class="input_box" slot="divR">
+          <h1>谢谢您观注我的小窝！</h1>
           <div class="usernameInput">
             <label>用户名 / USERNAME</label>
             <div class="input">
@@ -260,10 +261,17 @@ div.signupview_wrap {
     background-size: cover;
     opacity: 0.4;
   }
+  .hasH5_box {
+    max-width: 3rem;
+    div.r {
+      flex: 0 0 2.8rem !important;
+    }
+  }
 }
 </style>
 
 <script>
+import {mapState} from "vuex";
 import { Checkbox } from "iview";
 export default {
   name: "signupview",
@@ -291,6 +299,9 @@ export default {
         }
       }
     };
+  },
+  computed: {
+    ...mapState(['hasH5'])
   },
   created() {
     this.signUp();

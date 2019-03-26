@@ -2,7 +2,7 @@
   <div class="signinview_wrap">
     <Header :active="active"></Header>
     <div class="signinview_box_wrap"></div>
-    <div class="signin_box">
+    <div class="signin_box" :class="!hasH5 ? 'hasH5_box' : ''">
       <row-layout :config="config">
         <div slot="divL">
           <img class="bigPic" :src="config.left.img" alt="" />
@@ -25,6 +25,7 @@
           <p class="line8"></p>
         </div>
         <div class="input_box" slot="divR">
+          <h1>欢迎您的到来！</h1>
           <div class="usernameInput">
             <label>用户名 / USERNAME</label>
             <div class="input">
@@ -79,6 +80,7 @@ div.signinview_wrap {
     darken($menuColor, 20%) 50%,
     $menuColor 50
   );
+  
   div.signin_box {
     width: $signinBoxWidth;
     height: $signinBoxHeight;
@@ -340,6 +342,12 @@ div.signinview_wrap {
     background-size: cover;
     opacity: 0.4;
   }
+  .hasH5_box {
+    max-width: 3rem;
+    div.r {
+      flex: 0 0 2.8rem !important;
+    }
+  }
 }
 </style>
 
@@ -373,9 +381,7 @@ export default {
       }
     };
   },
-  computed: {
-    ...mapState(['hasH5'])
-  },
+  
   created() {
     this.signIn();
   },
