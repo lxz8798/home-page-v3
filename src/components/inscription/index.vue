@@ -19,7 +19,7 @@
 <style lang="scss">
 @import "../../assets/base/base";
 @import "../../assets/base/color";
-$liWAndH: 2.4rem;
+$liWAndH: calc(100% / 6);
 div.inscription-wrap {
   display: flex;
   justify-content: center;
@@ -46,6 +46,7 @@ div.inscription-wrap {
       ul {
         width: 100%;
         display: flex;
+        justify-content: space-between;
         flex-wrap: wrap;
         padding: $spancin;
         padding-top: 0;
@@ -71,12 +72,15 @@ div.inscription-wrap {
             color: lighten($fontColor, 20%);
           }
           span.img-box {
-            height: 2rem;
-          }
-          img {
             width: 100%;
-            height: 100%;
+            height: 3.2rem;
+            > img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
           }
+          
           p,
           span.img-box,
           h4 {
@@ -85,6 +89,9 @@ div.inscription-wrap {
           h4 {
             height: 0.3rem;
             line-height: 0.3rem;
+            font-size: 0.16rem;
+            margin-top: 10px;
+            border-top: 1px dashed #ddd;
           }
           p,
           span.img-box {

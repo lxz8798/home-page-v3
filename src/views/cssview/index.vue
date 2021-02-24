@@ -161,22 +161,22 @@ export default {
           class: "animate6"
         },
         {
-          url: "http://pnxgkoyon.bkt.clouddn.com/shan.webp",
+          url: "http://static.lazy-studio.com/shan.webp",
           name: "cloud7",
           class: "bounceInRight animated animate7"
         },
         {
-          url: "http://pnxgkoyon.bkt.clouddn.com/shan3.webp",
+          url: "http://static.lazy-studio.com/shan3.webp",
           name: "cloud8",
           class: "bounceInLeft animated animate8"
         },
         {
-          url: "http://pnxgkoyon.bkt.clouddn.com/xiake.webp",
+          url: "http://static.lazy-studio.com/xiake.webp",
           name: "xiake",
           class: "animate9"
         },
         {
-          url: "http://pnxgkoyon.bkt.clouddn.com/jianghu.webp",
+          url: "http://static.lazy-studio.com/jianghu.webp",
           name: "jianghu",
           class: "flipInX animated animate10"
         },

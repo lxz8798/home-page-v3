@@ -6,12 +6,12 @@
     <section class="first_box_wrap" ref="firstBox">
       <video
         id="homeVideo"
-        autoplay
         muted
+        autoplay
         loop
-        poster="http://pnxgkoyon.bkt.clouddn.com/banner2.webp"
+        poster="http://static.lazy-studio.com/first_screen.jpg"
       >
-        <source src="//pnxgkoyon.bkt.clouddn.com/video.mp4" type="video/mp4" />
+        <source src="http://static.lazy-studio.com/first_screen.mp4" type="video/mp4" />
         您的浏览器不支持video标签，建议更新浏览器版本
       </video>
       <article class="video_des">
@@ -26,7 +26,7 @@
           >主页内容不断填充ing...每天更新一点点。</strong
         >
       </article>
-      <div class="openSounds loader21" @click="openSounds()">
+      <div class="openSounds loader21" @click="openSounds">
         <div class="loader-21">
           <div></div>
           <div></div>
@@ -160,7 +160,7 @@ export default {
       itemLen: 4,
       loading: false,
       Javascript: {
-        title: "JAVASCRIPT / jQUERY / ZEPTO",
+        title: "JS / TS / jQUERY / ZEPTO",
         valueCustomText: 4.7,
         des:
           "可以熟练JAVASCRIPT，使用JAVASCRIPT完成页面交互，通过API拿数据做渲染，熟练的书写业务逻辑完成产品需求，可以排除因JS在页面产生的各种问题及BUG。虽然写了jQuery和zepto，但是我在vue项目里面没有特别需求的时候一般不会使用到它，都是通过JAVASCRIPT写原生，在项目里Vue本身提拱各种的方法对开发来说已经绰绰有余了。ES6使用CLASS封装类，TYPESCRIPT的诞生都说明JS开始向更加严谨的语法发展，要学的东西还有很多，给自己打个4.6分。"
@@ -279,7 +279,7 @@ section.home_screen_wrap {
       right: 0;
       width: 100%;
       height: inherit;
-      background: white;
+      background: rgba(255,255,255,.8);
       clip-path: polygon(81% 0, 100% 0%, 100% 100%, 48% 100%);
     }
     .openSounds {
@@ -287,7 +287,7 @@ section.home_screen_wrap {
       height: 0.4rem;
       position: absolute;
       bottom: $spancin + 0.1rem;
-      right: $spancin + 0.1rem;
+      left: $spancin + 0.1rem;
       z-index: 1;
       cursor: pointer;
       color: white;
@@ -309,12 +309,13 @@ section.home_screen_wrap {
         mix-blend-mode: overlay;
       }
       h1.noshdow {
-        color: $fontColor;
+        color: #9cd42d;
         text-shadow: none;
         animation-delay: 0.5s;
       }
       p,
       strong {
+        padding-left: 4px;
         line-height: 240%;
       }
       p:nth-child(1) {

@@ -78,14 +78,14 @@ header.Header-wrap {
     li:hover {
       border-top: 0.02rem solid $menuColor;
       a {
-        color: darken($menuColor, 30%);
+        color: #9cd42d;
       }
     }
 
     li.mini_activeHover {
       border-top: 0.02rem solid $menuColor;
       a {
-        color: darken($menuColor, 30%);
+        color: #9cd42d;
       }
     }
   }
