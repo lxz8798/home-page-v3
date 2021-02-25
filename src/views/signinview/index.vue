@@ -85,11 +85,11 @@ div.signinview_wrap {
     width: $signinBoxWidth;
     height: $signinBoxHeight;
 
-    background: white;
-    border-radius: 0.1rem;
     div.rowlayout_wrap {
       width: $signinBoxWidth;
       height: $signinBoxHeight;
+      background: white;
+      border-radius: 0.1rem;
       div.l {
         flex: 0 0 3rem;
         position: relative;
@@ -343,7 +343,11 @@ div.signinview_wrap {
     opacity: 0.4;
   }
   .hasH5_box {
+    width: unset !important;
     max-width: 3rem;
+    .rowlayout_wrap {
+      width: unset !important;
+    }
     div.r {
       flex: 0 0 2.8rem !important;
     }
@@ -381,9 +385,8 @@ export default {
       }
     };
   },
-  
-  created() {
-    this.signIn();
+  computed: {
+    ...mapState(['hasH5'])
   },
   mounted() {
     this.$Loading.finish();

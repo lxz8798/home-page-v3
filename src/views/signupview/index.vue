@@ -16,7 +16,7 @@
           <img class="qiqiu8" :src="config.left.qiqiu8" alt="" />
         </div>
         <div class="input_box" slot="divR">
-          <h1>谢谢您观注我的小窝！</h1>
+          <h1>谢谢您关注我的小窝！</h1>
           <div class="usernameInput">
             <label>用户名 / USERNAME</label>
             <div class="input">

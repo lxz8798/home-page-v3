@@ -18,7 +18,7 @@
         <!-- <h1 class="fadeInLeft animated">懒虫的窝</h1> -->
         <h1 class="noshdow fadeInLeft animated">懒虫的窝</h1>
         <p class="fadeInLeft animated">当前版本地址:<a href="http://v3.lazy-studio.com">http://v3.lazy-studio.com</a></p>
-        <p class="fadeInRight animated">更多版本地址: <a @click="gotoPath('v1')">v1</a> / <a @click="gotoPath('v1')">v2</a></p>
+        <p class="fadeInRight animated">更多版本地址: <a @click="gotoPath('v1')">v1</a> / <a @click="gotoPath('v2')">v2</a></p>
         <p class="fadeInLeft animated">github地址：<a href="https://github.com/lxz8798">https://github.com/lxz8798</a></p>
         <p class="fadeInLeft animated">
           还有更多项目请看work视图，过段时间才能放链接。。
