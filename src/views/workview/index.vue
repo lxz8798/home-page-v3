@@ -76,14 +76,26 @@ div.workview-wrap {
       > .inscription-content {
         > ul {
           > li {
-            flex: 1 1 calc(100% / 3);
+            flex: 1 1 100%;
           }
         }
       }
     }
   }
 
-  
+  > .inscription-wrap.phoneBox {
+    > .inscription-box-wrap {
+      > .inscription-content {
+        > ul {
+          > li {
+            flex: unset;
+            width: 0 0 calc(100% / 6);
+            max-width: 177px;
+          }
+        }
+      }
+    }
+  }
 
   .Footer_wrap {
     padding: $spancin;
@@ -144,7 +156,7 @@ export default {
           imgsize: "等待上传图片",
           des:
             "公司里接受北京建工出版社的需求，给其开发出全套解决方案，内容包含WEB端，移动端ANDROID/IOS，移动端H5，管理运营后台等等。",
-          link: "http://hyj.cabplink.com:50695",
+          link: "http://exam.cabplink.com",
           childs: [
             {
               year: "",
@@ -222,7 +234,7 @@ export default {
           img: "http://static.lazy-studio.com/work8.webp",
           imgsize: "等待上传图片",
           des: "针对每个项目都有一个独立的后台管理页面。",
-          link: "#",
+          link: "",
         },
       ],
       moveH5ProjectTitle: "移动端相关项目",
@@ -233,7 +245,7 @@ export default {
           img: "http://static.lazy-studio.com/phone1.webp",
           imgsize: "等待上传图片",
           des: "使用UNIAPP开发【正在开发中】,发布页面正在审核中。。。支持小程序、移动H5、公众号、ANDROID和IOS版本。",
-          link: "#"
+          link: ""
         },
         {
           year: "",
@@ -249,7 +261,7 @@ export default {
           img: "http://static.lazy-studio.com/phone6.webp",
           imgsize: "等待上传图片",
           des: "公众号被移除，现在只能通过我电脑上的小程序开发工具打开，主要是在微信和手机浏览器中访问。",
-          link: "#"
+          link: ""
         },
         {
           year: "",
@@ -266,16 +278,15 @@ export default {
           imgsize: "等待上传图片",
           des:
             "主要是给移动端的电子书资源阅读使用的核心技术，一个EPUB、PDF的通用阅读器，作为一个单独项目，独立于项目之外专门开发。",
-          link: "#"
+          link: ""
         },
         {
           year: "",
           name: "工信书院-小程序&公众号",
           img: "http://static.lazy-studio.com/phone3.webp",
           imgsize: "等待上传图片",
-          des:
-            "主要是给移动端的电子书资源阅读使用的核心技术，一个EPUB、PDF的通用阅读器，作为一个单独项目，独立于项目之外专门开发。",
-          link: "#"
+          des: "由本人实名微信授权的开发环境项目。",
+          link: ""
         }
       ]
     };

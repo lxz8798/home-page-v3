@@ -92,6 +92,9 @@ div.inscription-wrap {
             font-size: 0.16rem;
             margin-top: 10px;
             border-top: 1px dashed #ddd;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
           }
           p,
           span.img-box {

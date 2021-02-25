@@ -17,8 +17,9 @@
       <article class="video_des">
         <!-- <h1 class="fadeInLeft animated">懒虫的窝</h1> -->
         <h1 class="noshdow fadeInLeft animated">懒虫的窝</h1>
-        <p class="fadeInLeft animated">HTTP://V3.LAZY-STUDIO.COM</p>
-        <p class="fadeInRight animated">MORE VERSION: V1 / V2</p>
+        <p class="fadeInLeft animated">当前版本地址:<a href="http://v3.lazy-studio.com">http://v3.lazy-studio.com</a></p>
+        <p class="fadeInRight animated">更多版本地址: <a @click="gotoPath('v1')">v1</a> / <a @click="gotoPath('v1')">v2</a></p>
+        <p class="fadeInLeft animated">github地址：<a href="https://github.com/lxz8798">https://github.com/lxz8798</a></p>
         <p class="fadeInLeft animated">
           还有更多项目请看work视图，过段时间才能放链接。。
         </p>
@@ -160,10 +161,10 @@ export default {
       itemLen: 4,
       loading: false,
       Javascript: {
-        title: "JS / TS / jQUERY / ZEPTO",
-        valueCustomText: 4.7,
+        title: "JS / TS  / D3JS / THREEJS / OPENLAYERS",
+        valueCustomText: 4.5,
         des:
-          "可以熟练JAVASCRIPT，使用JAVASCRIPT完成页面交互，通过API拿数据做渲染，熟练的书写业务逻辑完成产品需求，可以排除因JS在页面产生的各种问题及BUG。虽然写了jQuery和zepto，但是我在vue项目里面没有特别需求的时候一般不会使用到它，都是通过JAVASCRIPT写原生，在项目里Vue本身提拱各种的方法对开发来说已经绰绰有余了。ES6使用CLASS封装类，TYPESCRIPT的诞生都说明JS开始向更加严谨的语法发展，要学的东西还有很多，给自己打个4.6分。"
+          "可以熟练JAVASCRIPT，使用JAVASCRIPT原生完成页面交互；使用D3JS、THREEJS完成数据可视化相关展示；使用OPENLAYERS完成地图展示；前端想要不被淘汰，需要能忍受一个长期学习的心态，总体我给自己打个4.5分。"
       },
       HtmlCSS: {
         title: "HTML&HTML5 / CSS&CSS3 / LESS&SCSS",
@@ -172,13 +173,13 @@ export default {
           "使用DIV+CSS完成页面这个技能，说是信手拈来也不为过，早期使用CSS的时候，各种浏览器兼容快写吐了，随着前端技术和现代浏览器的发展，现在只需要使用HTML5+CSS3来写符合标准规范的即可，比起以前真的是简单好多，各种布局方法真是熟得不能在熟了。在公司项目里面都是使用的LESS，不过我个人还是比较喜欢SCSS，各种@mixin、@for、@if超好用。页面布局方面我给自己打个4.8分，不写满分是怕自己骄傲。"
       },
       vueFamily: {
-        title: "VUE / VUEX / VUEROUTER / AXIOS / FLY / WEBPACK",
-        valueCustomText: 4.7,
+        title: "VUE / REACT && REACT NATIVE",
+        valueCustomText: 4.6,
         des:
-          "使用VUE完成的项目已经好些个了，除了公司的项目外，个人主页v2.0和v3.0都是使用的vue，应用级的项目骨架也已经搭建了几个，有对WEB端的，也有对移动端的。VUEX模块化已经在上线的项目在使用，中大型用起来感觉很方便。在早期的项目里都是使用的axios，后来自己封装项目骨架，发现fly用着也挺方便的，比如现在的v3.0用的就是fly，WEBPACK不能说多熟悉，但是应用已经不成问题了， 比如v3.0的个人主页，从2.5m压到只有500多k，我就谦虚点打个4.6分吧。"
+          "使用VUE完成的项目已经好些个了，除了公司的项目外，个人主页v2.0和v3.0都是使用的vue，应用级的项目骨架也已经搭建了几个，有对WEB端的，也有对移动端的。VUEX模块化已经在上线的项目在使用，中大型用起来感觉很方便。在早期的项目里都是使用的axios，后来自己封装项目骨架，发现fly用着也挺方便的，比如现在的v3.0用的就是fly，WEBPACK不能说多熟悉，但是应用已经不成问题了， 比如v3.0的个人主页，从2.5m压到只有500多k，永远学不完，给个4.6分吧。"
       },
       frame: {
-        title: "ELEMENTUI / IVIEW / MINTUI / UNIAPP",
+        title: "ELEMENTUI / IVIEW / ANT / UNIAPP",
         valueCustomText: 4.8,
         des:
           "前端用的框架实在是太多了，都是大同小异，除了市面上最常用的UI框架，什么ELEMENTUI、IVIEW外，针对移动端和公众的框架也在项目里经常使用，但是毕竟还不是最有效的解决方法。所以DCloud又出一个UNIAPP，写一套代码多端运行，类似的还有FLUTTER等，我个人使用UNIAPP的项目正在开发中，过段时间应该就会上线了。"
@@ -203,6 +204,17 @@ export default {
     this.$Loading.finish();
   },
   methods: {
+    gotoPath(version) {
+      switch (version) {
+        case 'v1':
+          location.href='http://v1.lazy-studio.com';
+        break;
+        case 'v2':
+          location.href='http://v2.lazy-studio.com';
+        break;
+      }
+
+    },
     /**
      * @Description: 打开声音
      * @Author: 李啸竹
@@ -312,6 +324,15 @@ section.home_screen_wrap {
         color: #9cd42d;
         text-shadow: none;
         animation-delay: 0.5s;
+      }
+      p {
+        > a {
+          color: #2c3e50;
+          &:hover {
+            color: #9cd42d;
+            transition: all 0.3s ease;
+          }
+        }
       }
       p,
       strong {
