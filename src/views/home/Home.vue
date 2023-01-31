@@ -9,9 +9,9 @@
         muted
         autoplay
         loop
-        poster="http://static.lazy-studio.com/first_screen.jpg"
+        poster="/static/images/first_screen.jpg"
       >
-        <source src="http://static.lazy-studio.com/first_screen.mp4" type="video/mp4" />
+        <source src="/static/images/first_screen.mp4" type="video/mp4" />
         您的浏览器不支持video标签，建议更新浏览器版本
       </video>
       <article class="video_des">

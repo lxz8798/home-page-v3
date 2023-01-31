@@ -11,7 +11,7 @@ const productionGzipExtensions = ['js', 'css'];
 const isProduction = process.env.NODE_ENV === 'production';
 module.exports = {
   // baseUrl
-  baseUrl: isProduction ? './' : '/',
+  publicPath: isProduction ? './' : '/',
   // 输出目录
   // outputDir: 'dist',
   // js、css、img、fonts静态资源的目录
@@ -66,16 +66,16 @@ module.exports = {
   parallel: require('os').cpus().length > 1,
   // 支持的loader有css-loader、postcss-loader、sass-loader、less-loader、stylus-loader
   // 配置高于chianWebpack中的关于 css loader的配置
-  css: { // 配置高于chainWebpack中关于css loader的配置
-    modules: false, // 是否开启支持‘foo.module.css’样式
-    // extract: true, // 是否使用css分离插件 ExtractTextPlugin，采用独立样式文件载入，不采用<style>方式内联至html文件中
-    sourceMap: false, // 是否在构建样式地图，false将提高构建速度
-    loaderOptions: {  //向 CSS 相关的 loader 传递选项(支持 css-loader postcss-loader sass-loader less-loader stylus-loader)
-      sass: {
-        includePaths: [path.resolve(__dirname, './node_modules/compass-mixins/lib')]
-      }
-    }
-  },
+  // css: { // 配置高于chainWebpack中关于css loader的配置
+  //   modules: false, // 是否开启支持‘foo.module.css’样式
+  //   // extract: true, // 是否使用css分离插件 ExtractTextPlugin，采用独立样式文件载入，不采用<style>方式内联至html文件中
+  //   sourceMap: false, // 是否在构建样式地图，false将提高构建速度
+  //   loaderOptions: {  //向 CSS 相关的 loader 传递选项(支持 css-loader postcss-loader sass-loader less-loader stylus-loader)
+  //     sass: {
+  //       includePaths: [path.resolve(__dirname, './node_modules/compass-mixins/lib')]
+  //     }
+  //   }
+  // },
   configureWebpack: config => {
     if (isProduction) {
       config.plugins.push(new CompressionWebpackPlugin({
